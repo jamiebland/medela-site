@@ -1,26 +1,103 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --color-blue: #80a8eb;
+  --color-blue-btn: #5a89de;
+  --color-blue-hover: #4a78cc;
+  --color-blue-dark: #1e3a6e;
+  --color-blue-mid: #6a96e0;
+  --color-blue-light: #b8d3f5;
+  --color-blue-pale: #e8f1fb;
+  --color-blue-xpale: #f2f6fd;
+
+  --color-bg: #f7f2f2;
+  --color-bg-warm: #ede9e9;
+
+  --color-purple: #9181b8;
+  --color-purple-dark: #4a3d7a;
+  --color-purple-deep: #2a1d4e;
+  --color-purple-mid: #6d5ea5;
+  --color-purple-light: #c8c0e0;
+  --color-purple-pale: #f0edf8;
+  --color-purple-xpale: #f7f5fc;
+
+  --color-text: #1c2133;
+  --color-text-mid: #4a556e;
+  --color-text-light: #8a93a8;
+
+  --color-amber: #e8a84c;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --shadow: 0 4px 32px rgba(30, 58, 110, 0.09);
+  --shadow-sm: 0 2px 12px rgba(30, 58, 110, 0.06);
+  --shadow-btn: 0 6px 20px rgba(90, 137, 222, 0.28);
+  --radius: 12px;
+  --radius-lg: 18px;
 }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+  overflow-x: hidden;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
 }
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+
+/* ── Scroll reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(.2,.8,.4,1), transform 0.6s cubic-bezier(.2,.8,.4,1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: 0.1s; }
+.d2 { transition-delay: 0.2s; }
+.d3 { transition-delay: 0.3s; }
+
+/* ── Schools marquee ── */
+@keyframes scroll-track {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-scroll-track {
+  animation: scroll-track 32s linear infinite;
+}
+.animate-scroll-track:hover {
+  animation-play-state: paused;
+}
+
+/* ── Float animation ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+.animate-float-delayed {
+  animation: float 4s ease-in-out infinite;
+  animation-delay: 0.9s;
+}
+
+/* ── Blog post prose ── */
+.prose h2 { font-size: 1.5rem; font-weight: 800; color: var(--color-text); margin: 2rem 0 0.75rem; letter-spacing: -0.02em; }
+.prose h3 { font-size: 1.25rem; font-weight: 700; color: var(--color-text); margin: 1.75rem 0 0.5rem; }
+.prose p { font-size: 1rem; color: var(--color-text-mid); line-height: 1.8; margin-bottom: 1rem; }
+.prose ul, .prose ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+.prose li { font-size: 1rem; color: var(--color-text-mid); line-height: 1.8; margin-bottom: 0.35rem; }
+.prose strong { color: var(--color-text); font-weight: 600; }
+.prose em { font-style: italic; }
+.prose a { color: var(--color-blue-btn); border-bottom: 1px solid var(--color-blue-light); transition: border-color 0.2s; }
+.prose a:hover { border-color: var(--color-blue-btn); }
+.prose hr { border: none; border-top: 1px solid var(--color-bg-warm); margin: 2rem 0; }
+.prose blockquote { border-left: 3px solid var(--color-blue-light); padding-left: 1rem; margin: 1.5rem 0; font-style: italic; color: var(--color-text-mid); }

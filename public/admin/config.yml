@@ -1,0 +1,25 @@
+local_backend: true
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Category", name: "category", widget: "select", options: ["Parents", "Schooling", "Growth", "Homework", "Reading", "Dyslexia", "ADHD", "Learning", "Aldeia"] }
+      - { label: "Author", name: "author", widget: "string", default: "Rebecca Bland" }
+      - { label: "Read Time (minutes)", name: "readTime", widget: "number", default: 5 }
+      - { label: "Featured Image", name: "featuredImage", widget: "image", required: false }
+      - { label: "Featured Post", name: "featured", widget: "boolean", default: false }
+      - { label: "Body", name: "body", widget: "markdown" }
