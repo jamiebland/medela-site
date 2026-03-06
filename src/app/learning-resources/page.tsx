@@ -20,7 +20,7 @@ import FaqAccordion from "@/components/FaqAccordion";
 import ResourceFilter from "./ResourceFilter";
 
 export const metadata = {
-  title: "Learning Resources \u2014 Medela Learning Support",
+  title: "Learning Resources",
   description:
     "Downloadable activity packs for Grades 1\u20134 \u2014 designed by a specialist using evidence-based methods. Cross-curricular, beautifully structured, and built with learning differences in mind.",
 };

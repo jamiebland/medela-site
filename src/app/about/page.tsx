@@ -8,7 +8,9 @@ import type { Metadata } from "next";
 import { Sprout, Puzzle, Heart, Handshake, BookOpen, Home, Leaf } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Us — Medela Learning Support",
+  title: "About Us",
+  description:
+    "Meet Rebecca and Jamille — the educational therapists behind Medela Learning Support. Learn about our approach to helping children with learning differences.",
 };
 
 const faqItems = [

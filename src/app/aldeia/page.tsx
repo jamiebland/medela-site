@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import RevealOnScroll from "@/components/RevealOnScroll";
-import Newsletter from "@/components/Newsletter";
+import Newsletter, { NewsletterForm } from "@/components/Newsletter";
 import {
   Globe,
   Mail,
@@ -27,7 +28,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Aldeia — The Parent Community for Learning Differences in Portugal",
+  title: "Aldeia — Parent Community",
+  description:
+    "Join Aldeia — a free parent community for families navigating learning differences in Portugal. Workshops, a WhatsApp group, and a fortnightly newsletter.",
 };
 
 export default function AldeiaPage() {
@@ -56,6 +59,13 @@ export default function AldeiaPage() {
         <div className="max-w-[1180px] mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-[72px] items-center relative z-10">
           {/* Left column */}
           <div>
+            <Image
+              src="/images/brand/Aldeia Logo Full.png"
+              alt="Aldeia"
+              width={160}
+              height={40}
+              className="mb-6 brightness-0 invert opacity-80"
+            />
             <div className="inline-flex items-center gap-[7px] bg-purple/[.18] border border-purple/[.28] text-purple-light px-3.5 py-1.5 rounded-full text-[11px] font-semibold tracking-[.07em] uppercase mb-[22px] w-fit">
               <Globe className="w-3.5 h-3.5 inline-block -mt-px" /> Lisbon · Portugal · Open to all families
             </div>
@@ -873,7 +883,7 @@ export default function AldeiaPage() {
                 Sign up for the newsletter and get the WhatsApp link in your
                 welcome email. Unsubscribe any time.
               </div>
-              <Newsletter />
+              <NewsletterForm />
               <div className="flex items-center gap-[9px] bg-[rgba(37,211,102,.1)] border border-[rgba(37,211,102,.2)] rounded-xl px-3.5 py-[11px] mt-2.5 text-xs text-white/[.72] leading-[1.5]">
                 <span><MessageCircle className="w-4 h-4" /></span>
                 <span>

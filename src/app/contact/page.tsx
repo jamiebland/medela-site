@@ -5,7 +5,7 @@ import ContactForm from "./ContactForm";
 import { SITE_EMAIL } from "@/lib/config";
 
 export const metadata = {
-  title: "Contact — Medela Learning Support",
+  title: "Contact",
   description: "Get in touch with Medela Learning Support. Book a free call or send us a message.",
 };
 

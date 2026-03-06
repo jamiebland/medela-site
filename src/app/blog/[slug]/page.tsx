@@ -2,6 +2,7 @@ import { getPostBySlug, getAllPosts } from "@/lib/blog";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Newsletter from "@/components/Newsletter";
+import { SITE_URL } from "@/lib/config";
 
 export const dynamic = "force-dynamic";
 
@@ -10,8 +11,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = await getPostBySlug(slug);
   if (!post) return { title: "Post Not Found" };
   return {
-    title: `${post.title} — Medela Learning`,
+    title: post.title,
     description: post.excerpt,
+    openGraph: {
+      type: "article",
+      title: post.title,
+      description: post.excerpt,
+      publishedTime: post.date,
+      authors: [post.author],
+      ...(post.featuredImage ? { images: [{ url: post.featuredImage, width: 1200, height: 630, alt: post.title }] } : {}),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      ...(post.featuredImage ? { images: [post.featuredImage] } : {}),
+    },
   };
 }
 
@@ -29,8 +44,24 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     day: "numeric",
   });
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    author: { "@type": "Person", name: post.author },
+    publisher: { "@type": "Organization", name: "Medela Learning Support" },
+    url: `${SITE_URL}/blog/${slug}`,
+    ...(post.featuredImage ? { image: post.featuredImage } : {}),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero */}
       <div
         className="relative overflow-hidden px-6 md:px-20 pt-16 md:pt-20 pb-20 md:pb-24"
