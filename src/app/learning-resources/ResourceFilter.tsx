@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import RevealOnScroll from "@/components/RevealOnScroll";
+import { Snowflake, Leaf, Sun, Package } from "lucide-react";
 
 /* ── Resource data ────────────────────────────────────────── */
 
@@ -18,7 +19,7 @@ interface Resource {
   originalPrice?: string;
   includes: string[];
   coverBg: string;
-  coverEmoji: string;
+  coverEmoji: React.ReactNode;
   badge?: { text: string; style: string };
   buyLabel: string;
   buyUrl: string;
@@ -34,9 +35,9 @@ const resources: Resource[] = [
     grade: "1", gradeLabel: "Grade 1", season: "Winter", year: 2026,
     price: "\u20ac29.99",
     includes: ["30+ activity pages", "Full answer booklet", "Instant PDF download"],
-    coverBg: "bg-gradient-to-br from-[#d4e8fb] to-[#b8d3f5]", coverEmoji: "\u2744\ufe0f",
+    coverBg: "bg-gradient-to-br from-[#d4e8fb] to-[#b8d3f5]", coverEmoji: <Snowflake className="w-12 h-12 text-blue-dark/40" />,
     badge: { text: "New", style: "bg-blue-btn text-white" },
-    buyLabel: "Buy now", buyUrl: "#",
+    buyLabel: "Buy now", buyUrl: "https://medelalearning.sellfy.store/p/coming-soon-winter-2025-activity-booklet-grade-2-hyjztx/",
   },
   {
     title: "Grade 1 Fall Learning Programme",
@@ -44,10 +45,10 @@ const resources: Resource[] = [
     grade: "1", gradeLabel: "Grade 1", season: "Fall", year: 2025,
     price: "\u20ac29.99",
     includes: ["30+ activity pages", "Full answer booklet", "Instant PDF download"],
-    coverBg: "bg-gradient-to-br from-[#fde8d0] to-[#f5c898]", coverEmoji: "\ud83c\udf42",
+    coverBg: "bg-gradient-to-br from-[#fde8d0] to-[#f5c898]", coverEmoji: <Leaf className="w-12 h-12 text-blue-dark/40" />,
     badge: { text: "Popular", style: "bg-amber text-[#5a3800]" },
     buyLabel: "Buy now",
-    buyUrl: "https://medelalearning.gumroad.com/l/grade1-fall-learning-programme?layout=profile",
+    buyUrl: "https://medelalearning.sellfy.store/p/fall-2025-programme-grade-1-mkxnwp/",
     coverImage: "https://assets.ycodeapp.com/assets/app95680/images/medela%20-%20fall%20activity%20book%20grade%201%20-%20social%20post-pwls88k1jz.webp",
   },
   {
@@ -56,8 +57,8 @@ const resources: Resource[] = [
     grade: "1", gradeLabel: "Grade 1", season: "Summer", year: 2025,
     price: "\u20ac29.99",
     includes: ["30+ activity pages", "Full answer booklet", "Instant PDF download"],
-    coverBg: "bg-gradient-to-br from-[#d0f5e8] to-[#a8e8d0]", coverEmoji: "\u2600\ufe0f",
-    buyLabel: "Buy now", buyUrl: "#",
+    coverBg: "bg-gradient-to-br from-[#d0f5e8] to-[#a8e8d0]", coverEmoji: <Sun className="w-12 h-12 text-blue-dark/40" />,
+    buyLabel: "Buy now", buyUrl: "https://medelalearning.sellfy.store/",
   },
   // ── Grade 2 ──
   {
@@ -66,9 +67,9 @@ const resources: Resource[] = [
     grade: "2", gradeLabel: "Grade 2", season: "Winter", year: 2026,
     price: "\u20ac29.99",
     includes: ["32+ activity pages", "Full answer booklet", "Instant PDF download"],
-    coverBg: "bg-gradient-to-br from-[#d4e8fb] to-[#b8d3f5]", coverEmoji: "\u2744\ufe0f",
+    coverBg: "bg-gradient-to-br from-[#d4e8fb] to-[#b8d3f5]", coverEmoji: <Snowflake className="w-12 h-12 text-blue-dark/40" />,
     badge: { text: "New", style: "bg-blue-btn text-white" },
-    buyLabel: "Buy now", buyUrl: "#",
+    buyLabel: "Buy now", buyUrl: "https://medelalearning.sellfy.store/p/winter-2025-activity-pack-grade-2-0qzwhg/",
   },
   {
     title: "Grade 2 Fall Activity Pack",
@@ -76,9 +77,9 @@ const resources: Resource[] = [
     grade: "2", gradeLabel: "Grade 2", season: "Fall", year: 2025,
     price: "\u20ac29.99",
     includes: ["32+ activity pages", "Full answer booklet", "Instant PDF download"],
-    coverBg: "bg-gradient-to-br from-[#fde8d0] to-[#f5c898]", coverEmoji: "\ud83c\udf42",
+    coverBg: "bg-gradient-to-br from-[#fde8d0] to-[#f5c898]", coverEmoji: <Leaf className="w-12 h-12 text-blue-dark/40" />,
     badge: { text: "Bestseller", style: "bg-[#3db87a] text-white" },
-    buyLabel: "Buy now", buyUrl: "#",
+    buyLabel: "Buy now", buyUrl: "https://medelalearning.sellfy.store/p/fall-2025-programme-grade-2/",
   },
   {
     title: "Grade 2 Summer Activity Pack",
@@ -86,8 +87,8 @@ const resources: Resource[] = [
     grade: "2", gradeLabel: "Grade 2", season: "Summer", year: 2025,
     price: "\u20ac29.99",
     includes: ["32+ activity pages", "Full answer booklet", "Instant PDF download"],
-    coverBg: "bg-gradient-to-br from-[#d0f5e8] to-[#a8e8d0]", coverEmoji: "\u2600\ufe0f",
-    buyLabel: "Buy now", buyUrl: "#",
+    coverBg: "bg-gradient-to-br from-[#d0f5e8] to-[#a8e8d0]", coverEmoji: <Sun className="w-12 h-12 text-blue-dark/40" />,
+    buyLabel: "Buy now", buyUrl: "https://medelalearning.sellfy.store/",
   },
   // ── Grade 3 ──
   {
@@ -96,9 +97,9 @@ const resources: Resource[] = [
     grade: "3", gradeLabel: "Grade 3", season: "Winter", year: 2026,
     price: "\u20ac34.99",
     includes: ["34+ activity pages", "Full answer booklet", "Instant PDF download"],
-    coverBg: "bg-gradient-to-br from-[#d4e8fb] to-[#b8d3f5]", coverEmoji: "\u2744\ufe0f",
+    coverBg: "bg-gradient-to-br from-[#d4e8fb] to-[#b8d3f5]", coverEmoji: <Snowflake className="w-12 h-12 text-blue-dark/40" />,
     badge: { text: "New", style: "bg-blue-btn text-white" },
-    buyLabel: "Buy now", buyUrl: "#",
+    buyLabel: "Buy now", buyUrl: "https://medelalearning.sellfy.store/p/winter-2025-activity-pack-grade-3-khgnxc/",
   },
   {
     title: "Grade 3 Fall Activity Pack",
@@ -106,8 +107,8 @@ const resources: Resource[] = [
     grade: "3", gradeLabel: "Grade 3", season: "Fall", year: 2025,
     price: "\u20ac34.99",
     includes: ["34+ activity pages", "Full answer booklet", "Instant PDF download"],
-    coverBg: "bg-gradient-to-br from-[#fde8d0] to-[#f5c898]", coverEmoji: "\ud83c\udf42",
-    buyLabel: "Buy now", buyUrl: "#",
+    coverBg: "bg-gradient-to-br from-[#fde8d0] to-[#f5c898]", coverEmoji: <Leaf className="w-12 h-12 text-blue-dark/40" />,
+    buyLabel: "Buy now", buyUrl: "https://medelalearning.sellfy.store/p/fall-2025-programme-grade-3-x5v8wc/",
   },
   {
     title: "Grade 3 Summer Activity Pack",
@@ -115,8 +116,8 @@ const resources: Resource[] = [
     grade: "3", gradeLabel: "Grade 3", season: "Summer", year: 2025,
     price: "\u20ac34.99",
     includes: ["34+ activity pages", "Full answer booklet", "Instant PDF download"],
-    coverBg: "bg-gradient-to-br from-[#d0f5e8] to-[#a8e8d0]", coverEmoji: "\u2600\ufe0f",
-    buyLabel: "Buy now", buyUrl: "#",
+    coverBg: "bg-gradient-to-br from-[#d0f5e8] to-[#a8e8d0]", coverEmoji: <Sun className="w-12 h-12 text-blue-dark/40" />,
+    buyLabel: "Buy now", buyUrl: "https://medelalearning.sellfy.store/p/2025-summer-programme-for-grade-3-students/",
   },
   // ── Grade 4 ──
   {
@@ -125,9 +126,9 @@ const resources: Resource[] = [
     grade: "4", gradeLabel: "Grade 4", season: "Winter", year: 2026,
     price: "\u20ac34.99",
     includes: ["36+ activity pages", "Full answer booklet", "Instant PDF download"],
-    coverBg: "bg-gradient-to-br from-[#d4e8fb] to-[#b8d3f5]", coverEmoji: "\u2744\ufe0f",
+    coverBg: "bg-gradient-to-br from-[#d4e8fb] to-[#b8d3f5]", coverEmoji: <Snowflake className="w-12 h-12 text-blue-dark/40" />,
     badge: { text: "New", style: "bg-blue-btn text-white" },
-    buyLabel: "Buy now", buyUrl: "#",
+    buyLabel: "Buy now", buyUrl: "https://medelalearning.sellfy.store/p/winter-2025-activity-pack-grade-4-ycqzm8/",
   },
   {
     title: "Grade 4 Fall Activity Pack",
@@ -135,8 +136,8 @@ const resources: Resource[] = [
     grade: "4", gradeLabel: "Grade 4", season: "Fall", year: 2025,
     price: "\u20ac34.99",
     includes: ["36+ activity pages", "Full answer booklet", "Instant PDF download"],
-    coverBg: "bg-gradient-to-br from-[#fde8d0] to-[#f5c898]", coverEmoji: "\ud83c\udf42",
-    buyLabel: "Buy now", buyUrl: "#",
+    coverBg: "bg-gradient-to-br from-[#fde8d0] to-[#f5c898]", coverEmoji: <Leaf className="w-12 h-12 text-blue-dark/40" />,
+    buyLabel: "Buy now", buyUrl: "https://medelalearning.sellfy.store/p/fall-2025-programme-grade-4-ph7pqq/",
   },
   {
     title: "Grade 4 Summer Activity Pack",
@@ -144,8 +145,8 @@ const resources: Resource[] = [
     grade: "4", gradeLabel: "Grade 4", season: "Summer", year: 2025,
     price: "\u20ac34.99",
     includes: ["36+ activity pages", "Full answer booklet", "Instant PDF download"],
-    coverBg: "bg-gradient-to-br from-[#d0f5e8] to-[#a8e8d0]", coverEmoji: "\u2600\ufe0f",
-    buyLabel: "Buy now", buyUrl: "#",
+    coverBg: "bg-gradient-to-br from-[#d0f5e8] to-[#a8e8d0]", coverEmoji: <Sun className="w-12 h-12 text-blue-dark/40" />,
+    buyLabel: "Buy now", buyUrl: "https://medelalearning.sellfy.store/p/2025-summer-programme-for-grade-4-students-5gcwlc/",
   },
   // ── Bundles ──
   {
@@ -154,9 +155,9 @@ const resources: Resource[] = [
     grade: "bundle", gradeLabel: "Grade 1", season: "All seasons", year: 2025,
     price: "\u20ac59.99", originalPrice: "\u20ac89.97",
     includes: ["All 3 seasonal packs", "90+ activity pages", "Save over \u20ac20"],
-    coverBg: "bg-gradient-to-br from-purple-pale to-purple-light", coverEmoji: "\ud83d\udce6",
+    coverBg: "bg-gradient-to-br from-purple-pale to-purple-light", coverEmoji: <Package className="w-12 h-12 text-blue-dark/40" />,
     badge: { text: "Bundle", style: "bg-purple text-white" },
-    buyLabel: "Buy bundle", buyUrl: "#", isBundle: true,
+    buyLabel: "Buy bundle", buyUrl: "https://medelalearning.sellfy.store/", isBundle: true,
   },
   {
     title: "Grade 2 Complete Bundle",
@@ -164,9 +165,9 @@ const resources: Resource[] = [
     grade: "bundle", gradeLabel: "Grade 2", season: "All seasons", year: 2025,
     price: "\u20ac59.99", originalPrice: "\u20ac89.97",
     includes: ["All 3 seasonal packs", "96+ activity pages", "Save over \u20ac20"],
-    coverBg: "bg-gradient-to-br from-purple-pale to-purple-light", coverEmoji: "\ud83d\udce6",
+    coverBg: "bg-gradient-to-br from-purple-pale to-purple-light", coverEmoji: <Package className="w-12 h-12 text-blue-dark/40" />,
     badge: { text: "Bundle", style: "bg-purple text-white" },
-    buyLabel: "Buy bundle", buyUrl: "#", isBundle: true,
+    buyLabel: "Buy bundle", buyUrl: "https://medelalearning.sellfy.store/", isBundle: true,
   },
   {
     title: "Grade 3 Complete Bundle",
@@ -174,9 +175,9 @@ const resources: Resource[] = [
     grade: "bundle", gradeLabel: "Grade 3", season: "All seasons", year: 2025,
     price: "\u20ac69.99", originalPrice: "\u20ac104.97",
     includes: ["All 3 seasonal packs", "102+ activity pages", "Save over \u20ac25"],
-    coverBg: "bg-gradient-to-br from-purple-pale to-purple-light", coverEmoji: "\ud83d\udce6",
+    coverBg: "bg-gradient-to-br from-purple-pale to-purple-light", coverEmoji: <Package className="w-12 h-12 text-blue-dark/40" />,
     badge: { text: "Bundle", style: "bg-purple text-white" },
-    buyLabel: "Buy bundle", buyUrl: "#", isBundle: true,
+    buyLabel: "Buy bundle", buyUrl: "https://medelalearning.sellfy.store/", isBundle: true,
   },
 ];
 
@@ -217,7 +218,7 @@ function ProductCard({ r, delay = 0 }: { r: Resource; delay?: number }) {
               className="object-cover transition-transform duration-400 group-hover:scale-[1.04]"
             />
           ) : (
-            <span className="text-[52px]">{r.coverEmoji}</span>
+            r.coverEmoji
           )}
           {r.badge && (
             <span className={`absolute top-3 left-3 z-2 px-3 py-1 rounded-full text-[10px] font-bold tracking-[.06em] uppercase ${r.badge.style}`}>
@@ -334,7 +335,7 @@ export default function ResourceFilter() {
                 <h2 className="text-lg md:text-2xl font-extrabold text-white leading-[1.2] tracking-tight mb-2">
                   Complete Grade Pack &mdash; All 3 Seasons in One
                 </h2>
-                <p className="text-sm text-white/[.52] leading-[1.7]">
+                <p className="text-sm text-white/[.72] leading-[1.7]">
                   Get Winter, Fall, and Summer in one bundle for any grade and save over 25%. Over 90 pages of structured learning, an answer booklet, and a complete year of at-home practice &mdash; all for one price.
                 </p>
               </div>

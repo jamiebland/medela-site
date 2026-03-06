@@ -3,27 +3,30 @@ import { getAllPosts } from "@/lib/blog";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import CtaBand from "@/components/CtaBand";
 import Newsletter from "@/components/Newsletter";
+import { Puzzle, Smartphone, GraduationCap, MessageCircle, Mail, BookOpen, Star } from "lucide-react";
+import { CALENDLY_URL, ASSET_BASE } from "@/lib/config";
 
 const schools = [
-  "TASIS, Lisbon",
-  "OIS International, Lisbon",
-  "EGI, Lisbon",
-  "BSL, Lisbon",
-  "CAISAL, Lisbon",
-  "ULIS, Lisbon",
-  "Saint Julian's, Lisbon",
-  "Red Bridge, Lisbon",
-  "St Katherine's, South Africa",
-  "King's Mead, South Africa",
-  "Crawford Sandton, South Africa",
-  "St Stithians, South Africa",
-  "BIS, Germany",
+  { name: "TASIS", logo: "tasis_logo-removebg-preview-irp56pe9jh.webp" },
+  { name: "OIS", logo: "ois_logo-removebg-preview-4gqlr958da.webp" },
+  { name: "EGI", logo: "egi_logo-removebg-preview-w5rjpbv75h.webp" },
+  { name: "BSL", logo: "bsl_logo-removebg-preview-pyvlry9s56.webp" },
+  { name: "CAISL", logo: "caisal_lisbon-removebg-preview-n7ofhimzsb.webp" },
+  { name: "ULIS", logo: "ulis_logo-removebg-preview-gnmlggijfm.webp" },
+  { name: "St. Julian's", logo: "st-julians-dl-removebg-preview-hx1dw1ydnz.webp" },
+  { name: "Red Bridge", logo: "red_bridge_logo-removebg-preview-wc1s7eifdo.webp" },
+  { name: "Aprendizes", logo: "aprendizes-removebg-preview-tvenjw3jed.webp" },
+  { name: "St Katherine's", logo: "st_katherine_s_logo-removebg-preview-jojfuoplvc.webp" },
+  { name: "Kingsmead", logo: "kings_mead_logo-removebg-preview-smhott9fkb.webp" },
+  { name: "Crawford", logo: "crawford_sandton_logo-removebg-preview-fc8lzvlm0v.webp" },
+  { name: "St Stithians", logo: "st_stithians_logo-removebg-preview-jxjkvgme7x.webp" },
+  { name: "BIS", logo: "bavarian_international_school-removebg-preview-moir7kraqt.webp" },
 ];
 
 const testimonials = [
   {
     quote:
-      "Within three months, my daughter went from dreading reading to choosing books at bedtime. Becs gave her the confidence we couldn't unlock on our own.",
+      "Within three months, my daughter went from dreading reading to choosing books at bedtime. Rebecca gave her the confidence we couldn't unlock on our own.",
     author: "Ana R.",
     role: "Parent of Grade 2 student, Lisbon",
   },
@@ -42,7 +45,7 @@ const testimonials = [
 ];
 
 export default async function HomePage() {
-  const posts = getAllPosts().slice(0, 3);
+  const posts = (await getAllPosts()).slice(0, 3);
 
   return (
     <>
@@ -55,8 +58,8 @@ export default async function HomePage() {
           </span>
 
           <h1 className="text-[2.5rem] md:text-[3.2rem] font-extrabold leading-[1.1] tracking-tight text-text mb-4">
-            Every child deserves to{" "}
-            <span className="text-blue-btn">love</span> learning
+            Every child deserves to<br />
+            <span className="text-blue-btn">love learning</span>
           </h1>
 
           <p className="text-base md:text-[17px] text-text-mid leading-7 mb-8 max-w-[480px]">
@@ -67,16 +70,15 @@ export default async function HomePage() {
 
           <div className="flex flex-wrap gap-3 mb-8">
             <a
-              href="https://calendly.com/medelalearnings"
+              href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-blue-btn text-white px-6 py-3 rounded-full text-sm font-bold hover:bg-blue-hover hover:-translate-y-0.5 transition-all"
-              style={{ boxShadow: "var(--shadow-btn)" }}
+              className="inline-flex items-center gap-2 bg-blue-btn text-white px-6 py-3 rounded-full text-sm font-bold shadow-[var(--shadow-btn)] hover:bg-blue-hover motion-safe:hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-btn focus-visible:ring-offset-2"
             >
               Book a free call &rarr;
             </a>
             <Link
-              href="/resources"
+              href="/learning-resources"
               className="inline-flex items-center gap-2 bg-transparent text-text-mid px-6 py-3 rounded-full text-sm font-medium border-[1.5px] border-black/[.12] hover:border-black/[.28] hover:text-text transition-all"
             >
               Browse resources
@@ -84,14 +86,9 @@ export default async function HomePage() {
           </div>
 
           <div className="flex items-center gap-3 text-[13px] text-text-light">
-            <div className="flex -space-x-2">
-              {[0, 1, 2, 3].map((i) => (
-                <span
-                  key={i}
-                  className="w-8 h-8 rounded-full bg-blue-pale border-2 border-bg flex items-center justify-center text-sm"
-                >
-                  {["\u{1F469}", "\u{1F468}", "\u{1F467}", "\u{1F466}"][i]}
-                </span>
+            <div className="flex gap-0.5">
+              {[0, 1, 2, 3, 4].map((i) => (
+                <Star key={i} className="w-4 h-4 fill-amber text-amber" />
               ))}
             </div>
             <span>
@@ -116,7 +113,7 @@ export default async function HomePage() {
             style={{ boxShadow: "var(--shadow)" }}
           >
             <p className="text-[28px] font-extrabold text-blue-btn leading-none">
-              13+
+              14+
             </p>
             <p className="text-[12px] text-text-light mt-1">Partner schools</p>
           </div>
@@ -136,18 +133,27 @@ export default async function HomePage() {
 
       {/* ───── 2. Schools Strip ───── */}
       <section className="bg-blue-dark py-8 overflow-hidden">
-        <p className="text-center text-[11px] tracking-[.12em] uppercase font-bold text-white/40 mb-5 px-6">
-          Trusted by families from 13 partner schools across Portugal, South
+        <p className="text-center text-[11px] tracking-[.12em] uppercase font-bold text-white/60 mb-5 px-6">
+          Trusted by families from 14 partner schools across Portugal, South
           Africa &amp; Europe
         </p>
         <div className="relative overflow-hidden">
-          <div className="animate-scroll-track flex w-max gap-3 px-3">
+          <div className="animate-scroll-track flex w-max gap-6 px-3 items-start will-change-transform">
             {[...schools, ...schools].map((school, i) => (
               <div
                 key={i}
-                className="flex items-center justify-center min-w-24 h-13 px-4 bg-white/[.07] border border-white/[.10] rounded-[9px] text-[12px] font-semibold text-white/60 whitespace-nowrap select-none"
+                className="flex flex-col items-center justify-start gap-2 px-3 select-none shrink-0 group"
               >
-                {school}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`${ASSET_BASE}/${school.logo}`}
+                  alt={school.name}
+                  loading="lazy"
+                  className="h-14 w-auto object-contain brightness-0 invert opacity-60 group-hover:opacity-90 transition-opacity"
+                />
+                <span className="text-[10px] font-medium text-white/40 group-hover:text-white/70 transition-colors">
+                  {school.name}
+                </span>
               </div>
             ))}
           </div>
@@ -176,7 +182,7 @@ export default async function HomePage() {
               >
                 <div className="bg-gradient-to-br from-blue-btn to-blue-dark px-7 py-8 text-white">
                   <div className="w-11 h-11 rounded-xl bg-white/[.18] flex items-center justify-center text-xl mb-4">
-                    {"\u{1F9E9}"}
+                    <Puzzle className="w-5 h-5" />
                   </div>
                   <h3 className="text-xl font-extrabold mb-2">
                     One-to-One Educational Therapy
@@ -208,7 +214,7 @@ export default async function HomePage() {
                     ))}
                   </ul>
                   <Link
-                    href="/services"
+                    href="/contact"
                     className="inline-flex items-center gap-1.5 text-[14px] font-bold text-blue-btn hover:text-blue-hover transition-colors"
                   >
                     Learn more &rarr;
@@ -225,7 +231,7 @@ export default async function HomePage() {
               >
                 <div className="bg-gradient-to-br from-purple to-purple-dark px-7 py-8 text-white">
                   <div className="w-11 h-11 rounded-xl bg-white/[.18] flex items-center justify-center text-xl mb-4">
-                    {"\u{1F4F1}"}
+                    <Smartphone className="w-5 h-5" />
                   </div>
                   <h3 className="text-xl font-extrabold mb-2">
                     Digital Learning Programmes
@@ -256,7 +262,7 @@ export default async function HomePage() {
                     ))}
                   </ul>
                   <Link
-                    href="/resources"
+                    href="/learning-resources"
                     className="inline-flex items-center gap-1.5 text-[14px] font-bold text-purple hover:text-purple-dark transition-colors"
                   >
                     Browse resources &rarr;
@@ -328,7 +334,7 @@ export default async function HomePage() {
                   },
                 ].map((step) => (
                   <div key={step.num} className="flex gap-4">
-                    <span className="text-[28px] font-extrabold text-blue-pale leading-none mt-0.5">
+                    <span className="text-[28px] font-extrabold text-blue-btn/20 leading-none mt-0.5">
                       {step.num}
                     </span>
                     <div>
@@ -384,7 +390,7 @@ export default async function HomePage() {
                         className="absolute inset-0 w-full h-full object-cover"
                       />
                     ) : (
-                      <span>{"\u{1F4D6}"}</span>
+                      <BookOpen className="w-8 h-8 text-blue-btn" />
                     )}
                     {post.category && (
                       <span className="absolute top-3 left-3 bg-white/90 text-[11px] font-bold text-text-mid uppercase tracking-[.08em] px-2.5 py-1 rounded-full">
@@ -429,7 +435,7 @@ export default async function HomePage() {
         <div className="max-w-[1180px] mx-auto grid md:grid-cols-2 gap-16 items-center">
           {/* Left */}
           <div>
-            <div className="flex items-center gap-2 text-[11px] tracking-[.12em] uppercase font-bold text-white/40 mb-2.5">
+            <div className="flex items-center gap-2 text-[11px] tracking-[.12em] uppercase font-bold text-white/60 mb-2.5">
               <span className="block w-[18px] h-0.5 bg-purple-light/50 rounded-sm" />
               Community
             </div>
@@ -472,22 +478,22 @@ export default async function HomePage() {
           <div className="grid grid-cols-2 gap-4">
             {[
               {
-                icon: "\u{1F393}",
+                icon: <GraduationCap className="w-5 h-5" />,
                 title: "Workshops",
                 desc: "Monthly live sessions on topics that matter to your family",
               },
               {
-                icon: "\u{1F4AC}",
+                icon: <MessageCircle className="w-5 h-5" />,
                 title: "WhatsApp Group",
                 desc: "Connect with other parents on the same journey",
               },
               {
-                icon: "\u{1F4EC}",
+                icon: <Mail className="w-5 h-5" />,
                 title: "Newsletter",
                 desc: "Practical tips and updates delivered fortnightly",
               },
               {
-                icon: "\u{1F4DA}",
+                icon: <BookOpen className="w-5 h-5" />,
                 title: "Resource Library",
                 desc: "Curated tools and guides you can use at home",
               },

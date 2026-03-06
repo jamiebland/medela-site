@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CALENDLY_URL, LOGO_URL } from "@/lib/config";
 
 export default function Footer() {
   return (
@@ -6,14 +7,17 @@ export default function Footer() {
       <div className="max-w-[1180px] mx-auto grid grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr] gap-9 md:gap-13 mb-12">
         {/* Brand */}
         <div className="col-span-2 md:col-span-1">
-          <div className="text-[15px] font-bold text-white mb-2.5 flex items-center gap-2.5 tracking-tight">
-            <div className="w-[30px] h-[30px] rounded-[7px] bg-blue-btn flex items-center justify-center">
-              <span className="text-[13px] font-extrabold text-white">M</span>
-            </div>
+          <div className="text-[15px] font-bold text-white mb-2.5 flex items-center gap-2 tracking-tight">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={LOGO_URL}
+              alt="Medela Learning"
+              className="h-[30px] w-auto object-contain brightness-0 invert shrink-0"
+            />
             Medela Learning Support
           </div>
           <p className="text-[13px] text-white/[.38] leading-7 max-w-[250px] mb-3.5">
-            Educational therapy and learning support for children in Lisbon and across Portugal. Founded by Becs and Jamille.
+            Educational therapy and learning support for children in Lisbon and across Portugal. Founded by Rebecca and Jamille.
           </p>
         </div>
 
@@ -23,7 +27,7 @@ export default function Footer() {
           <ul className="flex flex-col gap-2">
             <li><Link href="/about" className="text-sm text-white/[.46] hover:text-white transition-colors">About us</Link></li>
             <li><Link href="/learning-resources" className="text-sm text-white/[.46] hover:text-white transition-colors">Resources</Link></li>
-            <li><a href="https://calendly.com/medelalearnings" target="_blank" rel="noopener noreferrer" className="text-sm text-white/[.46] hover:text-white transition-colors">Book a session</a></li>
+            <li><a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-white/[.46] hover:text-white transition-colors">Book a session</a></li>
             <li><Link href="/contact" className="text-sm text-white/[.46] hover:text-white transition-colors">Contact</Link></li>
           </ul>
         </div>

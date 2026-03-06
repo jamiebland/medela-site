@@ -3,26 +3,30 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { Sparkles } from "lucide-react";
+import { CALENDLY_URL, LOGO_URL } from "@/lib/config";
+
+const links = [
+  { href: "/about", label: "About" },
+  { href: "/learning-resources", label: "Resources" },
+  { href: "/aldeia", label: "Aldeia", aldeia: true },
+  { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contact" },
+];
 
 export default function Nav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  const links = [
-    { href: "/about", label: "About" },
-    { href: "/learning-resources", label: "Resources" },
-    { href: "/aldeia", label: "Aldeia \u2726", aldeia: true },
-    { href: "/blog", label: "Blog" },
-    { href: "/contact", label: "Contact" },
-  ];
-
   return (
     <nav className="sticky top-0 z-[200] bg-bg/95 backdrop-blur-[16px] border-b border-blue/[.16] h-[70px] px-6 md:px-12 flex items-center justify-between">
-      <Link href="/" className="flex items-center gap-2.5 text-[15px] font-bold text-blue-dark tracking-tight">
-        <div className="w-9 h-9 rounded-[9px] bg-blue-btn flex items-center justify-center shrink-0">
-          <span className="text-[16px] font-extrabold text-white">M</span>
-        </div>
-        Medela Learning
+      <Link href="/" className="flex items-center">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={LOGO_URL}
+          alt="Medela Learning"
+          className="h-9 w-auto object-contain shrink-0"
+        />
       </Link>
 
       {/* Desktop links */}
@@ -31,12 +35,12 @@ export default function Nav() {
           <li key={l.href}>
             <Link
               href={l.href}
-              className={`text-sm font-medium relative pb-0.5 transition-colors
+              className={`text-[13px] font-medium relative pb-0.5 transition-colors
                 ${l.aldeia ? "text-purple hover:text-purple-dark" : "text-text-mid hover:text-blue-dark"}
                 ${pathname.startsWith(l.href) ? (l.aldeia ? "text-purple-dark" : "text-blue-dark") : ""}
               `}
             >
-              {l.label}
+              <span className="inline-flex items-center gap-1">{l.label}{l.aldeia && <Sparkles className="w-3 h-3" />}</span>
               <span
                 className={`absolute bottom-[-2px] left-0 right-0 h-0.5 rounded-sm transition-transform origin-left
                   ${l.aldeia ? "bg-purple" : "bg-blue"}
@@ -49,10 +53,10 @@ export default function Nav() {
         ))}
         <li>
           <a
-            href="https://calendly.com/medelalearnings"
+            href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-blue-btn text-white px-5 py-2 rounded-full text-sm font-semibold shadow-[var(--shadow-btn)] hover:bg-blue-hover hover:-translate-y-px transition-all"
+            className="bg-blue-btn text-white px-4 py-1.5 rounded-full text-[13px] font-semibold shadow-[var(--shadow-btn)] hover:bg-blue-hover motion-safe:hover:-translate-y-px transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-btn focus-visible:ring-offset-2"
           >
             Book a session &rarr;
           </a>
@@ -80,14 +84,14 @@ export default function Nav() {
               onClick={() => setOpen(false)}
               className={`text-base font-medium ${l.aldeia ? "text-purple" : "text-text-mid"}`}
             >
-              {l.label}
+              <span className="inline-flex items-center gap-1">{l.label}{l.aldeia && <Sparkles className="w-3.5 h-3.5" />}</span>
             </Link>
           ))}
           <a
-            href="https://calendly.com/medelalearnings"
+            href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-blue-btn text-white px-5 py-3 rounded-full text-sm font-semibold text-center shadow-[var(--shadow-btn)]"
+            className="bg-blue-btn text-white px-5 py-3 rounded-full text-sm font-semibold text-center shadow-[var(--shadow-btn)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-btn focus-visible:ring-offset-2"
           >
             Book a session &rarr;
           </a>

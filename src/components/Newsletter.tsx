@@ -1,13 +1,29 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState } from "react";
 
 export default function Newsletter() {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setStatus("sending");
+
+    const form = e.currentTarget;
+    const name = (form.elements.namedItem("name") as HTMLInputElement).value;
+    const email = (form.elements.namedItem("email") as HTMLInputElement).value;
+
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email }),
+      });
+      if (!res.ok) throw new Error();
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -22,7 +38,7 @@ export default function Newsletter() {
             One useful thing, every fortnight
           </h2>
           <p className="text-[15px] text-white/55 leading-7">
-            Practical tips, new resource launches, and community updates &mdash; straight to your inbox from Becs &amp; Jamille.
+            Practical tips, new resource launches, and community updates &mdash; straight to your inbox from Rebecca &amp; Jamille.
           </p>
         </div>
         <div>
@@ -41,10 +57,11 @@ export default function Newsletter() {
             </div>
           </div>
 
-          {!submitted ? (
+          {status !== "sent" ? (
             <form onSubmit={handleSubmit} className="flex flex-col gap-2">
               <input
                 type="text"
+                name="name"
                 placeholder="Your name"
                 required
                 className="px-4 py-3 rounded-full bg-white/[.14] border border-white/20 text-white text-sm outline-none w-full placeholder:text-white/[.38] focus:bg-white/20 focus:border-white/[.45] transition-all"
@@ -52,23 +69,28 @@ export default function Newsletter() {
               <div className="flex gap-2">
                 <input
                   type="email"
+                  name="email"
                   placeholder="Your email address"
                   required
                   className="flex-1 px-4 py-3 rounded-full bg-white/[.14] border border-white/20 text-white text-sm outline-none placeholder:text-white/[.38] focus:bg-white/20 focus:border-white/[.45] transition-all"
                 />
                 <button
                   type="submit"
-                  className="bg-white text-blue-btn px-5 py-3 rounded-full text-sm font-bold hover:bg-blue-xpale transition-colors whitespace-nowrap cursor-pointer"
+                  disabled={status === "sending"}
+                  className="bg-white text-blue-btn px-5 py-3 rounded-full text-sm font-bold hover:bg-blue-xpale transition-colors whitespace-nowrap cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-blue-btn disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Subscribe &rarr;
+                  {status === "sending" ? "Sending..." : "Subscribe \u2192"}
                 </button>
               </div>
-              <p className="text-[11px] text-white/30">No spam. Unsubscribe any time.</p>
+              {status === "error" && (
+                <p className="text-[11px] text-red-300">Something went wrong. Please try again.</p>
+              )}
+              <p className="text-[11px] text-white/50">No spam. Unsubscribe any time.</p>
             </form>
           ) : (
             <div className="p-4 bg-white/[.14] rounded-[var(--radius)] border border-white/[.24] text-center">
               <p className="text-white text-[15px] font-medium">
-                You&apos;re in! Check your inbox for a welcome from Becs &amp; Jamille.
+                You&apos;re in! Check your inbox for a welcome from Rebecca &amp; Jamille.
               </p>
             </div>
           )}

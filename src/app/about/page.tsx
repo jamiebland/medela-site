@@ -5,6 +5,7 @@ import Newsletter from "@/components/Newsletter";
 import FaqAccordion from "@/components/FaqAccordion";
 import { getAllPosts } from "@/lib/blog";
 import type { Metadata } from "next";
+import { Sprout, Puzzle, Heart, Handshake, BookOpen, Home, Leaf } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Us — Medela Learning Support",
@@ -46,7 +47,7 @@ const faqItems = [
     question:
       "Are the digital resources suitable for children with learning differences?",
     answer:
-      "Yes — they're designed with learning differences in mind. Our resources use structured, multi-sensory approaches with clear visuals, dyslexia-friendly fonts, and step-by-step scaffolding. They're created by Becs based on the same evidence-based methods used in her one-to-one sessions.",
+      "Yes — they're designed with learning differences in mind. Our resources use structured, multi-sensory approaches with clear visuals, dyslexia-friendly fonts, and step-by-step scaffolding. They're created by Rebecca based on the same evidence-based methods used in her one-to-one sessions.",
   },
   {
     question: "What is Aldeia, and how does it relate to Medela?",
@@ -56,7 +57,7 @@ const faqItems = [
 ];
 
 export default async function AboutPage() {
-  const allPosts = getAllPosts();
+  const allPosts = await getAllPosts();
   const blogPosts = allPosts.slice(0, 3);
 
   return (
@@ -69,7 +70,7 @@ export default async function AboutPage() {
         }}
       >
         <div className="max-w-[1180px] mx-auto relative z-10">
-          <nav className="flex items-center gap-1.5 text-[13px] text-white/40 mb-8">
+          <nav className="flex items-center gap-1.5 text-[13px] text-white/60 mb-8">
             <Link href="/" className="hover:text-white/70 transition-colors">
               Home
             </Link>
@@ -87,7 +88,7 @@ export default async function AboutPage() {
           </RevealOnScroll>
           <RevealOnScroll delay={1}>
             <p className="text-base md:text-lg text-white/55 leading-7 max-w-[560px]">
-              Medela Learning Support was founded by Becs and Jamille to give
+              Medela Learning Support was founded by Rebecca and Jamille to give
               every child access to specialist, compassionate educational
               therapy &mdash; whether in Lisbon, across Portugal, or online.
             </p>
@@ -107,7 +108,7 @@ export default async function AboutPage() {
                 The team
               </div>
               <h2 className="text-2xl md:text-4xl font-extrabold text-text leading-[1.15] tracking-tight mb-3">
-                Meet Becs &amp; Jamille
+                Meet Rebecca &amp; Jamille
               </h2>
               <p className="text-[15px] text-text-mid leading-7 max-w-[520px] mx-auto">
                 Two complementary skill sets, one shared mission: making
@@ -117,13 +118,13 @@ export default async function AboutPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Becs */}
+            {/* Rebecca */}
             <RevealOnScroll>
               <div className="bg-bg rounded-[var(--radius-lg)] shadow-[var(--shadow)] overflow-hidden hover:-translate-y-1 transition-transform duration-300">
                 <div className="relative h-[300px] overflow-hidden">
                   <img
                     src="https://assets.ycodeapp.com/assets/app95680/Images/published/rebecca%20top%20teacher!!!-15-7yb7mhu0ug.webp"
-                    alt="Becs — Educational Therapist & Founder"
+                    alt="Rebecca — Educational Therapist & Founder"
                     className="w-full h-full object-cover"
                   />
                   <span className="absolute top-4 left-4 bg-blue-btn text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
@@ -132,13 +133,13 @@ export default async function AboutPage() {
                 </div>
                 <div className="p-6 md:p-8">
                   <h3 className="text-xl font-extrabold text-text mb-0.5">
-                    Becs
+                    Rebecca
                   </h3>
                   <p className="text-sm font-semibold text-blue-btn mb-3">
                     Educational Therapist &amp; Founder
                   </p>
                   <p className="text-sm text-text-mid leading-7 mb-4">
-                    Becs is a specialist educational therapist with over a decade
+                    Rebecca is a specialist educational therapist with over a decade
                     of experience supporting children with dyslexia,
                     dyscalculia, ADHD, and language processing difficulties. She
                     designs every programme around the individual child &mdash;
@@ -174,7 +175,7 @@ export default async function AboutPage() {
             <RevealOnScroll delay={1}>
               <div className="bg-bg rounded-[var(--radius-lg)] shadow-[var(--shadow)] overflow-hidden hover:-translate-y-1 transition-transform duration-300">
                 <div className="relative h-[300px] overflow-hidden bg-purple-pale flex items-center justify-center">
-                  <span className="text-6xl">🌿</span>
+                  <Leaf className="w-16 h-16 text-purple-dark" />
                   <span className="absolute top-4 left-4 bg-purple-dark text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
                     Co-founder
                   </span>
@@ -239,39 +240,39 @@ export default async function AboutPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                icon: "🌱",
+                icon: <Sprout className="w-6 h-6 text-blue-btn" />,
                 title: "Every child can grow",
                 desc: "We believe that with the right support, every child can make meaningful progress — regardless of diagnosis or starting point.",
               },
               {
-                icon: "🧩",
+                icon: <Puzzle className="w-6 h-6 text-blue-btn" />,
                 title: "Learning is personal",
                 desc: "No two children learn the same way. Our programmes are built from scratch around each child's unique profile, strengths, and challenges.",
               },
               {
-                icon: "💛",
+                icon: <Heart className="w-6 h-6 text-blue-btn" />,
                 title: "Confidence comes first",
                 desc: "Academic skills follow confidence, not the other way around. We prioritise emotional safety and self-belief in every session.",
               },
               {
-                icon: "🤝",
+                icon: <Handshake className="w-6 h-6 text-blue-btn" />,
                 title: "Parents are partners",
                 desc: "You know your child best. We work alongside families — sharing strategies, celebrating wins, and adapting together.",
               },
               {
-                icon: "📖",
+                icon: <BookOpen className="w-6 h-6 text-blue-btn" />,
                 title: "Evidence drives everything",
                 desc: "Every approach we use is grounded in research. We stay current with the latest in educational psychology and learning science.",
               },
               {
-                icon: "🏠",
+                icon: <Home className="w-6 h-6 text-blue-btn" />,
                 title: "Community matters",
                 desc: "Learning differences affect the whole family. Through Aldeia, we build a network of support that extends far beyond the session room.",
               },
             ].map((value, i) => (
               <RevealOnScroll key={value.title} delay={i % 3 === 0 ? 0 : i % 3 === 1 ? 1 : 2}>
                 <div className="bg-white rounded-[var(--radius-lg)] shadow-[var(--shadow-sm)] p-6 md:p-8 hover:-translate-y-1 transition-transform duration-300">
-                  <span className="text-3xl mb-4 block">{value.icon}</span>
+                  <span className="mb-4 block">{value.icon}</span>
                   <h3 className="text-base font-bold text-text mb-2">
                     {value.title}
                   </h3>
@@ -351,7 +352,7 @@ export default async function AboutPage() {
               <div className="rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow)] mb-6">
                 <img
                   src="https://assets.ycodeapp.com/assets/app95680/Images/published/rebecca%20top%20teacher!!!-15-7yb7mhu0ug.webp"
-                  alt="Becs working with a child"
+                  alt="Rebecca working with a child"
                   className="w-full h-[300px] object-cover"
                 />
               </div>

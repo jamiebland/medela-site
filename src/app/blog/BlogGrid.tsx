@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { Users, School, Sprout, Pencil, BookOpen, Puzzle, Zap, Brain, Globe, GraduationCap } from "lucide-react";
 import type { BlogPost } from "@/lib/blog";
 
 function formatDate(dateStr: string) {
@@ -20,7 +21,7 @@ function PostCard({ post }: { post: BlogPost }) {
         {post.featuredImage ? (
           <img src={post.featuredImage} alt={post.title} className="absolute inset-0 w-full h-full object-cover" />
         ) : (
-          <span>{getCategoryEmoji(post.category)}</span>
+          <span>{getCategoryIcon(post.category)}</span>
         )}
         <span
           className={`absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wide uppercase text-white ${
@@ -48,19 +49,20 @@ function PostCard({ post }: { post: BlogPost }) {
   );
 }
 
-function getCategoryEmoji(cat: string) {
-  const map: Record<string, string> = {
-    Parents: "\uD83D\uDC6A",
-    Schooling: "\uD83C\uDFEB",
-    Growth: "\uD83C\uDF31",
-    Homework: "\u270F\uFE0F",
-    Reading: "\uD83D\uDCDA",
-    Dyslexia: "\uD83E\uDDE9",
-    ADHD: "\u26A1",
-    Learning: "\uD83E\uDDE0",
-    Aldeia: "\uD83C\uDF0D",
+function getCategoryIcon(cat: string) {
+  const iconClass = "w-9 h-9 text-blue-btn";
+  const map: Record<string, React.ReactNode> = {
+    Parents: <Users className={iconClass} />,
+    Schooling: <School className={iconClass} />,
+    Growth: <Sprout className={iconClass} />,
+    Homework: <Pencil className={iconClass} />,
+    Reading: <BookOpen className={iconClass} />,
+    Dyslexia: <Puzzle className={iconClass} />,
+    ADHD: <Zap className={iconClass} />,
+    Learning: <Brain className={iconClass} />,
+    Aldeia: <Globe className={iconClass} />,
   };
-  return map[cat] || "\uD83D\uDCD6";
+  return map[cat] || <GraduationCap className={iconClass} />;
 }
 
 export default function BlogGrid({
@@ -92,7 +94,7 @@ export default function BlogGrid({
                 {featured.featuredImage ? (
                   <img src={featured.featuredImage} alt={featured.title} className="absolute inset-0 w-full h-full object-cover" />
                 ) : (
-                  <span>{getCategoryEmoji(featured.category)}</span>
+                  <span>{getCategoryIcon(featured.category)}</span>
                 )}
                 <span className="absolute top-4 left-4 z-10 bg-blue-btn text-white px-3.5 py-1 rounded-full text-[11px] font-bold tracking-wide uppercase">
                   Featured
@@ -190,7 +192,7 @@ export default function BlogGrid({
           {/* Book session */}
           <div className="bg-blue-btn rounded-[var(--radius-lg)] p-6 text-center">
             <h3 className="text-[15px] font-extrabold text-white leading-snug tracking-tight mb-2">Need one-to-one support?</h3>
-            <p className="text-[13px] text-white/55 leading-relaxed mb-4">Book a free 20-minute call with Becs to talk through your child&apos;s challenges.</p>
+            <p className="text-[13px] text-white/55 leading-relaxed mb-4">Book a free 20-minute call with Rebecca to talk through your child&apos;s challenges.</p>
             <a
               href="https://calendly.com/medelalearnings"
               target="_blank"

@@ -2,6 +2,29 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import Newsletter from "@/components/Newsletter";
+import {
+  Globe,
+  Mail,
+  MessageCircle,
+  GraduationCap,
+  MapPin,
+  BookOpen,
+  Hash,
+  Zap,
+  School,
+  Plane,
+  Handshake,
+  Brain,
+  ClipboardList,
+  Heart,
+  Home,
+  Sparkles,
+  Monitor,
+  Clock,
+  Video,
+  Leaf,
+  Smile,
+} from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Aldeia — The Parent Community for Learning Differences in Portugal",
@@ -34,7 +57,7 @@ export default function AldeiaPage() {
           {/* Left column */}
           <div>
             <div className="inline-flex items-center gap-[7px] bg-purple/[.18] border border-purple/[.28] text-purple-light px-3.5 py-1.5 rounded-full text-[11px] font-semibold tracking-[.07em] uppercase mb-[22px] w-fit">
-              🌍 Lisbon · Portugal · Open to all families
+              <Globe className="w-3.5 h-3.5 inline-block -mt-px" /> Lisbon · Portugal · Open to all families
             </div>
             <h1 className="text-[clamp(28px,4vw,52px)] font-extrabold text-white leading-[1.1] tracking-tight mb-[18px]">
               You shouldn&apos;t have to{" "}
@@ -42,7 +65,7 @@ export default function AldeiaPage() {
                 navigate this alone
               </span>
             </h1>
-            <p className="text-base text-white/[.56] leading-7 max-w-[440px] mb-8">
+            <p className="text-base text-white/[.72] leading-7 max-w-[440px] mb-8">
               Aldeia is a warm, honest community for parents raising children
               with learning differences in Portugal. Expert workshops, a
               supportive WhatsApp group, and a fortnightly newsletter &mdash; all
@@ -57,7 +80,7 @@ export default function AldeiaPage() {
               </a>
               <a
                 href="#workshops"
-                className="inline-flex items-center gap-[7px] text-white/70 px-5 py-[13px] rounded-full text-sm font-medium border-[1.5px] border-white/20 hover:border-white/55 hover:text-white transition-all"
+                className="inline-flex items-center gap-[7px] text-white px-5 py-[13px] rounded-full text-sm font-medium border-[1.5px] border-white/40 hover:border-white/70 hover:bg-white/10 transition-all"
               >
                 See upcoming workshops
               </a>
@@ -68,22 +91,22 @@ export default function AldeiaPage() {
           <div className="grid grid-cols-2 gap-3">
             {[
               {
-                ico: "📬",
+                ico: <Mail className="w-6 h-6" />,
                 title: "Newsletter",
-                desc: "Fortnightly insights from Becs & Jamille. Practical, warm, never generic.",
+                desc: "Fortnightly insights from Rebecca & Jamille. Practical, warm, never generic.",
               },
               {
-                ico: "💬",
+                ico: <MessageCircle className="w-6 h-6" />,
                 title: "WhatsApp Group",
                 desc: "A safe space for parents to share, ask questions, and support each other.",
               },
               {
-                ico: "🎓",
+                ico: <GraduationCap className="w-6 h-6" />,
                 title: "Workshops",
                 desc: "Monthly sessions with psychometrists, OTs, teachers, and speech therapists.",
               },
               {
-                ico: "🇵🇹",
+                ico: <MapPin className="w-6 h-6" />,
                 title: "Rooted in Lisbon",
                 desc: "Built for raising children in Portugal — whether Portuguese, expat, or both.",
               },
@@ -128,32 +151,32 @@ export default function AldeiaPage() {
                 <div className="flex flex-col gap-2.5 mt-7">
                   {[
                     {
-                      ico: "📖",
+                      ico: <BookOpen className="w-4 h-4" />,
                       title: "Dyslexia or reading difficulties",
                       desc: "Your child is bright but struggles with reading, writing, or spelling in ways that confuse and frustrate them.",
                     },
                     {
-                      ico: "🔢",
+                      ico: <Hash className="w-4 h-4" />,
                       title: "Dyscalculia or maths challenges",
                       desc: "Numbers just don't stick. Maths homework is a battleground every evening.",
                     },
                     {
-                      ico: "⚡",
+                      ico: <Zap className="w-4 h-4" />,
                       title: "ADHD & attention differences",
                       desc: "Focusing is hard. School is hard. Finding support that actually works can feel impossible.",
                     },
                     {
-                      ico: "💬",
+                      ico: <MessageCircle className="w-4 h-4" />,
                       title: "Language & processing differences",
                       desc: "Your child struggles to follow instructions, process spoken language, or express themselves clearly.",
                     },
                     {
-                      ico: "🏫",
+                      ico: <School className="w-4 h-4" />,
                       title: "School anxiety or avoidance",
                       desc: "Monday mornings are dreaded. Your child's relationship with school has broken down.",
                     },
                     {
-                      ico: "✈️",
+                      ico: <Plane className="w-4 h-4" />,
                       title: "Expat families in Portugal",
                       desc: "Navigating the Portuguese education system — or an international school — as a newcomer, without a support network.",
                     },
@@ -195,22 +218,22 @@ export default function AldeiaPage() {
               <div className="grid grid-cols-2 gap-3 mt-7">
                 {[
                   {
-                    ico: "🤝",
+                    ico: <Handshake className="w-5 h-5" />,
                     title: "Peer support",
                     desc: "Parents who genuinely understand what you're going through — because they've been there.",
                   },
                   {
-                    ico: "🧠",
+                    ico: <Brain className="w-5 h-5" />,
                     title: "Expert access",
                     desc: "Monthly workshops with specialists you'd usually have to pay privately for an hour with.",
                   },
                   {
-                    ico: "📋",
+                    ico: <ClipboardList className="w-5 h-5" />,
                     title: "Practical guidance",
                     desc: "Not just theory — real strategies, scripts for school meetings, and step-by-step guides.",
                   },
                   {
-                    ico: "💛",
+                    ico: <Heart className="w-5 h-5" />,
                     title: "Hope & perspective",
                     desc: "This is hard. But children with the right support grow into confident, capable adults.",
                   },
@@ -256,25 +279,25 @@ export default function AldeiaPage() {
             <div className="flex flex-col gap-[26px]">
               {[
                 {
-                  ico: "📬",
+                  ico: <Mail className="w-5 h-5" />,
                   title: "Fortnightly newsletter",
-                  desc: "Becs and Jamille write every issue personally. Practical tips, workshop recaps, recommended resources, and honest reflections on the realities of supporting a child with learning differences in Portugal.",
+                  desc: "Rebecca and Jamille write every issue personally. Practical tips, workshop recaps, recommended resources, and honest reflections on the realities of supporting a child with learning differences in Portugal.",
                   delay: 0,
                 },
                 {
-                  ico: "💬",
+                  ico: <MessageCircle className="w-5 h-5" />,
                   title: "WhatsApp community group",
                   desc: "A warm, moderated space for day-to-day questions, recommendations, and support. When you join the newsletter, you'll receive a private link to the WhatsApp group in your welcome email.",
                   delay: 1,
                 },
                 {
-                  ico: "🎓",
+                  ico: <GraduationCap className="w-5 h-5" />,
                   title: "Monthly expert workshops",
                   desc: "Live online sessions with psychometrists, occupational therapists, speech therapists, educational psychologists, and experienced teachers. Recorded for those who can't make it live. Affordable and practical.",
                   delay: 2,
                 },
                 {
-                  ico: "📖",
+                  ico: <BookOpen className="w-5 h-5" />,
                   title: "Aldeia blog & resource library",
                   desc: "Articles written for parents — not professionals. Honest, readable, and grounded in the specific experience of raising a child with learning differences in Portugal.",
                   delay: 3,
@@ -303,14 +326,14 @@ export default function AldeiaPage() {
               <div className="bg-white rounded-[18px] shadow-[0_4px_32px_rgba(42,29,78,.10)] overflow-hidden">
                 {/* WA Header */}
                 <div className="bg-purple-dark px-5 py-4 flex items-center gap-2.5">
-                  <div className="w-9 h-9 rounded-full bg-purple-light flex items-center justify-center text-base">
-                    🏡
+                  <div className="w-9 h-9 rounded-full bg-purple-light flex items-center justify-center">
+                    <Home className="w-4 h-4" />
                   </div>
                   <div>
                     <h4 className="text-[13px] font-bold text-white">
                       Aldeia Community
                     </h4>
-                    <p className="text-[11px] text-white/50 mt-px">
+                    <p className="text-[11px] text-white/70 mt-px">
                       247 members
                     </p>
                   </div>
@@ -325,7 +348,7 @@ export default function AldeiaPage() {
                     <div className="bg-white text-[#1c2133] px-3.5 py-2.5 rounded-xl rounded-bl-[3px] text-[13px] leading-[1.5]">
                       Has anyone navigated the psychometric report process at an
                       international school here? We just got ours back and I
-                      don&apos;t know where to start 😅
+                      don&apos;t know where to start <Smile className="w-3.5 h-3.5 inline-block -mt-px" />
                     </div>
                     <div className="text-[10px] text-[#aaa] mt-[3px]">
                       10:42
@@ -334,9 +357,9 @@ export default function AldeiaPage() {
                   {/* me */}
                   <div className="self-end max-w-[80%]">
                     <div className="bg-[#dcf8c6] text-[#1a2033] px-3.5 py-2.5 rounded-xl rounded-br-[3px] text-[13px] leading-[1.5]">
-                      Yes! We went through this last year. Becs actually did a
+                      Yes! We went through this last year. Rebecca actually did a
                       workshop on this &mdash; the recording should be in the
-                      drive 🙌
+                      drive <Sparkles className="w-3.5 h-3.5 inline-block -mt-px" />
                     </div>
                     <div className="text-[10px] text-[#aaa] mt-[3px] text-right">
                       10:44
@@ -346,7 +369,7 @@ export default function AldeiaPage() {
                   <div className="self-start max-w-[80%]">
                     <div className="bg-white text-[#1c2133] px-3.5 py-2.5 rounded-xl rounded-bl-[3px] text-[13px] leading-[1.5]">
                       Oh amazing, thank you! I didn&apos;t know where to look.
-                      This group is a lifesaver honestly 💜
+                      This group is a lifesaver honestly <Heart className="w-3.5 h-3.5 inline-block -mt-px text-purple" />
                     </div>
                     <div className="text-[10px] text-[#aaa] mt-[3px]">
                       10:46
@@ -365,7 +388,7 @@ export default function AldeiaPage() {
                 </div>
                 {/* WA Footer */}
                 <div className="px-[18px] py-3.5 bg-white text-xs text-[#4a4468] border-t border-purple/[.1] text-center">
-                  💜 WhatsApp link shared in welcome email on signup
+                  <Heart className="w-3 h-3 inline-block -mt-px text-purple" /> WhatsApp link shared in welcome email on signup
                 </div>
               </div>
             </RevealOnScroll>
@@ -397,7 +420,7 @@ export default function AldeiaPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-[18px] mt-12">
             {/* Workshop 1 — Upcoming */}
             <RevealOnScroll>
-              <div className="bg-white rounded-[18px] shadow-[0_2px_12px_rgba(42,29,78,.06)] overflow-hidden hover:-translate-y-[5px] hover:shadow-[0_4px_32px_rgba(42,29,78,.10)] transition-all flex flex-col">
+              <div className="bg-white rounded-[18px] shadow-[0_2px_12px_rgba(42,29,78,.06)] overflow-hidden motion-safe:hover:-translate-y-[5px] hover:shadow-[0_4px_32px_rgba(42,29,78,.10)] transition-all flex flex-col">
                 <div
                   className="px-[22px] pt-6 pb-5 relative overflow-hidden"
                   style={{
@@ -412,7 +435,7 @@ export default function AldeiaPage() {
                   <h3 className="text-base font-bold text-white leading-[1.3] mb-2 tracking-tight">
                     Understanding Your Child&apos;s Psychometric Report
                   </h3>
-                  <div className="text-xs text-white/50">
+                  <div className="text-xs text-white/70">
                     Tue 18 March 2026 · 7:00 PM Lisbon
                   </div>
                 </div>
@@ -434,18 +457,18 @@ export default function AldeiaPage() {
                   </div>
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     <span className="flex items-center gap-[5px] bg-purple-xpale border border-purple/[.15] px-2.5 py-1 rounded-full text-[11px] font-medium text-purple-dark">
-                      🖥 Online
+                      <Monitor className="w-3 h-3 inline-block -mt-px" /> Online
                     </span>
                     <span className="flex items-center gap-[5px] bg-purple-xpale border border-purple/[.15] px-2.5 py-1 rounded-full text-[11px] font-medium text-purple-dark">
-                      ⏱ 75 mins
+                      <Clock className="w-3 h-3 inline-block -mt-px" /> 75 mins
                     </span>
                     <span className="flex items-center gap-[5px] bg-purple-xpale border border-purple/[.15] px-2.5 py-1 rounded-full text-[11px] font-medium text-purple-dark">
-                      🎥 Recorded
+                      <Video className="w-3 h-3 inline-block -mt-px" /> Recorded
                     </span>
                   </div>
                   <div className="flex items-center gap-2 mb-4">
-                    <div className="w-[30px] h-[30px] rounded-full bg-purple-pale flex items-center justify-center text-[13px] shrink-0">
-                      🌿
+                    <div className="w-[30px] h-[30px] rounded-full bg-purple-pale flex items-center justify-center shrink-0">
+                      <Leaf className="w-3.5 h-3.5" />
                     </div>
                     <div>
                       <div className="text-xs font-semibold text-[#1c2133]">
@@ -465,7 +488,7 @@ export default function AldeiaPage() {
                     </div>
                     <a
                       href="#"
-                      className="text-[13px] font-semibold text-white bg-purple-dark px-4 py-2 rounded-full hover:bg-purple-deep transition-colors whitespace-nowrap"
+                      className="text-[13px] font-semibold text-white bg-purple-dark px-4 py-2 rounded-full hover:bg-purple-deep transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-dark focus-visible:ring-offset-2"
                     >
                       Register &rarr;
                     </a>
@@ -476,7 +499,7 @@ export default function AldeiaPage() {
 
             {/* Workshop 2 — Upcoming */}
             <RevealOnScroll delay={1}>
-              <div className="bg-white rounded-[18px] shadow-[0_2px_12px_rgba(42,29,78,.06)] overflow-hidden hover:-translate-y-[5px] hover:shadow-[0_4px_32px_rgba(42,29,78,.10)] transition-all flex flex-col">
+              <div className="bg-white rounded-[18px] shadow-[0_2px_12px_rgba(42,29,78,.06)] overflow-hidden motion-safe:hover:-translate-y-[5px] hover:shadow-[0_4px_32px_rgba(42,29,78,.10)] transition-all flex flex-col">
                 <div
                   className="px-[22px] pt-6 pb-5 relative overflow-hidden"
                   style={{
@@ -491,13 +514,13 @@ export default function AldeiaPage() {
                   <h3 className="text-base font-bold text-white leading-[1.3] mb-2 tracking-tight">
                     Dyslexia at Home: Practical Strategies That Actually Work
                   </h3>
-                  <div className="text-xs text-white/50">
+                  <div className="text-xs text-white/70">
                     Thu 3 April 2026 · 7:30 PM Lisbon
                   </div>
                 </div>
                 <div className="px-[22px] pt-5 pb-[22px] flex-1 flex flex-col">
                   <p className="text-[13px] text-[#4a4468] leading-[1.7] mb-4 flex-1">
-                    Becs shares the at-home techniques she uses in her own
+                    Rebecca shares the at-home techniques she uses in her own
                     sessions &mdash; from multisensory reading approaches to
                     managing the emotional side of homework battles. Honest,
                     practical, parent-friendly.
@@ -513,13 +536,13 @@ export default function AldeiaPage() {
                   </div>
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     <span className="flex items-center gap-[5px] bg-purple-xpale border border-purple/[.15] px-2.5 py-1 rounded-full text-[11px] font-medium text-purple-dark">
-                      🖥 Online
+                      <Monitor className="w-3 h-3 inline-block -mt-px" /> Online
                     </span>
                     <span className="flex items-center gap-[5px] bg-purple-xpale border border-purple/[.15] px-2.5 py-1 rounded-full text-[11px] font-medium text-purple-dark">
-                      ⏱ 60 mins
+                      <Clock className="w-3 h-3 inline-block -mt-px" /> 60 mins
                     </span>
                     <span className="flex items-center gap-[5px] bg-purple-xpale border border-purple/[.15] px-2.5 py-1 rounded-full text-[11px] font-medium text-purple-dark">
-                      🎥 Recorded
+                      <Video className="w-3 h-3 inline-block -mt-px" /> Recorded
                     </span>
                   </div>
                   <div className="flex items-center gap-2 mb-4">
@@ -527,13 +550,13 @@ export default function AldeiaPage() {
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src="https://assets.ycodeapp.com/assets/app95680/Images/published/rebecca%20top%20teacher!!!-15-7yb7mhu0ug.webp"
-                        alt="Becs"
+                        alt="Rebecca"
                         className="w-full h-full object-cover"
                       />
                     </div>
                     <div>
                       <div className="text-xs font-semibold text-[#1c2133]">
-                        Becs
+                        Rebecca
                       </div>
                       <div className="text-[11px] text-[#8a86a8]">
                         Educational Therapist · Medela
@@ -549,7 +572,7 @@ export default function AldeiaPage() {
                     </div>
                     <a
                       href="#"
-                      className="text-[13px] font-semibold text-white bg-purple-dark px-4 py-2 rounded-full hover:bg-purple-deep transition-colors whitespace-nowrap"
+                      className="text-[13px] font-semibold text-white bg-purple-dark px-4 py-2 rounded-full hover:bg-purple-deep transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-dark focus-visible:ring-offset-2"
                     >
                       Register &rarr;
                     </a>
@@ -560,7 +583,7 @@ export default function AldeiaPage() {
 
             {/* Workshop 3 — Coming soon */}
             <RevealOnScroll delay={2}>
-              <div className="bg-white rounded-[18px] shadow-[0_2px_12px_rgba(42,29,78,.06)] overflow-hidden hover:-translate-y-[5px] hover:shadow-[0_4px_32px_rgba(42,29,78,.10)] transition-all flex flex-col">
+              <div className="bg-white rounded-[18px] shadow-[0_2px_12px_rgba(42,29,78,.06)] overflow-hidden motion-safe:hover:-translate-y-[5px] hover:shadow-[0_4px_32px_rgba(42,29,78,.10)] transition-all flex flex-col">
                 <div
                   className="px-[22px] pt-6 pb-5 relative overflow-hidden"
                   style={{
@@ -575,7 +598,7 @@ export default function AldeiaPage() {
                   <h3 className="text-base font-bold text-white leading-[1.3] mb-2 tracking-tight">
                     Navigating the Portuguese School System as an Expat Family
                   </h3>
-                  <div className="text-xs text-white/50">
+                  <div className="text-xs text-white/70">
                     May 2026 · Date TBC
                   </div>
                 </div>
@@ -597,18 +620,18 @@ export default function AldeiaPage() {
                   </div>
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     <span className="flex items-center gap-[5px] bg-purple-xpale border border-purple/[.15] px-2.5 py-1 rounded-full text-[11px] font-medium text-purple-dark">
-                      🖥 Online
+                      <Monitor className="w-3 h-3 inline-block -mt-px" /> Online
                     </span>
                     <span className="flex items-center gap-[5px] bg-purple-xpale border border-purple/[.15] px-2.5 py-1 rounded-full text-[11px] font-medium text-purple-dark">
-                      ⏱ 90 mins
+                      <Clock className="w-3 h-3 inline-block -mt-px" /> 90 mins
                     </span>
                     <span className="flex items-center gap-[5px] bg-purple-xpale border border-purple/[.15] px-2.5 py-1 rounded-full text-[11px] font-medium text-purple-dark">
-                      🎥 Recorded
+                      <Video className="w-3 h-3 inline-block -mt-px" /> Recorded
                     </span>
                   </div>
                   <div className="flex items-center gap-2 mb-4">
-                    <div className="w-[30px] h-[30px] rounded-full bg-purple-pale flex items-center justify-center text-[13px] shrink-0">
-                      🌿
+                    <div className="w-[30px] h-[30px] rounded-full bg-purple-pale flex items-center justify-center shrink-0">
+                      <Leaf className="w-3.5 h-3.5" />
                     </div>
                     <div>
                       <div className="text-xs font-semibold text-[#1c2133]">
@@ -626,7 +649,7 @@ export default function AldeiaPage() {
                         per family
                       </span>
                     </div>
-                    <span className="text-[13px] font-semibold text-[#8a86a8] bg-purple/[.2] px-4 py-2 rounded-full cursor-default whitespace-nowrap">
+                    <span className="text-[13px] font-semibold text-purple-dark bg-purple/[.2] px-4 py-2 rounded-full cursor-default whitespace-nowrap">
                       Waitlist &rarr;
                     </span>
                   </div>
@@ -691,7 +714,7 @@ export default function AldeiaPage() {
               </h2>
             </div>
             <Link
-              href="/blog?cat=aldeia"
+              href="/blog"
               className="text-sm font-semibold text-purple-dark border-b-[1.5px] border-purple-light pb-0.5"
             >
               All Aldeia articles &rarr;
@@ -701,7 +724,7 @@ export default function AldeiaPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
               {
-                ico: "🧠",
+                ico: <Brain className="w-8 h-8" />,
                 cat: "ADHD",
                 date: "February 2026",
                 title:
@@ -710,7 +733,7 @@ export default function AldeiaPage() {
                 delay: 0,
               },
               {
-                ico: "🏫",
+                ico: <School className="w-8 h-8" />,
                 cat: "Schools",
                 date: "January 2026",
                 title:
@@ -719,7 +742,7 @@ export default function AldeiaPage() {
                 delay: 1,
               },
               {
-                ico: "💬",
+                ico: <MessageCircle className="w-8 h-8" />,
                 cat: "Community",
                 date: "December 2025",
                 title:
@@ -782,7 +805,7 @@ export default function AldeiaPage() {
               Start with the{" "}
               <span className="font-light text-purple-light">newsletter</span>
             </h2>
-            <p className="text-[15px] text-white/[.52] leading-7">
+            <p className="text-[15px] text-white/[.72] leading-7">
               The fortnightly Aldeia newsletter is the heart of the community.
               When you sign up, you&apos;ll get the WhatsApp group link in your
               welcome email &mdash; and access to everything Aldeia has to offer.
@@ -790,20 +813,20 @@ export default function AldeiaPage() {
             <div className="flex flex-col gap-2.5 mt-6">
               {[
                 {
-                  ico: "📬",
+                  ico: <Mail className="w-5 h-5" />,
                   content: (
                     <>
                       <strong className="text-white/[.85] font-semibold">
                         What&apos;s in each issue:
                       </strong>{" "}
                       practical strategies, workshop recaps, parent stories,
-                      resource recommendations, and honest reflections from Becs
+                      resource recommendations, and honest reflections from Rebecca
                       &amp; Jamille.
                     </>
                   ),
                 },
                 {
-                  ico: "💬",
+                  ico: <MessageCircle className="w-5 h-5" />,
                   content: (
                     <>
                       <strong className="text-white/[.85] font-semibold">
@@ -815,7 +838,7 @@ export default function AldeiaPage() {
                   ),
                 },
                 {
-                  ico: "🎓",
+                  ico: <GraduationCap className="w-5 h-5" />,
                   content: (
                     <>
                       <strong className="text-white/[.85] font-semibold">
@@ -851,8 +874,8 @@ export default function AldeiaPage() {
                 welcome email. Unsubscribe any time.
               </div>
               <Newsletter />
-              <div className="flex items-center gap-[9px] bg-[rgba(37,211,102,.1)] border border-[rgba(37,211,102,.2)] rounded-xl px-3.5 py-[11px] mt-2.5 text-xs text-white/[.58] leading-[1.5]">
-                <span>💬</span>
+              <div className="flex items-center gap-[9px] bg-[rgba(37,211,102,.1)] border border-[rgba(37,211,102,.2)] rounded-xl px-3.5 py-[11px] mt-2.5 text-xs text-white/[.72] leading-[1.5]">
+                <span><MessageCircle className="w-4 h-4" /></span>
                 <span>
                   <strong className="text-white/80">
                     WhatsApp community link
@@ -869,7 +892,7 @@ export default function AldeiaPage() {
       </div>
 
       {/* ════════════════════════════════════════
-           TEAM — Meet Becs & Jamille
+           TEAM — Meet Rebecca & Jamille
          ════════════════════════════════════════ */}
       <section className="py-16 md:py-[88px] px-6 md:px-20 bg-white">
         <div className="max-w-[1180px] mx-auto">
@@ -878,7 +901,7 @@ export default function AldeiaPage() {
             Behind Aldeia
           </div>
           <h2 className="text-[clamp(22px,3.2vw,40px)] font-extrabold leading-[1.13] tracking-tight text-[#1c2133] mb-3">
-            Meet Becs &amp; Jamille
+            Meet Rebecca &amp; Jamille
           </h2>
           <p className="text-base text-[#4a4468] leading-7 max-w-[560px]">
             Two people who believed parents shouldn&apos;t have to figure this
@@ -886,27 +909,27 @@ export default function AldeiaPage() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-11">
-            {/* Becs */}
+            {/* Rebecca */}
             <RevealOnScroll>
               <div className="bg-[#f5f3fa] rounded-[18px] overflow-hidden shadow-[0_2px_12px_rgba(42,29,78,.06)] flex hover:-translate-y-[3px] hover:shadow-[0_4px_32px_rgba(42,29,78,.10)] transition-all">
                 <div className="w-[120px] shrink-0 bg-purple-pale overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="https://assets.ycodeapp.com/assets/app95680/Images/published/rebecca%20top%20teacher!!!-15-7yb7mhu0ug.webp"
-                    alt="Becs"
+                    alt="Rebecca"
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
                 <div className="p-5 flex flex-col justify-center">
                   <div className="text-[17px] font-extrabold text-[#1c2133] tracking-tight mb-0.5">
-                    Becs
+                    Rebecca
                   </div>
                   <div className="text-xs text-purple-dark font-semibold mb-2.5">
                     Educational Therapist &amp; Founder
                   </div>
                   <p className="text-[13px] text-[#4a4468] leading-[1.65]">
                     Specialist educational therapist and founder of Medela
-                    Learning. Becs created Aldeia because she saw, every day in
+                    Learning. Rebecca created Aldeia because she saw, every day in
                     her sessions, how isolated parents felt &mdash; and wanted to
                     change that.
                   </p>
@@ -918,8 +941,8 @@ export default function AldeiaPage() {
             <RevealOnScroll delay={1}>
               <div className="bg-[#f5f3fa] rounded-[18px] overflow-hidden shadow-[0_2px_12px_rgba(42,29,78,.06)] flex hover:-translate-y-[3px] hover:shadow-[0_4px_32px_rgba(42,29,78,.10)] transition-all">
                 <div className="w-[120px] shrink-0 bg-purple-pale overflow-hidden">
-                  <div className="w-full h-full flex items-center justify-center text-[40px]">
-                    🌿
+                  <div className="w-full h-full flex items-center justify-center">
+                    <Leaf className="w-10 h-10" />
                   </div>
                 </div>
                 <div className="p-5 flex flex-col justify-center">
@@ -957,9 +980,9 @@ export default function AldeiaPage() {
             <h2 className="text-[clamp(20px,2.8vw,34px)] font-extrabold text-white leading-[1.15] tracking-tight mb-2">
               Looking for one-to-one support for your child?
             </h2>
-            <p className="text-[15px] text-white/[.52] leading-7 max-w-[480px]">
+            <p className="text-[15px] text-white/[.72] leading-7 max-w-[480px]">
               Aldeia is for the community. Medela Learning Support is for the
-              child. Becs offers specialist educational therapy sessions &mdash;
+              child. Rebecca offers specialist educational therapy sessions &mdash;
               one-to-one, personalised, and evidence-based &mdash; for children
               with learning differences in Lisbon and online.
             </p>

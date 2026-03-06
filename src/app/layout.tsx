@@ -12,7 +12,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Medela Learning Support — Educational Therapy in Lisbon",
   description:
-    "Specialist one-to-one educational therapy for children with learning differences in Lisbon and across Portugal. Founded by Becs and Jamille.",
+    "Specialist one-to-one educational therapy for children with learning differences in Lisbon and across Portugal. Founded by Rebecca and Jamille.",
 };
 
 export default function RootLayout({

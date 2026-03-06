@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import Newsletter from "@/components/Newsletter";
 
 export async function generateStaticParams() {
-  const posts = getAllPosts();
+  const posts = await getAllPosts();
   return posts.map((post) => ({ slug: post.slug }));
 }
 
@@ -23,7 +23,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const post = await getPostBySlug(slug);
   if (!post) notFound();
 
-  const allPosts = getAllPosts();
+  const allPosts = await getAllPosts();
   const related = allPosts.filter((p) => p.slug !== slug).slice(0, 3);
 
   const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
@@ -71,7 +71,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {post.featuredImage && (
         <div className="max-w-[780px] mx-auto px-6 md:px-0 -mt-6">
           <div className="rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow)]">
-            <img src={post.featuredImage} alt={post.title} className="w-full h-auto" />
+            <img src={post.featuredImage} alt={post.title} className="w-full h-auto object-cover" />
           </div>
         </div>
       )}

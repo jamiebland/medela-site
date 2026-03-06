@@ -4,8 +4,8 @@
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
   --color-blue: #80a8eb;
-  --color-blue-btn: #5a89de;
-  --color-blue-hover: #4a78cc;
+  --color-blue-btn: #3e6dbf;
+  --color-blue-hover: #2d5aab;
   --color-blue-dark: #1e3a6e;
   --color-blue-mid: #6a96e0;
   --color-blue-light: #b8d3f5;
@@ -33,7 +33,7 @@
 :root {
   --shadow: 0 4px 32px rgba(30, 58, 110, 0.09);
   --shadow-sm: 0 2px 12px rgba(30, 58, 110, 0.06);
-  --shadow-btn: 0 6px 20px rgba(90, 137, 222, 0.28);
+  --shadow-btn: 0 6px 20px rgba(62, 109, 191, 0.30);
   --radius: 12px;
   --radius-lg: 18px;
 }
@@ -51,7 +51,8 @@ body {
 }
 
 img { max-width: 100%; display: block; }
-a { text-decoration: none; color: inherit; }
+
+a { text-decoration: none; }
 
 /* ── Scroll reveal ── */
 .reveal {
@@ -71,6 +72,7 @@ a { text-decoration: none; color: inherit; }
 }
 .animate-scroll-track {
   animation: scroll-track 32s linear infinite;
+  will-change: transform;
 }
 .animate-scroll-track:hover {
   animation-play-state: paused;
@@ -87,6 +89,18 @@ a { text-decoration: none; color: inherit; }
 .animate-float-delayed {
   animation: float 4s ease-in-out infinite;
   animation-delay: 0.9s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll-track,
+  .animate-float,
+  .animate-float-delayed,
+  .reveal {
+    animation: none;
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* ── Blog post prose ── */

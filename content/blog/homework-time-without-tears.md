@@ -1,11 +1,14 @@
 ---
-title: "Homework Time Without Tears"
-date: "2026-02-06"
-excerpt: "Research shows that support from adults other than parents, like teachers or tutors, can help maintain motivation and effort."
-category: "Homework"
-author: "Rebecca Bland"
+title: Homework Time Without Tears
+date: '2026-02-06'
+excerpt: >-
+  Research shows that support from adults other than parents, like teachers or
+  tutors, can help maintain motivation and effort.
+category: Homework
+author: Rebecca Bland
 readTime: 6
-featuredImage: "https://assets.ycodeapp.com/assets/app95680/images/a-large-building-on-top-of-a-lush-green-hillside-jwi0nzaezcc-vzgdyfbekg.webp"
+featuredImage: >-
+  https://assets.ycodeapp.com/assets/app95680/images/a-large-building-on-top-of-a-lush-green-hillside-jwi0nzaezcc-vzgdyfbekg.webp
 featured: false
 ---
 

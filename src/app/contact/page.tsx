@@ -1,5 +1,8 @@
 import Link from "next/link";
+import { Phone, Mail, Building } from "lucide-react";
 import Newsletter from "@/components/Newsletter";
+import ContactForm from "./ContactForm";
+import { SITE_EMAIL } from "@/lib/config";
 
 export const metadata = {
   title: "Contact — Medela Learning Support",
@@ -48,13 +51,13 @@ export default function ContactPage() {
 
             <div className="flex flex-col gap-6 mb-10">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-blue-pale flex items-center justify-center text-xl shrink-0">
-                  &#128222;
+                <div className="w-12 h-12 rounded-xl bg-blue-pale flex items-center justify-center shrink-0">
+                  <Phone className="w-5 h-5 text-blue-btn" />
                 </div>
                 <div>
                   <h3 className="text-[15px] font-bold text-text mb-1">Book a free call</h3>
                   <p className="text-sm text-text-mid leading-relaxed mb-2">
-                    A 20-minute call with Becs to discuss your child&apos;s needs.
+                    A 20-minute call with Rebecca to discuss your child&apos;s needs.
                   </p>
                   <a
                     href="https://calendly.com/medelalearnings"
@@ -68,23 +71,23 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-blue-pale flex items-center justify-center text-xl shrink-0">
-                  &#9993;
+                <div className="w-12 h-12 rounded-xl bg-blue-pale flex items-center justify-center shrink-0">
+                  <Mail className="w-5 h-5 text-blue-btn" />
                 </div>
                 <div>
                   <h3 className="text-[15px] font-bold text-text mb-1">Email us</h3>
                   <p className="text-sm text-text-mid leading-relaxed">
                     For general enquiries, partnerships, or school liaison requests.
                   </p>
-                  <a href="mailto:rebecca@medelalearning.com" className="text-sm font-semibold text-blue-btn">
-                    rebecca@medelalearning.com
+                  <a href={`mailto:${SITE_EMAIL}`} className="text-sm font-semibold text-blue-btn">
+                    {SITE_EMAIL}
                   </a>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-blue-pale flex items-center justify-center text-xl shrink-0">
-                  &#127961;
+                <div className="w-12 h-12 rounded-xl bg-blue-pale flex items-center justify-center shrink-0">
+                  <Building className="w-5 h-5 text-blue-btn" />
                 </div>
                 <div>
                   <h3 className="text-[15px] font-bold text-text mb-1">Based in Lisbon</h3>
@@ -111,64 +114,7 @@ export default function ContactPage() {
           </div>
 
           {/* Right: contact form */}
-          <div className="bg-white rounded-[var(--radius-lg)] p-8 shadow-[var(--shadow)] h-fit">
-            <h3 className="text-lg font-bold text-text mb-1 tracking-tight">Send us a message</h3>
-            <p className="text-sm text-text-mid mb-6">We&apos;ll get back to you within 24 hours.</p>
-
-            <form className="flex flex-col gap-4" action="https://formspree.io/f/placeholder" method="POST">
-              <div>
-                <label className="text-xs font-semibold text-text-mid uppercase tracking-wider mb-1.5 block">Your name</label>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  className="w-full px-4 py-3 rounded-xl border border-blue-light/50 text-sm outline-none focus:border-blue-btn transition-colors bg-bg"
-                  placeholder="Full name"
-                />
-              </div>
-              <div>
-                <label className="text-xs font-semibold text-text-mid uppercase tracking-wider mb-1.5 block">Email address</label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  className="w-full px-4 py-3 rounded-xl border border-blue-light/50 text-sm outline-none focus:border-blue-btn transition-colors bg-bg"
-                  placeholder="you@email.com"
-                />
-              </div>
-              <div>
-                <label className="text-xs font-semibold text-text-mid uppercase tracking-wider mb-1.5 block">Subject</label>
-                <select
-                  name="subject"
-                  className="w-full px-4 py-3 rounded-xl border border-blue-light/50 text-sm outline-none focus:border-blue-btn transition-colors bg-bg text-text-mid"
-                >
-                  <option>General enquiry</option>
-                  <option>One-to-one sessions</option>
-                  <option>Learning resources</option>
-                  <option>School liaison</option>
-                  <option>Aldeia community</option>
-                  <option>Partnership</option>
-                </select>
-              </div>
-              <div>
-                <label className="text-xs font-semibold text-text-mid uppercase tracking-wider mb-1.5 block">Message</label>
-                <textarea
-                  name="message"
-                  required
-                  rows={5}
-                  className="w-full px-4 py-3 rounded-xl border border-blue-light/50 text-sm outline-none focus:border-blue-btn transition-colors bg-bg resize-none"
-                  placeholder="Tell us a bit about your child and how we can help..."
-                />
-              </div>
-              <button
-                type="submit"
-                className="bg-blue-btn text-white px-6 py-3 rounded-full text-sm font-bold shadow-[var(--shadow-btn)] hover:bg-blue-hover hover:-translate-y-0.5 transition-all cursor-pointer"
-              >
-                Send message &rarr;
-              </button>
-              <p className="text-[11px] text-text-light">We respect your privacy and will never share your information.</p>
-            </form>
-          </div>
+          <ContactForm />
         </div>
       </section>
 
