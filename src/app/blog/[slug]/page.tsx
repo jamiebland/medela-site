@@ -3,10 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Newsletter from "@/components/Newsletter";
 
-export async function generateStaticParams() {
-  const posts = await getAllPosts();
-  return posts.map((post) => ({ slug: post.slug }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -36,12 +33,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     <>
       {/* Hero */}
       <div
-        className="relative overflow-hidden px-6 md:px-20 py-16 md:py-20"
+        className="relative overflow-hidden px-6 md:px-20 pt-16 md:pt-20 pb-20 md:pb-24"
         style={{ background: "linear-gradient(140deg, #1e3a6e 0%, #0e2248 100%)" }}
       >
         <div className="absolute -right-20 -top-20 w-[440px] h-[440px] rounded-full border border-blue/[.09] pointer-events-none" />
-        <div className="max-w-[780px] mx-auto relative z-10">
-          <div className="flex items-center gap-2 text-xs text-white/[.38] mb-5 font-medium">
+        <div className="max-w-[780px] mx-auto relative z-10 text-center">
+          <div className="flex items-center justify-center gap-2 text-xs text-white/[.38] mb-5 font-medium">
             <Link href="/" className="hover:text-white/70 transition-colors">Home</Link>
             <span className="text-white/20">/</span>
             <Link href="/blog" className="hover:text-white/70 transition-colors">Blog</Link>
@@ -57,7 +54,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             {post.title}
           </h1>
 
-          <div className="flex items-center gap-3.5 flex-wrap text-sm text-white/50">
+          <div className="flex items-center justify-center gap-3.5 flex-wrap text-sm text-white/50">
             <span>{formattedDate}</span>
             <span className="w-1 h-1 rounded-full bg-white/30" />
             <span>By {post.author}</span>
@@ -69,9 +66,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       {/* Featured image */}
       {post.featuredImage && (
-        <div className="max-w-[780px] mx-auto px-6 md:px-0 -mt-6">
+        <div className="max-w-[780px] mx-auto px-6 md:px-0 -mt-8 relative z-10 mb-2">
           <div className="rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow)]">
-            <img src={post.featuredImage} alt={post.title} className="w-full h-auto object-cover" />
+            <img src={post.featuredImage} alt={post.title} className="w-full h-auto block" />
           </div>
         </div>
       )}

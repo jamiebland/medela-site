@@ -3,6 +3,8 @@ import Link from "next/link";
 import BlogGrid from "./BlogGrid";
 import Newsletter from "@/components/Newsletter";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Blog — Medela Learning Support",
   description: "Honest writing about learning differences, educational therapy, and raising confident children.",
