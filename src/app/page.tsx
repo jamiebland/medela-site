@@ -1,10 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getAllPosts } from "@/lib/blog";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import CtaBand from "@/components/CtaBand";
 import Newsletter from "@/components/Newsletter";
 import { Puzzle, Smartphone, GraduationCap, MessageCircle, Mail, BookOpen, Star } from "lucide-react";
-import { CALENDLY_URL, ASSET_BASE } from "@/lib/config";
+import { CALENDLY_URL, ASSET_BASE, SITE_URL, SITE_EMAIL } from "@/lib/config";
+import JsonLd from "@/components/JsonLd";
 
 const schools = [
   { name: "TASIS", logo: "tasis_logo-removebg-preview-irp56pe9jh.webp" },
@@ -44,11 +46,31 @@ const testimonials = [
   },
 ];
 
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  name: "Medela Learning Support",
+  url: SITE_URL,
+  email: SITE_EMAIL,
+  description:
+    "Specialist one-to-one educational therapy for children with learning differences in Lisbon and across Portugal.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Lisbon",
+    addressCountry: "PT",
+  },
+  areaServed: [
+    { "@type": "Country", name: "Portugal" },
+    { "@type": "Country", name: "South Africa" },
+  ],
+};
+
 export default async function HomePage() {
   const posts = (await getAllPosts()).slice(0, 3);
 
   return (
     <>
+      <JsonLd data={localBusinessJsonLd} />
       {/* ───── 1. Hero ───── */}
       <section className="relative grid md:grid-cols-2 min-h-[600px] overflow-hidden bg-bg">
         {/* Left */}
@@ -99,10 +121,12 @@ export default async function HomePage() {
 
         {/* Right */}
         <div className="relative hidden md:block">
-          <img
+          <Image
             src="https://assets.ycodeapp.com/assets/app95680/Images/published/rebecca%20top%20teacher!!!-18-dd0kutji5t.webp"
             alt="Rebecca, educational therapist, working with a child"
-            className="absolute inset-0 w-full h-full object-cover"
+            fill
+            priority
+            className="object-cover"
           />
           {/* gradient overlay fading from bg to transparent */}
           <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/40 to-transparent" />
@@ -144,6 +168,7 @@ export default async function HomePage() {
                 key={i}
                 className="flex flex-col items-center justify-start gap-2 px-3 select-none shrink-0 group"
               >
+                {/* Raw img: animated marquee with CSS filters + dynamic sizing — next/image not suited */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={`${ASSET_BASE}/${school.logo}`}
@@ -284,9 +309,11 @@ export default async function HomePage() {
                 className="rounded-[var(--radius-lg)] overflow-hidden"
                 style={{ boxShadow: "var(--shadow)" }}
               >
-                <img
+                <Image
                   src="https://assets.ycodeapp.com/assets/app95680/Images/published/rebecca%20top%20teacher!!!-18-dd0kutji5t.webp"
                   alt="Educational therapy session"
+                  width={800}
+                  height={420}
                   className="w-full h-[420px] object-cover"
                 />
               </div>
@@ -384,10 +411,12 @@ export default async function HomePage() {
                 >
                   <div className="relative h-44 bg-blue-pale flex items-center justify-center text-4xl">
                     {post.featuredImage ? (
-                      <img
+                      <Image
                         src={post.featuredImage}
                         alt={post.title}
-                        className="absolute inset-0 w-full h-full object-cover"
+                        fill
+                        unoptimized
+                        className="object-cover"
                       />
                     ) : (
                       <BookOpen className="w-8 h-8 text-blue-btn" />

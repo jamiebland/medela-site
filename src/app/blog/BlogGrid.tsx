@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Users, School, Sprout, Pencil, BookOpen, Puzzle, Zap, Brain, Globe, GraduationCap } from "lucide-react";
 import type { BlogPost } from "@/lib/blog";
 
@@ -19,7 +20,7 @@ function PostCard({ post }: { post: BlogPost }) {
     >
       <div className="h-[168px] overflow-hidden relative bg-blue-pale flex items-center justify-center text-4xl">
         {post.featuredImage ? (
-          <img src={post.featuredImage} alt={post.title} className="absolute inset-0 w-full h-full object-cover" />
+          <Image src={post.featuredImage} alt={post.title} fill unoptimized className="object-cover" />
         ) : (
           <span>{getCategoryIcon(post.category)}</span>
         )}
@@ -92,7 +93,7 @@ export default function BlogGrid({
             >
               <div className="h-[340px] md:h-[340px] overflow-hidden relative bg-blue-pale flex items-center justify-center text-6xl">
                 {featured.featuredImage ? (
-                  <img src={featured.featuredImage} alt={featured.title} className="absolute inset-0 w-full h-full object-cover" />
+                  <Image src={featured.featuredImage} alt={featured.title} fill unoptimized className="object-cover" />
                 ) : (
                   <span>{getCategoryIcon(featured.category)}</span>
                 )}

@@ -1,10 +1,12 @@
 import { getPostBySlug, getAllPosts } from "@/lib/blog";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Newsletter from "@/components/Newsletter";
+import JsonLd from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/config";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -44,24 +46,32 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     day: "numeric",
   });
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.title,
-    description: post.excerpt,
-    datePublished: post.date,
-    author: { "@type": "Person", name: post.author },
-    publisher: { "@type": "Organization", name: "Medela Learning Support" },
-    url: `${SITE_URL}/blog/${slug}`,
-    ...(post.featuredImage ? { image: post.featuredImage } : {}),
-  };
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: post.title,
+      description: post.excerpt,
+      datePublished: post.date,
+      author: { "@type": "Person", name: post.author },
+      publisher: { "@type": "Organization", name: "Medela Learning Support" },
+      url: `${SITE_URL}/blog/${slug}`,
+      ...(post.featuredImage ? { image: post.featuredImage } : {}),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+        { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+        { "@type": "ListItem", position: 3, name: post.title },
+      ],
+    },
+  ];
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
       {/* Hero */}
       <div
         className="relative overflow-hidden px-6 md:px-20 pt-16 md:pt-20 pb-20 md:pb-24"
@@ -99,7 +109,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {post.featuredImage && (
         <div className="max-w-[780px] mx-auto px-6 md:px-0 -mt-8 relative z-10 mb-2">
           <div className="rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow)]">
-            <img src={post.featuredImage} alt={post.title} className="w-full h-auto block" />
+            <Image src={post.featuredImage} alt={post.title} width={780} height={440} unoptimized className="w-full h-auto block" />
           </div>
         </div>
       )}
@@ -139,7 +149,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 >
                   <div className="h-[160px] overflow-hidden relative bg-blue-pale flex items-center justify-center text-4xl">
                     {r.featuredImage ? (
-                      <img src={r.featuredImage} alt={r.title} className="absolute inset-0 w-full h-full object-cover" />
+                      <Image src={r.featuredImage} alt={r.title} fill unoptimized className="object-cover" />
                     ) : null}
                     <span className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wide uppercase text-white bg-blue-btn">
                       {r.category}

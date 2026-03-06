@@ -1,9 +1,13 @@
 import Link from "next/link";
+import Image from "next/image";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import CtaBand from "@/components/CtaBand";
 import Newsletter from "@/components/Newsletter";
 import FaqAccordion from "@/components/FaqAccordion";
+import JsonLd from "@/components/JsonLd";
 import { getAllPosts } from "@/lib/blog";
+import { buildFaqJsonLd } from "@/lib/structured-data";
+import { CALENDLY_URL } from "@/lib/config";
 import type { Metadata } from "next";
 import { Sprout, Puzzle, Heart, Handshake, BookOpen, Home, Leaf } from "lucide-react";
 
@@ -58,12 +62,15 @@ const faqItems = [
   },
 ];
 
+const faqJsonLd = buildFaqJsonLd(faqItems);
+
 export default async function AboutPage() {
   const allPosts = await getAllPosts();
   const blogPosts = allPosts.slice(0, 3);
 
   return (
     <main>
+      <JsonLd data={faqJsonLd} />
       {/* ── Hero ── */}
       <section
         className="relative py-20 md:py-28 px-6 md:px-20 overflow-hidden"
@@ -124,10 +131,11 @@ export default async function AboutPage() {
             <RevealOnScroll>
               <div className="bg-bg rounded-[var(--radius-lg)] shadow-[var(--shadow)] overflow-hidden hover:-translate-y-1 transition-transform duration-300">
                 <div className="relative h-[300px] overflow-hidden">
-                  <img
+                  <Image
                     src="https://assets.ycodeapp.com/assets/app95680/Images/published/rebecca%20top%20teacher!!!-15-7yb7mhu0ug.webp"
                     alt="Rebecca — Educational Therapist & Founder"
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
                   />
                   <span className="absolute top-4 left-4 bg-blue-btn text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
                     Founder
@@ -351,11 +359,12 @@ export default async function AboutPage() {
 
           <div className="lg:sticky lg:top-28">
             <RevealOnScroll delay={1}>
-              <div className="rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow)] mb-6">
-                <img
+              <div className="rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow)] mb-6 relative h-[300px]">
+                <Image
                   src="https://assets.ycodeapp.com/assets/app95680/Images/published/rebecca%20top%20teacher!!!-15-7yb7mhu0ug.webp"
                   alt="Rebecca working with a child"
-                  className="w-full h-[300px] object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
               <div className="bg-white rounded-[var(--radius-lg)] shadow-[var(--shadow-sm)] p-6">
@@ -405,7 +414,7 @@ export default async function AboutPage() {
                 happy to chat.
               </p>
               <a
-                href="https://calendly.com/medelalearnings"
+                href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-blue-btn text-white px-6 py-3 rounded-full text-sm font-bold shadow-[var(--shadow-btn)] hover:bg-blue-hover hover:-translate-y-0.5 transition-all"
@@ -451,11 +460,13 @@ export default async function AboutPage() {
                     className="group block bg-white rounded-[var(--radius-lg)] shadow-[var(--shadow-sm)] overflow-hidden hover:-translate-y-1 transition-transform duration-300"
                   >
                     {post.featuredImage && (
-                      <div className="h-[180px] overflow-hidden">
-                        <img
+                      <div className="h-[180px] overflow-hidden relative">
+                        <Image
                           src={post.featuredImage}
                           alt={post.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          fill
+                          unoptimized
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                       </div>
                     )}

@@ -1,5 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
+import JsonLd from "@/components/JsonLd";
+import { buildFaqJsonLd } from "@/lib/structured-data";
+import { CALENDLY_URL } from "@/lib/config";
 import {
   ShoppingCart,
   CreditCard,
@@ -58,9 +61,12 @@ const faqItems = [
   },
 ];
 
+const faqJsonLd = buildFaqJsonLd(faqItems);
+
 export default function LearningResourcesPage() {
   return (
     <>
+      <JsonLd data={faqJsonLd} />
       {/* ═══════════════════════════════════════════
           HERO
       ═══════════════════════════════════════════ */}
@@ -388,7 +394,7 @@ export default function LearningResourcesPage() {
                 through which pack is right for your child.
               </p>
               <a
-                href="https://calendly.com/medelalearnings"
+                href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-blue-btn text-white px-6 py-3 rounded-full text-sm font-semibold shadow-[var(--shadow-btn)] hover:bg-blue-hover hover:-translate-y-0.5 transition-all"

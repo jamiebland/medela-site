@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { getSupabase, hasSupabase } from "./supabase";
 import { remark } from "remark";
 import html from "remark-html";
@@ -122,12 +123,12 @@ async function getPostBySlugFromSupabase(slug: string): Promise<BlogPost | null>
 
 // ── Public API ──
 
-export async function getAllPosts(): Promise<BlogPost[]> {
+export const getAllPosts = cache(async (): Promise<BlogPost[]> => {
   if (hasSupabase) return getAllPostsFromSupabase();
   return getAllPostsFromFiles();
-}
+});
 
-export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
+export const getPostBySlug = cache(async (slug: string): Promise<BlogPost | null> => {
   if (hasSupabase) return getPostBySlugFromSupabase(slug);
   return getPostBySlugFromFiles(slug);
-}
+});

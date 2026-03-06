@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Sparkles } from "lucide-react";
@@ -21,11 +22,13 @@ export default function Nav() {
   return (
     <nav className="sticky top-0 z-[200] bg-bg/95 backdrop-blur-[16px] border-b border-blue/[.16] h-[70px] px-6 md:px-12 flex items-center justify-between">
       <Link href="/" className="flex items-center">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src={LOGO_URL}
           alt="Medela Learning"
-          className="h-9 w-auto object-contain shrink-0"
+          width={120}
+          height={28}
+          className="h-7 w-auto object-contain shrink-0"
+          priority
         />
       </Link>
 

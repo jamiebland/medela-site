@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { CALENDLY_URL, LOGO_URL } from "@/lib/config";
 
 export default function Footer() {
@@ -8,10 +9,11 @@ export default function Footer() {
         {/* Brand */}
         <div className="col-span-2 md:col-span-1">
           <div className="text-[15px] font-bold text-white mb-2.5 flex items-center gap-2 tracking-tight">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={LOGO_URL}
               alt="Medela Learning"
+              width={120}
+              height={30}
               className="h-[30px] w-auto object-contain brightness-0 invert shrink-0"
             />
             Medela Learning Support

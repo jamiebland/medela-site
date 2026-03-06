@@ -63,10 +63,10 @@ export default function AldeiaPage() {
               src="/images/brand/Aldeia Logo Full.png"
               alt="Aldeia"
               width={160}
-              height={40}
-              className="mb-6 brightness-0 invert opacity-80"
+              height={24}
+              className="h-6 w-auto mb-6 brightness-0 invert opacity-80"
             />
-            <div className="inline-flex items-center gap-[7px] bg-purple/[.18] border border-purple/[.28] text-purple-light px-3.5 py-1.5 rounded-full text-[11px] font-semibold tracking-[.07em] uppercase mb-[22px] w-fit">
+            <div className="inline-flex items-center gap-[7px] bg-purple/[.18] border border-purple/[.28] text-purple-light px-3.5 py-1.5 rounded-full text-[11px] font-semibold tracking-[.07em] uppercase mb-3 w-fit">
               <Globe className="w-3.5 h-3.5 inline-block -mt-px" /> Lisbon · Portugal · Open to all families
             </div>
             <h1 className="text-[clamp(28px,4vw,52px)] font-extrabold text-white leading-[1.1] tracking-tight mb-[18px]">
@@ -125,7 +125,7 @@ export default function AldeiaPage() {
                 key={c.title}
                 className="bg-white/[.055] border border-purple/[.18] rounded-xl p-5 hover:bg-white/[.09] hover:-translate-y-[3px] transition-all"
               >
-                <div className="text-2xl mb-2.5">{c.ico}</div>
+                <div className="text-purple-light mb-2.5">{c.ico}</div>
                 <h4 className="text-sm font-bold text-white mb-[5px] tracking-tight">
                   {c.title}
                 </h4>
@@ -557,10 +557,11 @@ export default function AldeiaPage() {
                   </div>
                   <div className="flex items-center gap-2 mb-4">
                     <div className="w-[30px] h-[30px] rounded-full overflow-hidden bg-purple-pale shrink-0">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
+                      <Image
                         src="https://assets.ycodeapp.com/assets/app95680/Images/published/rebecca%20top%20teacher!!!-15-7yb7mhu0ug.webp"
                         alt="Rebecca"
+                        width={30}
+                        height={30}
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -923,10 +924,11 @@ export default function AldeiaPage() {
             <RevealOnScroll>
               <div className="bg-[#f5f3fa] rounded-[18px] overflow-hidden shadow-[0_2px_12px_rgba(42,29,78,.06)] flex hover:-translate-y-[3px] hover:shadow-[0_4px_32px_rgba(42,29,78,.10)] transition-all">
                 <div className="w-[120px] shrink-0 bg-purple-pale overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src="https://assets.ycodeapp.com/assets/app95680/Images/published/rebecca%20top%20teacher!!!-15-7yb7mhu0ug.webp"
                     alt="Rebecca"
+                    width={120}
+                    height={160}
                     className="w-full h-full object-cover object-top"
                   />
                 </div>

@@ -17,8 +17,8 @@ export function middleware(request: NextRequest) {
     if (pathname.startsWith("/api/blog")) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
-    // For admin pages, redirect to login
-    if (pathname.startsWith("/admin")) {
+    // For admin pages (except login), redirect to login
+    if (pathname.startsWith("/admin") && pathname !== "/admin/login") {
       const loginUrl = new URL("/admin/login", request.url);
       return NextResponse.redirect(loginUrl);
     }

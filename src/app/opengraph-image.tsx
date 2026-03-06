@@ -1,11 +1,18 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 
-export const runtime = "edge";
 export const alt = "Medela Learning Support";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OgImage() {
+const logoPromise = readFile(
+  join(process.cwd(), "public/images/brand/Medela Logo Icon.png")
+).then((data) => `data:image/png;base64,${data.toString("base64")}`);
+
+export default async function OgImage() {
+  const logoSrc = await logoPromise;
+
   return new ImageResponse(
     (
       <div
@@ -15,43 +22,94 @@ export default function OgImage() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
+          alignItems: "center",
           justifyContent: "center",
-          padding: "80px",
+          position: "relative",
         }}
       >
+        {/* Subtle decorative circle */}
         <div
           style={{
-            fontSize: 28,
-            color: "rgba(255,255,255,0.4)",
-            letterSpacing: "0.12em",
-            textTransform: "uppercase",
-            fontWeight: 700,
-            marginBottom: 20,
+            position: "absolute",
+            width: 520,
+            height: 520,
+            borderRadius: "50%",
+            border: "1px solid rgba(128,168,235,0.08)",
+            top: 55,
+            left: -60,
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            width: 380,
+            height: 380,
+            borderRadius: "50%",
+            border: "1px solid rgba(128,168,235,0.06)",
+            bottom: -80,
+            right: -40,
+          }}
+        />
+
+        {/* Logo */}
+        <img
+          src={logoSrc}
+          width={120}
+          height={120}
+          style={{ marginBottom: 32, opacity: 0.95 }}
+        />
+
+        {/* Site name */}
+        <div
+          style={{
+            fontSize: 52,
+            fontWeight: 800,
+            color: "#ffffff",
+            letterSpacing: "-0.02em",
+            lineHeight: 1.1,
+            textAlign: "center",
           }}
         >
           Medela Learning Support
         </div>
+
+        {/* Divider */}
         <div
           style={{
-            fontSize: 56,
-            fontWeight: 800,
-            color: "#ffffff",
-            lineHeight: 1.15,
-            maxWidth: 800,
+            width: 48,
+            height: 3,
+            background: "#80a8eb",
+            borderRadius: 2,
+            marginTop: 24,
+            marginBottom: 24,
+          }}
+        />
+
+        {/* Tagline */}
+        <div
+          style={{
+            fontSize: 24,
+            color: "rgba(255,255,255,0.5)",
+            textAlign: "center",
+            lineHeight: 1.5,
+            maxWidth: 600,
           }}
         >
           Educational Therapy for Children with Learning Differences
         </div>
+
+        {/* Location */}
         <div
           style={{
-            fontSize: 24,
-            color: "rgba(255,255,255,0.55)",
-            marginTop: 24,
-            lineHeight: 1.5,
-            maxWidth: 700,
+            fontSize: 16,
+            color: "rgba(255,255,255,0.3)",
+            marginTop: 20,
+            letterSpacing: "0.1em",
+            textTransform: "uppercase",
+            fontWeight: 600,
           }}
         >
-          Specialist one-to-one support in Lisbon and across Portugal
+          Lisbon, Portugal
         </div>
       </div>
     ),
