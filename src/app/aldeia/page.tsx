@@ -23,7 +23,6 @@ import {
   Monitor,
   Clock,
   Video,
-  Leaf,
   Smile,
 } from "lucide-react";
 
@@ -477,8 +476,14 @@ export default function AldeiaPage() {
                     </span>
                   </div>
                   <div className="flex items-center gap-2 mb-4">
-                    <div className="w-[30px] h-[30px] rounded-full bg-purple-pale flex items-center justify-center shrink-0">
-                      <Leaf className="w-3.5 h-3.5" />
+                    <div className="w-[30px] h-[30px] rounded-full overflow-hidden bg-purple-pale shrink-0">
+                      <Image
+                        src="/images/team/jamille-avatar-sm.jpg"
+                        alt="Jamille"
+                        width={30}
+                        height={30}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div>
                       <div className="text-xs font-semibold text-[#1c2133]">
@@ -558,7 +563,7 @@ export default function AldeiaPage() {
                   <div className="flex items-center gap-2 mb-4">
                     <div className="w-[30px] h-[30px] rounded-full overflow-hidden bg-purple-pale shrink-0">
                       <Image
-                        src="https://assets.ycodeapp.com/assets/app95680/Images/published/rebecca%20top%20teacher!!!-15-7yb7mhu0ug.webp"
+                        src="/images/team/rebecca-avatar-sm.jpg"
                         alt="Rebecca"
                         width={30}
                         height={30}
@@ -641,8 +646,14 @@ export default function AldeiaPage() {
                     </span>
                   </div>
                   <div className="flex items-center gap-2 mb-4">
-                    <div className="w-[30px] h-[30px] rounded-full bg-purple-pale flex items-center justify-center shrink-0">
-                      <Leaf className="w-3.5 h-3.5" />
+                    <div className="w-[30px] h-[30px] rounded-full overflow-hidden bg-purple-pale shrink-0">
+                      <Image
+                        src="/images/team/jamille-avatar-sm.jpg"
+                        alt="Jamille"
+                        width={30}
+                        height={30}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div>
                       <div className="text-xs font-semibold text-[#1c2133]">
@@ -925,11 +936,11 @@ export default function AldeiaPage() {
               <div className="bg-[#f5f3fa] rounded-[18px] overflow-hidden shadow-[0_2px_12px_rgba(42,29,78,.06)] flex hover:-translate-y-[3px] hover:shadow-[0_4px_32px_rgba(42,29,78,.10)] transition-all">
                 <div className="w-[120px] shrink-0 bg-purple-pale overflow-hidden">
                   <Image
-                    src="https://assets.ycodeapp.com/assets/app95680/Images/published/rebecca%20top%20teacher!!!-15-7yb7mhu0ug.webp"
+                    src="/images/team/rebecca-avatar.jpg"
                     alt="Rebecca"
                     width={120}
                     height={160}
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="p-5 flex flex-col justify-center">
@@ -952,10 +963,13 @@ export default function AldeiaPage() {
             {/* Jamille */}
             <RevealOnScroll delay={1}>
               <div className="bg-[#f5f3fa] rounded-[18px] overflow-hidden shadow-[0_2px_12px_rgba(42,29,78,.06)] flex hover:-translate-y-[3px] hover:shadow-[0_4px_32px_rgba(42,29,78,.10)] transition-all">
-                <div className="w-[120px] shrink-0 bg-purple-pale overflow-hidden">
-                  <div className="w-full h-full flex items-center justify-center">
-                    <Leaf className="w-10 h-10" />
-                  </div>
+                <div className="w-[120px] shrink-0 overflow-hidden relative">
+                  <Image
+                    src="/images/team/jamille-avatar.jpg"
+                    alt="Jamille"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div className="p-5 flex flex-col justify-center">
                   <div className="text-[17px] font-extrabold text-[#1c2133] tracking-tight mb-0.5">

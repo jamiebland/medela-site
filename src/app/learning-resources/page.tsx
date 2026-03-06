@@ -350,11 +350,11 @@ export default function LearningResourcesPage() {
         <div className="max-w-[1180px] mx-auto grid md:grid-cols-[auto_1fr] gap-11 items-center relative z-10 text-center md:text-left">
           <div className="w-[140px] h-[140px] rounded-full overflow-hidden border-[3px] border-white/[.15] shrink-0 bg-blue-pale mx-auto md:mx-0">
             <Image
-              src="https://assets.ycodeapp.com/assets/app95680/Images/published/rebecca%20top%20teacher!!!-15-7yb7mhu0ug.webp"
-              alt="Rebecca \u2014 Educational Therapist and creator of Medela Learning Resources"
+              src="/images/team/rebecca-avatar.jpg"
+              alt="Rebecca — Educational Therapist and creator of Medela Learning Resources"
               width={140}
               height={140}
-              className="w-full h-full object-cover object-top"
+              className="w-full h-full object-cover"
             />
           </div>
           <div>

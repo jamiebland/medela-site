@@ -126,7 +126,7 @@ export default async function HomePage() {
             alt="Rebecca, educational therapist, working with a child"
             fill
             priority
-            className="object-cover"
+            className="object-cover object-right"
           />
           {/* gradient overlay fading from bg to transparent */}
           <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/40 to-transparent" />
@@ -314,7 +314,7 @@ export default async function HomePage() {
                   alt="Educational therapy session"
                   width={800}
                   height={420}
-                  className="w-full h-[420px] object-cover"
+                  className="w-full h-[420px] object-cover object-right"
                 />
               </div>
               <div

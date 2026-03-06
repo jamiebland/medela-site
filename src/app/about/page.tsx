@@ -9,7 +9,7 @@ import { getAllPosts } from "@/lib/blog";
 import { buildFaqJsonLd } from "@/lib/structured-data";
 import { CALENDLY_URL } from "@/lib/config";
 import type { Metadata } from "next";
-import { Sprout, Puzzle, Heart, Handshake, BookOpen, Home, Leaf } from "lucide-react";
+import { Sprout, Puzzle, Heart, Handshake, BookOpen, Home } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -132,7 +132,7 @@ export default async function AboutPage() {
               <div className="bg-bg rounded-[var(--radius-lg)] shadow-[var(--shadow)] overflow-hidden hover:-translate-y-1 transition-transform duration-300">
                 <div className="relative h-[300px] overflow-hidden">
                   <Image
-                    src="https://assets.ycodeapp.com/assets/app95680/Images/published/rebecca%20top%20teacher!!!-15-7yb7mhu0ug.webp"
+                    src="/images/team/rebecca-avatar.jpg"
                     alt="Rebecca — Educational Therapist & Founder"
                     fill
                     className="object-cover"
@@ -184,8 +184,13 @@ export default async function AboutPage() {
             {/* Jamille */}
             <RevealOnScroll delay={1}>
               <div className="bg-bg rounded-[var(--radius-lg)] shadow-[var(--shadow)] overflow-hidden hover:-translate-y-1 transition-transform duration-300">
-                <div className="relative h-[300px] overflow-hidden bg-purple-pale flex items-center justify-center">
-                  <Leaf className="w-16 h-16 text-purple-dark" />
+                <div className="relative h-[300px] overflow-hidden">
+                  <Image
+                    src="/images/team/jamille-avatar.jpg"
+                    alt="Jamille — Co-founder & Community Lead"
+                    fill
+                    className="object-cover"
+                  />
                   <span className="absolute top-4 left-4 bg-purple-dark text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
                     Co-founder
                   </span>
@@ -361,7 +366,7 @@ export default async function AboutPage() {
             <RevealOnScroll delay={1}>
               <div className="rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow)] mb-6 relative h-[300px]">
                 <Image
-                  src="https://assets.ycodeapp.com/assets/app95680/Images/published/rebecca%20top%20teacher!!!-15-7yb7mhu0ug.webp"
+                  src="/images/team/rebecca-avatar.jpg"
                   alt="Rebecca working with a child"
                   fill
                   className="object-cover"
