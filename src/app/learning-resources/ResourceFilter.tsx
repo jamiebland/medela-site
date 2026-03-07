@@ -36,8 +36,9 @@ const resources: Resource[] = [
     price: "\u20ac29.99",
     includes: ["30+ activity pages", "Full answer booklet", "Instant PDF download"],
     coverBg: "bg-gradient-to-br from-[#d4e8fb] to-[#b8d3f5]", coverEmoji: <Snowflake className="w-12 h-12 text-blue-dark/40" />,
+    coverImage: "/images/resources/winter-grade1-cover.png",
     badge: { text: "New", style: "bg-blue-btn text-white" },
-    buyLabel: "Buy now", buyUrl: "https://medelalearning.sellfy.store/p/coming-soon-winter-2025-activity-booklet-grade-2-hyjztx/",
+    buyLabel: "Buy now", buyUrl: "https://medelalearning.gumroad.com/l/grade1-winter", // TODO: replace with Gumroad link
   },
   {
     title: "Grade 1 Fall Learning Programme",
@@ -46,19 +47,9 @@ const resources: Resource[] = [
     price: "\u20ac29.99",
     includes: ["30+ activity pages", "Full answer booklet", "Instant PDF download"],
     coverBg: "bg-gradient-to-br from-[#fde8d0] to-[#f5c898]", coverEmoji: <Leaf className="w-12 h-12 text-blue-dark/40" />,
+    coverImage: "/images/resources/fall-grade1-cover.png",
     badge: { text: "Popular", style: "bg-amber text-[#5a3800]" },
-    buyLabel: "Buy now",
-    buyUrl: "https://medelalearning.sellfy.store/p/fall-2025-programme-grade-1-mkxnwp/",
-    coverImage: "https://assets.ycodeapp.com/assets/app95680/images/medela%20-%20fall%20activity%20book%20grade%201%20-%20social%20post-pwls88k1jz.webp",
-  },
-  {
-    title: "Grade 1 Summer Activity Pack",
-    subtitle: "Keep learning alive over the long summer break without it feeling like school work.",
-    grade: "1", gradeLabel: "Grade 1", season: "Summer", year: 2025,
-    price: "\u20ac29.99",
-    includes: ["30+ activity pages", "Full answer booklet", "Instant PDF download"],
-    coverBg: "bg-gradient-to-br from-[#d0f5e8] to-[#a8e8d0]", coverEmoji: <Sun className="w-12 h-12 text-blue-dark/40" />,
-    buyLabel: "Buy now", buyUrl: "https://medelalearning.sellfy.store/",
+    buyLabel: "Buy now", buyUrl: "https://medelalearning.gumroad.com/l/grade1-fall", // TODO: replace with Gumroad link
   },
   // ── Grade 2 ──
   {
@@ -68,8 +59,9 @@ const resources: Resource[] = [
     price: "\u20ac29.99",
     includes: ["32+ activity pages", "Full answer booklet", "Instant PDF download"],
     coverBg: "bg-gradient-to-br from-[#d4e8fb] to-[#b8d3f5]", coverEmoji: <Snowflake className="w-12 h-12 text-blue-dark/40" />,
+    coverImage: "/images/resources/winter-grade2-cover.png",
     badge: { text: "New", style: "bg-blue-btn text-white" },
-    buyLabel: "Buy now", buyUrl: "https://medelalearning.sellfy.store/p/winter-2025-activity-pack-grade-2-0qzwhg/",
+    buyLabel: "Buy now", buyUrl: "https://medelalearning.gumroad.com/l/grade2-winter", // TODO: replace with Gumroad link
   },
   {
     title: "Grade 2 Fall Activity Pack",
@@ -78,29 +70,11 @@ const resources: Resource[] = [
     price: "\u20ac29.99",
     includes: ["32+ activity pages", "Full answer booklet", "Instant PDF download"],
     coverBg: "bg-gradient-to-br from-[#fde8d0] to-[#f5c898]", coverEmoji: <Leaf className="w-12 h-12 text-blue-dark/40" />,
+    coverImage: "/images/resources/fall-grade2-cover.png",
     badge: { text: "Bestseller", style: "bg-[#3db87a] text-white" },
-    buyLabel: "Buy now", buyUrl: "https://medelalearning.sellfy.store/p/fall-2025-programme-grade-2/",
-  },
-  {
-    title: "Grade 2 Summer Activity Pack",
-    subtitle: "Summer learning that doesn\u2019t feel like a chore \u2014 themed activities across four subject areas.",
-    grade: "2", gradeLabel: "Grade 2", season: "Summer", year: 2025,
-    price: "\u20ac29.99",
-    includes: ["32+ activity pages", "Full answer booklet", "Instant PDF download"],
-    coverBg: "bg-gradient-to-br from-[#d0f5e8] to-[#a8e8d0]", coverEmoji: <Sun className="w-12 h-12 text-blue-dark/40" />,
-    buyLabel: "Buy now", buyUrl: "https://medelalearning.sellfy.store/",
+    buyLabel: "Buy now", buyUrl: "https://medelalearning.gumroad.com/l/grade2-fall", // TODO: replace with Gumroad link
   },
   // ── Grade 3 ──
-  {
-    title: "Grade 3 Winter Activity Pack",
-    subtitle: "Longer texts, multi-step Maths, and richer Science content \u2014 built for the jump from Grade 2.",
-    grade: "3", gradeLabel: "Grade 3", season: "Winter", year: 2026,
-    price: "\u20ac34.99",
-    includes: ["34+ activity pages", "Full answer booklet", "Instant PDF download"],
-    coverBg: "bg-gradient-to-br from-[#d4e8fb] to-[#b8d3f5]", coverEmoji: <Snowflake className="w-12 h-12 text-blue-dark/40" />,
-    badge: { text: "New", style: "bg-blue-btn text-white" },
-    buyLabel: "Buy now", buyUrl: "https://medelalearning.sellfy.store/p/winter-2025-activity-pack-grade-3-khgnxc/",
-  },
   {
     title: "Grade 3 Fall Activity Pack",
     subtitle: "A favourite for parents helping children settle into the demands of Grade 3 after summer.",
@@ -108,7 +82,8 @@ const resources: Resource[] = [
     price: "\u20ac34.99",
     includes: ["34+ activity pages", "Full answer booklet", "Instant PDF download"],
     coverBg: "bg-gradient-to-br from-[#fde8d0] to-[#f5c898]", coverEmoji: <Leaf className="w-12 h-12 text-blue-dark/40" />,
-    buyLabel: "Buy now", buyUrl: "https://medelalearning.sellfy.store/p/fall-2025-programme-grade-3-x5v8wc/",
+    coverImage: "/images/resources/fall-grade3-cover.png",
+    buyLabel: "Buy now", buyUrl: "https://medelalearning.gumroad.com/l/grade3-fall", // TODO: replace with Gumroad link
   },
   {
     title: "Grade 3 Summer Activity Pack",
@@ -117,19 +92,10 @@ const resources: Resource[] = [
     price: "\u20ac34.99",
     includes: ["34+ activity pages", "Full answer booklet", "Instant PDF download"],
     coverBg: "bg-gradient-to-br from-[#d0f5e8] to-[#a8e8d0]", coverEmoji: <Sun className="w-12 h-12 text-blue-dark/40" />,
-    buyLabel: "Buy now", buyUrl: "https://medelalearning.sellfy.store/p/2025-summer-programme-for-grade-3-students/",
+    coverImage: "/images/resources/summer-grade3-cover.png",
+    buyLabel: "Buy now", buyUrl: "https://medelalearning.gumroad.com/l/grade3-summer", // TODO: replace with Gumroad link
   },
   // ── Grade 4 ──
-  {
-    title: "Grade 4 Winter Activity Pack",
-    subtitle: "Our most advanced pack \u2014 complex reading comprehension, reasoning Maths, and extended writing.",
-    grade: "4", gradeLabel: "Grade 4", season: "Winter", year: 2026,
-    price: "\u20ac34.99",
-    includes: ["36+ activity pages", "Full answer booklet", "Instant PDF download"],
-    coverBg: "bg-gradient-to-br from-[#d4e8fb] to-[#b8d3f5]", coverEmoji: <Snowflake className="w-12 h-12 text-blue-dark/40" />,
-    badge: { text: "New", style: "bg-blue-btn text-white" },
-    buyLabel: "Buy now", buyUrl: "https://medelalearning.sellfy.store/p/winter-2025-activity-pack-grade-4-ycqzm8/",
-  },
   {
     title: "Grade 4 Fall Activity Pack",
     subtitle: "Bridge the summer gap and consolidate the skills needed for a strong Grade 4 year.",
@@ -137,7 +103,8 @@ const resources: Resource[] = [
     price: "\u20ac34.99",
     includes: ["36+ activity pages", "Full answer booklet", "Instant PDF download"],
     coverBg: "bg-gradient-to-br from-[#fde8d0] to-[#f5c898]", coverEmoji: <Leaf className="w-12 h-12 text-blue-dark/40" />,
-    buyLabel: "Buy now", buyUrl: "https://medelalearning.sellfy.store/p/fall-2025-programme-grade-4-ph7pqq/",
+    coverImage: "/images/resources/fall-grade4-cover.png",
+    buyLabel: "Buy now", buyUrl: "https://medelalearning.gumroad.com/l/grade4-fall", // TODO: replace with Gumroad link
   },
   {
     title: "Grade 4 Summer Activity Pack",
@@ -146,7 +113,8 @@ const resources: Resource[] = [
     price: "\u20ac34.99",
     includes: ["36+ activity pages", "Full answer booklet", "Instant PDF download"],
     coverBg: "bg-gradient-to-br from-[#d0f5e8] to-[#a8e8d0]", coverEmoji: <Sun className="w-12 h-12 text-blue-dark/40" />,
-    buyLabel: "Buy now", buyUrl: "https://medelalearning.sellfy.store/p/2025-summer-programme-for-grade-4-students-5gcwlc/",
+    coverImage: "/images/resources/summer-grade4-cover.png",
+    buyLabel: "Buy now", buyUrl: "https://medelalearning.gumroad.com/l/grade4-summer", // TODO: replace with Gumroad link
   },
   // ── Bundles ──
   {
@@ -157,7 +125,7 @@ const resources: Resource[] = [
     includes: ["All 3 seasonal packs", "90+ activity pages", "Save over \u20ac20"],
     coverBg: "bg-gradient-to-br from-purple-pale to-purple-light", coverEmoji: <Package className="w-12 h-12 text-blue-dark/40" />,
     badge: { text: "Bundle", style: "bg-purple text-white" },
-    buyLabel: "Buy bundle", buyUrl: "https://medelalearning.sellfy.store/", isBundle: true,
+    buyLabel: "Buy bundle", buyUrl: "https://medelalearning.gumroad.com/l/grade1-bundle", isBundle: true, // TODO: replace with Gumroad link
   },
   {
     title: "Grade 2 Complete Bundle",
@@ -167,7 +135,7 @@ const resources: Resource[] = [
     includes: ["All 3 seasonal packs", "96+ activity pages", "Save over \u20ac20"],
     coverBg: "bg-gradient-to-br from-purple-pale to-purple-light", coverEmoji: <Package className="w-12 h-12 text-blue-dark/40" />,
     badge: { text: "Bundle", style: "bg-purple text-white" },
-    buyLabel: "Buy bundle", buyUrl: "https://medelalearning.sellfy.store/", isBundle: true,
+    buyLabel: "Buy bundle", buyUrl: "https://medelalearning.gumroad.com/l/grade2-bundle", isBundle: true, // TODO: replace with Gumroad link
   },
   {
     title: "Grade 3 Complete Bundle",
@@ -177,19 +145,19 @@ const resources: Resource[] = [
     includes: ["All 3 seasonal packs", "102+ activity pages", "Save over \u20ac25"],
     coverBg: "bg-gradient-to-br from-purple-pale to-purple-light", coverEmoji: <Package className="w-12 h-12 text-blue-dark/40" />,
     badge: { text: "Bundle", style: "bg-purple text-white" },
-    buyLabel: "Buy bundle", buyUrl: "https://medelalearning.sellfy.store/", isBundle: true,
+    buyLabel: "Buy bundle", buyUrl: "https://medelalearning.gumroad.com/l/grade3-bundle", isBundle: true, // TODO: replace with Gumroad link
   },
 ];
 
 /* ── Filter tabs config ─────────────────────────────────── */
 
 const tabs = [
-  { key: "all",    label: "All packs", count: 14 },
-  { key: "1",      label: "Grade 1",   count: 3 },
-  { key: "2",      label: "Grade 2",   count: 3 },
-  { key: "3",      label: "Grade 3",   count: 3 },
-  { key: "4",      label: "Grade 4",   count: 3 },
-  { key: "bundle", label: "Bundles",   count: 4 },
+  { key: "all",    label: "All packs", count: 10 },
+  { key: "1",      label: "Grade 1",   count: 2 },
+  { key: "2",      label: "Grade 2",   count: 2 },
+  { key: "3",      label: "Grade 3",   count: 2 },
+  { key: "4",      label: "Grade 4",   count: 2 },
+  { key: "bundle", label: "Bundles",   count: 3 },
 ];
 
 /* ── Grade section groups (for labelled grid sections) ──── */
