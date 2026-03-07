@@ -44,6 +44,12 @@ const testimonials = [
     author: "David K.",
     role: "Parent of Grade 3 student, Lisbon",
   },
+  {
+    quote:
+      "Rebecca has been amazing with my child, her professionalism, attention to detail and level of care have been indescribable. Very happy to be recommending her to upcoming parents.",
+    author: "Georgia S",
+    role: "Parent of Grade 2 student, Lisbon",
+  },
 ];
 
 const localBusinessJsonLd = {
@@ -87,7 +93,7 @@ export default async function HomePage() {
           <p className="text-base md:text-[17px] text-text-mid leading-7 mb-8 max-w-[480px]">
             Specialist educational therapy and digital learning programmes that
             help children build confidence, close gaps, and fall in love with
-            learning &mdash; wherever they are.
+            learning &ndash; wherever they are.
           </p>
 
           <div className="flex flex-wrap gap-3 mb-8">
@@ -156,7 +162,7 @@ export default async function HomePage() {
       </section>
 
       {/* ───── 2. Schools Strip ───── */}
-      <section className="bg-blue-dark py-8 overflow-hidden">
+      <section className="color-blue py-8 overflow-hidden">
         <p className="text-center text-[11px] tracking-[.12em] uppercase font-bold text-white/60 mb-5 px-6">
           Trusted by families from 14 partner schools across Portugal, South
           Africa &amp; Europe
@@ -205,7 +211,7 @@ export default async function HomePage() {
                 className="rounded-[var(--radius-lg)] overflow-hidden border border-black/[.05]"
                 style={{ boxShadow: "var(--shadow)" }}
               >
-                <div className="bg-gradient-to-br from-blue-btn to-blue-dark px-7 py-8 text-white">
+                <div className="bg-gradient-to-br from-color-blue to-blue-dark px-7 py-8 text-white">
                   <div className="w-11 h-11 rounded-xl bg-white/[.18] flex items-center justify-center text-xl mb-4">
                     <Puzzle className="w-5 h-5" />
                   </div>
@@ -214,7 +220,7 @@ export default async function HomePage() {
                   </h3>
                   <p className="text-[14px] text-white/65 leading-6">
                     Personalised sessions tailored to your child&apos;s unique
-                    learning profile &mdash; building skills, confidence, and
+                    learning profile while building skills, confidence, and
                     independence.
                   </p>
                 </div>
@@ -263,7 +269,7 @@ export default async function HomePage() {
                   </h3>
                   <p className="text-[14px] text-white/65 leading-6">
                     Structured, therapist-designed digital resources your child
-                    can work through at home &mdash; at their own pace.
+                    can work through at home or at their own pace.
                   </p>
                 </div>
                 <div className="bg-white px-7 py-7">
@@ -310,7 +316,7 @@ export default async function HomePage() {
                 style={{ boxShadow: "var(--shadow)" }}
               >
                 <Image
-                  src="https://assets.ycodeapp.com/assets/app95680/Images/published/rebecca%20top%20teacher!!!-18-dd0kutji5t.webp"
+                  src=<img src="image 41.jpg" alt="Educational therapy session" width={800} height={420} className="w-full h-[420px] object-cover object-right" />
                   alt="Educational therapy session"
                   width={800}
                   height={420}
@@ -322,7 +328,7 @@ export default async function HomePage() {
                 style={{ boxShadow: "var(--shadow)" }}
               >
                 <p className="text-[13px] font-bold text-blue-btn">
-                  10+ years experience
+                  7+ years experience
                 </p>
                 <p className="text-[11px] text-text-light">
                   Qualified educational therapist
@@ -352,7 +358,7 @@ export default async function HomePage() {
                   {
                     num: "02",
                     title: "Design a personalised plan",
-                    desc: "Every therapy plan is built around your child \u2014 not a one-size-fits-all programme. Goals are meaningful and achievable.",
+                    desc: "Every therapy plan is built around your child, not a one-size-fits-all programme. Goals are meaningful and achievable.",
                   },
                   {
                     num: "03",
@@ -458,7 +464,7 @@ export default async function HomePage() {
       <section
         className="py-20 px-6 md:px-20 text-white overflow-hidden"
         style={{
-          background: "linear-gradient(135deg, #4a3d7a 0%, #2a1d4e 100%)",
+          background: "linear-gradient(135deg, #c8c0e0 0%, #9181b8 100%)",
         }}
       >
         <div className="max-w-[1180px] mx-auto grid md:grid-cols-2 gap-16 items-center">
@@ -472,7 +478,7 @@ export default async function HomePage() {
               The Aldeia Community
             </h2>
             <p className="text-[17px] text-white/55 leading-7 mb-8 max-w-[440px]">
-              A village of support for every family &mdash; because raising a
+              A village of support for every family. Raising a
               learner is easier when you&apos;re not doing it alone.
             </p>
 
@@ -497,7 +503,7 @@ export default async function HomePage() {
 
             <Link
               href="/aldeia"
-              className="inline-flex items-center gap-2 bg-purple text-white px-6 py-3 rounded-full text-sm font-bold hover:bg-purple-mid hover:-translate-y-0.5 transition-all"
+              className="inline-flex items-center gap-2 color-purple-deep text-white px-6 py-3 rounded-full text-sm font-bold hover:bg-purple-mid hover:-translate-y-0.5 transition-all"
             >
               Explore Aldeia &rarr;
             </Link>

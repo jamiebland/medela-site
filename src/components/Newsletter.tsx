@@ -30,7 +30,7 @@ function NewsletterForm() {
     return (
       <div className="p-4 bg-white/[.14] rounded-[var(--radius)] border border-white/[.24] text-center">
         <p className="text-white text-[15px] font-medium">
-          You&apos;re in! Check your inbox for a welcome from Rebecca &amp; Jamille.
+          You&apos;re in! Check your inbox for a welcome from the Medela team!
         </p>
       </div>
     );
@@ -73,7 +73,7 @@ export { NewsletterForm };
 
 export default function Newsletter() {
   return (
-    <section className="bg-blue-btn py-18 px-6 md:px-20">
+    <section className="color-blue py-18 px-6 md:px-20">
       <div className="max-w-[1180px] mx-auto grid md:grid-cols-2 gap-16 items-center">
         <div>
           <div className="flex items-center gap-2 text-[11px] tracking-[.12em] uppercase font-bold text-white/[.42] mb-2.5">
@@ -84,7 +84,7 @@ export default function Newsletter() {
             One useful thing, every fortnight
           </h2>
           <p className="text-[15px] text-white/55 leading-7">
-            Practical tips, new resource launches, and community updates &mdash; straight to your inbox from Rebecca &amp; Jamille.
+            Practical tips, new resource launches, and community updates, straight to your inbox from Medela
           </p>
         </div>
         <div>
