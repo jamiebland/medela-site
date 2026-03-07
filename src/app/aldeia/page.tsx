@@ -77,7 +77,7 @@ export default function AldeiaPage() {
             <p className="text-base text-white/[.72] leading-7 max-w-[440px] mb-8">
               Aldeia is a warm, honest community for parents raising children
               with learning differences in Portugal. Expert workshops, a
-              supportive WhatsApp group, and a fortnightly newsletter &mdash; all
+              supportive WhatsApp group, and a fortnightly newsletter &ndash; all
               in one place.
             </p>
             <div className="flex items-center gap-2.5 flex-wrap mb-10">
@@ -221,7 +221,7 @@ export default function AldeiaPage() {
                 Why parents join Aldeia
               </h2>
               <p className="text-base text-[#4a4468] leading-7 max-w-[560px]">
-                Community isn&apos;t just nice to have &mdash; it&apos;s often
+                Community isn&apos;t just nice to have &ndash; it&apos;s often
                 the thing that makes the difference.
               </p>
               <div className="grid grid-cols-2 gap-3 mt-7">
@@ -367,7 +367,7 @@ export default function AldeiaPage() {
                   <div className="self-end max-w-[80%]">
                     <div className="bg-[#dcf8c6] text-[#1a2033] px-3.5 py-2.5 rounded-xl rounded-br-[3px] text-[13px] leading-[1.5]">
                       Yes! We went through this last year. Rebecca actually did a
-                      workshop on this &mdash; the recording should be in the
+                      workshop on this &ndash; the recording should be in the
                       drive <Sparkles className="w-3.5 h-3.5 inline-block -mt-px" />
                     </div>
                     <div className="text-[10px] text-[#aaa] mt-[3px] text-right">
@@ -387,7 +387,7 @@ export default function AldeiaPage() {
                   {/* me */}
                   <div className="self-end max-w-[80%]">
                     <div className="bg-[#dcf8c6] text-[#1a2033] px-3.5 py-2.5 rounded-xl rounded-br-[3px] text-[13px] leading-[1.5]">
-                      Also &mdash; Jamille is hosting a Q&amp;A on psychometrics
+                      Also &ndash; Jamille is hosting a Q&amp;A on psychometrics
                       next month. Definitely worth joining!
                     </div>
                     <div className="text-[10px] text-[#aaa] mt-[3px] text-right">
@@ -450,7 +450,7 @@ export default function AldeiaPage() {
                 </div>
                 <div className="px-[22px] pt-5 pb-[22px] flex-1 flex flex-col">
                   <p className="text-[13px] text-[#4a4468] leading-[1.7] mb-4 flex-1">
-                    Your child has had a psychometric assessment &mdash; now
+                    Your child has had a psychometric assessment &ndash; now
                     what? Jamille walks through what the scores actually mean,
                     what to ask the school, and how to use the report to get the
                     right support in place.
@@ -536,7 +536,7 @@ export default function AldeiaPage() {
                 <div className="px-[22px] pt-5 pb-[22px] flex-1 flex flex-col">
                   <p className="text-[13px] text-[#4a4468] leading-[1.7] mb-4 flex-1">
                     Rebecca shares the at-home techniques she uses in her own
-                    sessions &mdash; from multisensory reading approaches to
+                    sessions &ndash; from multisensory reading approaches to
                     managing the emotional side of homework battles. Honest,
                     practical, parent-friendly.
                   </p>
@@ -830,7 +830,7 @@ export default function AldeiaPage() {
             <p className="text-[15px] text-white/[.72] leading-7">
               The fortnightly Aldeia newsletter is the heart of the community.
               When you sign up, you&apos;ll get the WhatsApp group link in your
-              welcome email &mdash; and access to everything Aldeia has to offer.
+              welcome email &ndash; and access to everything Aldeia has to offer.
             </p>
             <div className="flex flex-col gap-2.5 mt-6">
               {[
@@ -854,7 +854,7 @@ export default function AldeiaPage() {
                       <strong className="text-white/[.85] font-semibold">
                         WhatsApp community link
                       </strong>{" "}
-                      shared in your welcome email &mdash; a warm, moderated
+                      shared in your welcome email &ndash; a warm, moderated
                       group of parents who get it.
                     </>
                   ),
@@ -866,7 +866,7 @@ export default function AldeiaPage() {
                       <strong className="text-white/[.85] font-semibold">
                         Early access to workshops
                       </strong>{" "}
-                      and subscriber-only rates &mdash; announced in the
+                      and subscriber-only rates &ndash; announced in the
                       newsletter before anywhere else.
                     </>
                   ),
@@ -889,7 +889,7 @@ export default function AldeiaPage() {
           <div>
             <div className="bg-white/[.07] border border-purple/[.2] rounded-[18px] p-8">
               <div className="text-lg font-bold text-white mb-1.5 tracking-tight">
-                Join Aldeia &mdash; it&apos;s free
+                Join Aldeia &ndash; it&apos;s free
               </div>
               <div className="text-[13px] text-white/[.45] mb-5 leading-[1.6]">
                 Sign up for the newsletter and get the WhatsApp link in your
@@ -927,7 +927,7 @@ export default function AldeiaPage() {
           </h2>
           <p className="text-base text-[#4a4468] leading-7 max-w-[560px]">
             Two people who believed parents shouldn&apos;t have to figure this
-            out alone &mdash; and built a community to prove it.
+            out alone &ndash; and built a community to prove it.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-11">
@@ -953,7 +953,7 @@ export default function AldeiaPage() {
                   <p className="text-[13px] text-[#4a4468] leading-[1.65]">
                     Specialist educational therapist and founder of Medela
                     Learning. Rebecca created Aldeia because she saw, every day in
-                    her sessions, how isolated parents felt &mdash; and wanted to
+                    her sessions, how isolated parents felt &ndash; and wanted to
                     change that.
                   </p>
                 </div>
@@ -981,7 +981,7 @@ export default function AldeiaPage() {
                   <p className="text-[13px] text-[#4a4468] leading-[1.65]">
                     Jamille leads the Aldeia community and hosts the workshops.
                     Her background is in community building and parent advocacy
-                    &mdash; and she brings warmth and practical wisdom to
+                    &ndash; and she brings warmth and practical wisdom to
                     everything Aldeia does.
                   </p>
                 </div>
@@ -1008,8 +1008,8 @@ export default function AldeiaPage() {
             </h2>
             <p className="text-[15px] text-white/[.72] leading-7 max-w-[480px]">
               Aldeia is for the community. Medela Learning Support is for the
-              child. Rebecca offers specialist educational therapy sessions &mdash;
-              one-to-one, personalised, and evidence-based &mdash; for children
+              child. Rebecca offers specialist educational therapy sessions.
+              One-to-one, personalised, and evidence-based for children
               with learning differences in Lisbon and online.
             </p>
           </div>

@@ -14,7 +14,7 @@ import { Sprout, Puzzle, Heart, Handshake, BookOpen, Home } from "lucide-react";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Meet Rebecca and Jamille — the educational therapists behind Medela Learning Support. Learn about our approach to helping children with learning differences.",
+    "Meet Rebecca the educational therapist behind Medela Learning Support. Learn about Medela's approach to helping children with learning differences.",
 };
 
 const faqItems = [
@@ -58,7 +58,7 @@ const faqItems = [
   {
     question: "What is Aldeia, and how does it relate to Medela?",
     answer:
-      "Aldeia (Portuguese for 'village') is our community arm, led by Jamille. It brings parents, educators, and specialists together through workshops, meetups, and online events. While Medela focuses on one-to-one educational therapy and resources, Aldeia builds the wider support network — because raising a child with learning differences is easier with a village around you.",
+      "Aldeia (Portuguese for 'village') is our community arm. It brings parents, educators, and specialists together through workshops, meetups, and online events. While Medela focuses on one-to-one educational therapy and resources, Aldeia builds the wider support network — because raising a child with learning differences is easier with a village around you.",
   },
 ];
 
@@ -97,9 +97,9 @@ export default async function AboutPage() {
           </RevealOnScroll>
           <RevealOnScroll delay={1}>
             <p className="text-base md:text-lg text-white/55 leading-7 max-w-[560px]">
-              Medela Learning Support was founded by Rebecca and Jamille to give
+              Medela Learning Support was founded by Rebecca to give
               every child access to specialist, compassionate educational
-              therapy &mdash; whether in Lisbon, across Portugal, or online.
+              therapy. Whether in Lisbon, across Portugal, or online.
             </p>
           </RevealOnScroll>
         </div>
@@ -117,7 +117,7 @@ export default async function AboutPage() {
                 The team
               </div>
               <h2 className="text-2xl md:text-4xl font-extrabold text-text leading-[1.15] tracking-tight mb-3">
-                Meet Rebecca &amp; Jamille
+                Meet the growing team!
               </h2>
               <p className="text-[15px] text-text-mid leading-7 max-w-[520px] mx-auto">
                 Two complementary skill sets, one shared mission: making
@@ -152,8 +152,8 @@ export default async function AboutPage() {
                     Rebecca is a specialist educational therapist with over a decade
                     of experience supporting children with dyslexia,
                     dyscalculia, ADHD, and language processing difficulties. She
-                    designs every programme around the individual child &mdash;
-                    combining structured, evidence-based methods with warmth and
+                    designs every programme around the individual child. 
+                    Combining structured, evidence-based methods with warmth and
                     creativity to rebuild confidence from the ground up.
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
@@ -208,7 +208,7 @@ export default async function AboutPage() {
                     specialists through workshops, events, and shared resources.
                     Her background in community development and family support
                     means she understands that learning differences affect the
-                    whole family &mdash; not just the child.
+                    whole family, not just the child.
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {[
@@ -315,7 +315,7 @@ export default async function AboutPage() {
               </h2>
               <p className="text-[15px] text-text-mid leading-7 mb-10">
                 Every child&apos;s journey with Medela follows a clear,
-                structured process &mdash; but one that always stays flexible
+                structured process but one that always stays flexible
                 enough to adapt as they grow.
               </p>
             </RevealOnScroll>

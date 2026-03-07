@@ -162,7 +162,7 @@ export default async function HomePage() {
       </section>
 
       {/* ───── 2. Schools Strip ───── */}
-      <section className="color-blue py-8 overflow-hidden">
+      <section className="color-blue-mid py-8 overflow-hidden">
         <p className="text-center text-[11px] tracking-[.12em] uppercase font-bold text-white/60 mb-5 px-6">
           Trusted by families from 14 partner schools across Portugal, South
           Africa &amp; Europe
@@ -211,7 +211,7 @@ export default async function HomePage() {
                 className="rounded-[var(--radius-lg)] overflow-hidden border border-black/[.05]"
                 style={{ boxShadow: "var(--shadow)" }}
               >
-                <div className="bg-gradient-to-br from-color-blue to-blue-dark px-7 py-8 text-white">
+                <div className="bg-gradient-to-br from-color-blue-btn to-blue-dark px-7 py-8 text-white">
                   <div className="w-11 h-11 rounded-xl bg-white/[.18] flex items-center justify-center text-xl mb-4">
                     <Puzzle className="w-5 h-5" />
                   </div>
@@ -316,7 +316,7 @@ export default async function HomePage() {
                 style={{ boxShadow: "var(--shadow)" }}
               >
                 <Image
-                  src="/image 41.jpg"  alt="Educational therapy session"
+                  src="C:\Users\jamie\Documents\GitHub\medela-site\public\images\medela\image 41.jpg"  alt="Educational therapy session"
                   width={800}
                   height={420}
                   className="w-full h-[420px] object-cover object-right"
@@ -463,7 +463,7 @@ export default async function HomePage() {
       <section
         className="py-20 px-6 md:px-20 text-white overflow-hidden"
         style={{
-          background: "linear-gradient(135deg, #c8c0e0 0%, #9181b8 100%)",
+          background: "linear-gradient(135deg, #9181b8 0%, #2a1d4e 100%)",
         }}
       >
         <div className="max-w-[1180px] mx-auto grid md:grid-cols-2 gap-16 items-center">
