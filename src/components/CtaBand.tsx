@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { CALENDLY_URL } from "@/lib/config";
 
 export default function CtaBand() {
@@ -21,12 +20,12 @@ export default function CtaBand() {
           >
             Book a free call &rarr;
           </a>
-          <Link
-            href="/contact"
+          <a
+            href="mailto:rebecca@medelalearning.com"
             className="inline-flex items-center gap-2 bg-transparent text-white px-6 py-3 rounded-full text-sm font-medium border-[1.5px] border-white/40 hover:border-white/70 hover:bg-white/10 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-blue-dark"
           >
             Send us a message
-          </Link>
+          </a>
         </div>
       </div>
     </section>

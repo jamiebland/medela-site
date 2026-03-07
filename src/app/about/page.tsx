@@ -10,6 +10,7 @@ import { buildFaqJsonLd } from "@/lib/structured-data";
 import { CALENDLY_URL } from "@/lib/config";
 import type { Metadata } from "next";
 import { Sprout, Puzzle, Heart, Handshake, BookOpen, Home } from "lucide-react";
+import TeamMemberModal from "@/components/TeamMemberModal";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -72,39 +73,45 @@ export default async function AboutPage() {
     <main>
       <JsonLd data={faqJsonLd} />
       {/* ── Hero ── */}
-      <section
-        className="relative py-20 md:py-28 px-6 md:px-20 overflow-hidden"
-        style={{
-          background: "linear-gradient(135deg, var(--color-blue-dark) 0%, #0e2248 100%)",
-        }}
-      >
-        <div className="max-w-[1180px] mx-auto relative z-10">
-          <nav className="flex items-center gap-1.5 text-[13px] text-white/60 mb-8">
-            <Link href="/" className="hover:text-white/70 transition-colors">
-              Home
-            </Link>
+      <section className="relative grid md:grid-cols-2 min-h-[480px] overflow-hidden bg-blue">
+        {/* Left */}
+        <div className="flex flex-col justify-center px-6 md:px-16 lg:px-20 py-16 md:py-24 relative z-10">
+          <nav className="flex items-center gap-1.5 text-[13px] text-white/70 mb-8">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
-            <span className="text-white/70">About</span>
+            <span className="text-white">About</span>
           </nav>
           <RevealOnScroll>
-            <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-[1.12] tracking-tight max-w-[680px] mb-5">
+            <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-[1.12] tracking-tight max-w-[560px] mb-5">
               We help children{" "}
-              <span className="text-blue-light">
-                rediscover their confidence
-              </span>{" "}
+              <span className="text-blue-dark">rediscover their confidence</span>{" "}
               in learning
             </h1>
           </RevealOnScroll>
           <RevealOnScroll delay={1}>
-            <p className="text-base md:text-lg text-white/55 leading-7 max-w-[560px]">
+            <p className="text-base md:text-lg text-white/80 leading-7 max-w-[460px]">
               Medela Learning Support was founded by Rebecca to give
               every child access to specialist, compassionate educational
               therapy. Whether in Lisbon, across Portugal, or online.
             </p>
           </RevealOnScroll>
         </div>
-        <div className="absolute right-[-80px] top-[-80px] w-[300px] h-[300px] rounded-full border border-white/[.06] pointer-events-none" />
-        <div className="absolute left-[-40px] bottom-[-60px] w-[200px] h-[200px] rounded-full border border-white/[.04] pointer-events-none" />
+
+        {/* Right — image */}
+        <div className="relative hidden md:block">
+          <Image
+            src="/images/medela/image-sit.jpg"
+            alt="Educational therapy session"
+            fill
+            priority
+            className="object-cover object-center"
+          />
+          {/* Smooth gradient: starts solid blue, fades gradually across the image */}
+          <div
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(to right, #80a8eb 0%, rgba(128,168,235,0.75) 25%, rgba(128,168,235,0.3) 55%, rgba(128,168,235,0) 80%)" }}
+          />
+        </div>
       </section>
 
       {/* ── Team ── */}
@@ -120,7 +127,7 @@ export default async function AboutPage() {
                 Meet the growing team!
               </h2>
               <p className="text-[15px] text-text-mid leading-7 max-w-[520px] mx-auto">
-                Two complementary skill sets, one shared mission: making
+                Complementary skill sets, one shared mission: making
                 learning accessible, enjoyable, and effective for every child.
               </p>
             </RevealOnScroll>
@@ -129,10 +136,26 @@ export default async function AboutPage() {
           <div className="grid md:grid-cols-2 gap-8">
             {/* Rebecca */}
             <RevealOnScroll>
+              <TeamMemberModal
+                name="Rebecca Bland"
+                title="Educational Therapist & Founder"
+                image="/images/team/image-rebecca-profile.jpg"
+                modalImage="/images/team/medela-rebecca-profile-2.webp"
+                email="rebecca@medelalearning.com"
+                accentClass="text-blue-btn"
+                bio={
+                  <>
+                    <p>I began my studies with a focus on psychology, but quickly realised that I wanted to be directly involved in the solutions and journeys of children&apos;s learning, rather than in assessment or counselling. This led me to teaching and, eventually, to specialising as an education therapist.</p>
+                    <p>My early work involved partnering with universities and parents to support students with reading and writing difficulties. This experience highlighted the importance of individualised support and creative teaching methods in improving children&apos;s engagement and understanding. Here, the dream for Medela Learning Support began.</p>
+                    <p>My journey took me from working at an independent school in Johannesburg, South Africa — where I provided one-on-one academic support to remedial learners — to teaching at an international school in Portugal. Now I am fulfilling my dream, working as a private education specialist.</p>
+                    <p>I am also currently working toward a Master&apos;s degree with a specific focus on dyslexia. This continues to allow me to stay at the forefront of research and best practice, ensuring that the support I offer remains both deeply informed and highly effective.</p>
+                  </>
+                }
+              >
               <div className="bg-bg rounded-[var(--radius-lg)] shadow-[var(--shadow)] overflow-hidden hover:-translate-y-1 transition-transform duration-300">
                 <div className="relative h-[300px] overflow-hidden">
                   <Image
-                    src="/images/team/rebecca-avatar.jpg"
+                    src="/images/team/image-rebecca-profile.jpg"
                     alt="Rebecca — Educational Therapist & Founder"
                     fill
                     className="object-cover"
@@ -174,15 +197,36 @@ export default async function AboutPage() {
                     ))}
                   </div>
                   <p className="text-[12px] text-text-light leading-5">
-                    PGCert SpLD (Dyslexia &amp; Literacy) &middot; BSc
-                    Psychology &middot; Registered Educational Therapist
+                    B.Ed (FP) &middot; AvDip Remedial Therapy &middot; Dyslexia Specialist
                   </p>
+                  <a
+                    href="mailto:rebecca@medelalearning.com"
+                    className="mt-4 inline-flex items-center gap-2 bg-blue-pale text-blue-btn text-[13px] font-semibold px-4 py-2 rounded-full hover:bg-blue hover:text-white transition-colors"
+                  >
+                    rebecca@medelalearning.com
+                  </a>
                 </div>
               </div>
+              </TeamMemberModal>
             </RevealOnScroll>
 
             {/* Jamille */}
             <RevealOnScroll delay={1}>
+              <TeamMemberModal
+                name="Jamille"
+                title="Resource Creator & Co-founder of Aldeia"
+                image="/images/team/jamille-avatar.jpg"
+                email="jamille@medelalearning.com"
+                accentClass="text-purple-dark"
+                bio={
+                  <>
+                    <p>Born in Brazil and raised with a deep appreciation for community and connection, Jamille&apos;s path to Medela was shaped by years of firsthand experience within international schools across Portugal.</p>
+                    <p>As a parent herself and someone embedded in Lisbon&apos;s international school community, she witnessed something that couldn&apos;t be ignored: the isolation and confusion experienced by families when a child begins to struggle. Without local networks, language fluency, or knowledge of the Portuguese system, many parents were left navigating learning difficulties entirely alone.</p>
+                    <p>This gap — between what families needed and what was available — became Jamille&apos;s driving force. She co-founded Aldeia with a clear mission: to build a village of support around every family. Through workshops, community events, a growing WhatsApp network, and curated resources, Aldeia creates the connections that make a real difference.</p>
+                    <p>Today, Jamille continues to grow Aldeia into a thriving network of parents, educators, and specialists — united by the belief that no family should face learning challenges alone.</p>
+                  </>
+                }
+              >
               <div className="bg-bg rounded-[var(--radius-lg)] shadow-[var(--shadow)] overflow-hidden hover:-translate-y-1 transition-transform duration-300">
                 <div className="relative h-[300px] overflow-hidden">
                   <Image
@@ -192,7 +236,7 @@ export default async function AboutPage() {
                     className="object-cover"
                   />
                   <span className="absolute top-4 left-4 bg-purple-dark text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
-                    Co-founder
+                    Resource Creator &amp; Co-founder of Aldeia
                   </span>
                 </div>
                 <div className="p-6 md:p-8">
@@ -200,7 +244,7 @@ export default async function AboutPage() {
                     Jamille
                   </h3>
                   <p className="text-sm font-semibold text-purple-dark mb-3">
-                    Co-founder &amp; Community Lead
+                    Resource Creator &amp; Co-founder of Aldeia
                   </p>
                   <p className="text-sm text-text-mid leading-7 mb-4">
                     Jamille brings the community to life. As the driving force
@@ -230,8 +274,15 @@ export default async function AboutPage() {
                     Community Development &middot; Family Support Specialist
                     &middot; Aldeia Founder
                   </p>
+                  <a
+                    href="mailto:jamille@medelalearning.com"
+                    className="mt-4 inline-flex items-center gap-2 bg-purple-pale text-purple-dark text-[13px] font-semibold px-4 py-2 rounded-full hover:bg-purple hover:text-white transition-colors"
+                  >
+                    jamille@medelalearning.com
+                  </a>
                 </div>
               </div>
+              </TeamMemberModal>
             </RevealOnScroll>
           </div>
         </div>
@@ -252,7 +303,7 @@ export default async function AboutPage() {
             </RevealOnScroll>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
             {[
               {
                 icon: <Sprout className="w-6 h-6 text-blue-btn" />,
@@ -285,13 +336,13 @@ export default async function AboutPage() {
                 desc: "Learning differences affect the whole family. Through Aldeia, we build a network of support that extends far beyond the session room.",
               },
             ].map((value, i) => (
-              <RevealOnScroll key={value.title} delay={i % 3 === 0 ? 0 : i % 3 === 1 ? 1 : 2}>
-                <div className="bg-white rounded-[var(--radius-lg)] shadow-[var(--shadow-sm)] p-6 md:p-8 hover:-translate-y-1 transition-transform duration-300">
+              <RevealOnScroll key={value.title} delay={i % 3 === 0 ? 0 : i % 3 === 1 ? 1 : 2} className="h-full">
+                <div className="flex flex-col h-full bg-white rounded-[var(--radius-lg)] shadow-[var(--shadow-sm)] p-6 md:p-8 hover:-translate-y-1 transition-transform duration-300">
                   <span className="mb-4 block">{value.icon}</span>
                   <h3 className="text-base font-bold text-text mb-2">
                     {value.title}
                   </h3>
-                  <p className="text-sm text-text-mid leading-7">
+                  <p className="text-sm text-text-mid leading-7 flex-1">
                     {value.desc}
                   </p>
                 </div>
@@ -366,10 +417,11 @@ export default async function AboutPage() {
             <RevealOnScroll delay={1}>
               <div className="rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow)] mb-6 relative h-[300px]">
                 <Image
-                  src="/images/team/rebecca-avatar.jpg"
+                  src="/images/medela/medela-teaching.webp"
                   alt="Rebecca working with a child"
                   fill
                   className="object-cover"
+                  style={{ transform: "scale(1.35) translateX(10%)", objectPosition: "center" }}
                 />
               </div>
               <div className="bg-white rounded-[var(--radius-lg)] shadow-[var(--shadow-sm)] p-6">
@@ -422,7 +474,7 @@ export default async function AboutPage() {
                 href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-blue-btn text-white px-6 py-3 rounded-full text-sm font-bold shadow-[var(--shadow-btn)] hover:bg-blue-hover hover:-translate-y-0.5 transition-all"
+                className="inline-flex items-center gap-2 bg-blue text-white px-6 py-3 rounded-full text-sm font-bold shadow-[var(--shadow-btn)] hover:bg-blue-mid hover:-translate-y-0.5 transition-all"
               >
                 Book a free call &rarr;
               </a>
@@ -457,15 +509,15 @@ export default async function AboutPage() {
               </Link>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
               {blogPosts.map((post, i) => (
-                <RevealOnScroll key={post.slug} delay={i % 3 === 0 ? 0 : i % 3 === 1 ? 1 : 2}>
+                <RevealOnScroll key={post.slug} delay={i % 3 === 0 ? 0 : i % 3 === 1 ? 1 : 2} className="h-full">
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="group block bg-white rounded-[var(--radius-lg)] shadow-[var(--shadow-sm)] overflow-hidden hover:-translate-y-1 transition-transform duration-300"
+                    className="group flex flex-col h-full bg-white rounded-[var(--radius-lg)] shadow-[var(--shadow-sm)] overflow-hidden hover:-translate-y-1 transition-transform duration-300"
                   >
-                    {post.featuredImage && (
-                      <div className="h-[180px] overflow-hidden relative">
+                    <div className="relative h-[180px] shrink-0 bg-blue-pale flex items-center justify-center">
+                      {post.featuredImage ? (
                         <Image
                           src={post.featuredImage}
                           alt={post.title}
@@ -473,23 +525,28 @@ export default async function AboutPage() {
                           unoptimized
                           className="object-cover group-hover:scale-105 transition-transform duration-500"
                         />
-                      </div>
-                    )}
-                    <div className="p-5">
-                      <div className="flex items-center gap-3 text-[11px] text-text-light mb-2">
-                        {post.category && (
-                          <span className="bg-blue-pale text-blue-btn font-semibold px-2 py-0.5 rounded-full">
-                            {post.category}
-                          </span>
-                        )}
-                        <span>{post.readTime} min read</span>
-                      </div>
-                      <h3 className="text-[15px] font-bold text-text leading-snug mb-1.5 group-hover:text-blue-btn transition-colors">
+                      ) : (
+                        <BookOpen className="w-8 h-8 text-blue-btn" />
+                      )}
+                      {post.category && (
+                        <span className="absolute top-3 left-3 bg-white/90 text-[11px] font-bold text-text-mid uppercase tracking-[.08em] px-2.5 py-1 rounded-full">
+                          {post.category}
+                        </span>
+                      )}
+                    </div>
+                    <div className="flex flex-col flex-1 p-5">
+                      <p className="text-[12px] text-text-light mb-2">{post.date}</p>
+                      <h3 className="text-[15px] font-bold text-text leading-snug mb-2 group-hover:text-blue-btn transition-colors">
                         {post.title}
                       </h3>
-                      <p className="text-sm text-text-mid leading-6 line-clamp-2">
-                        {post.excerpt}
-                      </p>
+                      {post.excerpt && (
+                        <p className="text-[13px] text-text-mid leading-6 line-clamp-3 mb-4">
+                          {post.excerpt}
+                        </p>
+                      )}
+                      <span className="mt-auto text-[13px] font-bold text-blue-btn">
+                        Read article &rarr;
+                      </span>
                     </div>
                   </Link>
                 </RevealOnScroll>
