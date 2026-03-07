@@ -316,8 +316,7 @@ export default async function HomePage() {
                 style={{ boxShadow: "var(--shadow)" }}
               >
                 <Image
-                  src=<img src="image 41.jpg" alt="Educational therapy session" width={800} height={420} className="w-full h-[420px] object-cover object-right" />
-                  alt="Educational therapy session"
+                  src="/image 41.jpg"  alt="Educational therapy session"
                   width={800}
                   height={420}
                   className="w-full h-[420px] object-cover object-right"
