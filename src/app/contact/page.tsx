@@ -28,7 +28,7 @@ export default function ContactPage() {
             Get in <span className="text-blue-light">touch</span>
           </h1>
           <p className="text-base text-white/55 leading-7 max-w-[520px]">
-            Whether you have a question, want to discuss your child&apos;s needs, or just want to say hello &mdash; we&apos;d love to hear from you.
+            Whether you have a question, want to discuss your child&apos;s needs, or just want to say hello &ndash; we&apos;d love to hear from you.
           </p>
         </div>
       </div>
@@ -46,7 +46,7 @@ export default function ContactPage() {
               We&apos;re here to help
             </h2>
             <p className="text-base text-text-mid leading-7 mb-8 max-w-[460px]">
-              The easiest way to start is with a free 20-minute call. No commitment, no pressure &mdash; just a conversation about your child.
+              The easiest way to start is with a free 20-minute call. No commitment, no pressure &ndash; just a conversation about your child.
             </p>
 
             <div className="flex flex-col gap-6 mb-10">
@@ -102,7 +102,7 @@ export default function ContactPage() {
             <div className="bg-purple-pale rounded-[var(--radius-lg)] p-6">
               <h3 className="text-[15px] font-bold text-purple-dark mb-2">Looking for the Aldeia community?</h3>
               <p className="text-sm text-text-mid leading-relaxed mb-3">
-                Join our free parent community &mdash; workshops, WhatsApp group, and fortnightly newsletter.
+                Join our free parent community &ndash; workshops, WhatsApp group, and fortnightly newsletter.
               </p>
               <Link
                 href="/aldeia"

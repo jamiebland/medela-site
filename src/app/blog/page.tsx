@@ -34,7 +34,7 @@ export default async function BlogPage() {
             Insights &amp; ideas for <span className="text-blue-light">parents &amp; educators</span>
           </h1>
           <p className="text-base text-white/55 leading-7 max-w-[520px]">
-            Honest writing about learning differences, educational therapy, and raising confident children &mdash; from Rebecca, Jamille, and the Aldeia community.
+            Honest writing about learning differences, educational therapy, and raising confident children &ndash; from Rebecca, Jamille, and the Aldeia community.
           </p>
         </div>
       </div>

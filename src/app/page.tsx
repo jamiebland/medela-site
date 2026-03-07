@@ -162,7 +162,7 @@ export default async function HomePage() {
       </section>
 
       {/* ───── 2. Schools Strip ───── */}
-      <section className="color-blue-mid py-8 overflow-hidden">
+      <section className="bg-blue-mid py-8 overflow-hidden">
         <p className="text-center text-[11px] tracking-[.12em] uppercase font-bold text-white/60 mb-5 px-6">
           Trusted by families from 14 partner schools across Portugal, South
           Africa &amp; Europe
@@ -316,7 +316,8 @@ export default async function HomePage() {
                 style={{ boxShadow: "var(--shadow)" }}
               >
                 <Image
-                  src="C:\Users\jamie\Documents\GitHub\medela-site\public\images\medela\image 41.jpg"  alt="Educational therapy session"
+                  src="/images/medela/image-hand.jpg"
+                  alt="Educational therapy session"
                   width={800}
                   height={420}
                   className="w-full h-[420px] object-cover object-right"

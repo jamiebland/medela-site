@@ -73,7 +73,7 @@ export { NewsletterForm };
 
 export default function Newsletter() {
   return (
-    <section className="color-blue-btn py-18 px-6 md:px-20">
+    <section className="bg-blue-mid py-18 px-6 md:px-20">
       <div className="max-w-[1180px] mx-auto grid md:grid-cols-2 gap-16 items-center">
         <div>
           <div className="flex items-center gap-2 text-[11px] tracking-[.12em] uppercase font-bold text-white/[.42] mb-2.5">
