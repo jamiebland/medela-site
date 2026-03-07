@@ -7,6 +7,7 @@ import Newsletter from "@/components/Newsletter";
 import { Puzzle, Smartphone, GraduationCap, MessageCircle, Mail, BookOpen, Star } from "lucide-react";
 import { CALENDLY_URL, ASSET_BASE, SITE_URL, SITE_EMAIL } from "@/lib/config";
 import JsonLd from "@/components/JsonLd";
+import AldeiaQR from "@/components/AldeiaQR";
 
 const schools = [
   { name: "TASIS", logo: "tasis_logo-removebg-preview-irp56pe9jh.webp" },
@@ -28,27 +29,21 @@ const schools = [
 const testimonials = [
   {
     quote:
-      "Within three months, my daughter went from dreading reading to choosing books at bedtime. Rebecca gave her the confidence we couldn't unlock on our own.",
-    author: "Ana R.",
-    role: "Parent of Grade 2 student, Lisbon",
+      "Rebecca is exceptional! She's worked wonders with my daughter, providing personalized guidance and support that has made a huge difference in her understanding and confidence. Rebecca's patience, expertise, and enthusiasm are truly inspiring, and her ability to break down complex concepts into manageable chunks has been invaluable. We're so grateful to have her in our lives - highly recommend!",
+    author: "Candice",
+    role: "Parent of a Grade 5 learner, Cascais",
   },
   {
     quote:
-      "The digital programmes have been a lifesaver for us. My son actually looks forward to his learning sessions now, and his teacher has noticed the difference in class.",
-    author: "Sarah M.",
-    role: "Parent of Grade 4 student, South Africa",
+      "We had the absolute pleasure of working with Rebecca this school year after receiving a glowing recommendation from another teacher, and I can't say enough wonderful things about the impact she had on my daughter's reading and writing skills. From the very first session, Rebecca created a warm, supportive, and encouraging environment that truly brought out the best in my child. We are so grateful for the time and care Rebecca invested in our daughter. She has made a lasting impact, and we would recommend her wholeheartedly to any family.",
+    author: "Anne-Marie",
+    role: "Parent of a Grade 2 student, Germany",
   },
   {
     quote:
-      "We tried tutoring before, but Medela's approach is completely different. They understand how my child thinks and meet him exactly where he is. The progress has been remarkable.",
-    author: "David K.",
-    role: "Parent of Grade 3 student, Lisbon",
-  },
-  {
-    quote:
-      "Rebecca has been amazing with my child, her professionalism, attention to detail and level of care have been indescribable. Very happy to be recommending her to upcoming parents.",
-    author: "Georgia S",
-    role: "Parent of Grade 2 student, Lisbon",
+      "Rebecca has been a huge addition to Nuno's scholarly life since he started his sessions with her. She quickly understood the areas where he has difficulties and helped him find efficient ways to organise himself. Furthermore her sensitivity to understanding his personality and forms of best communicating with him were vital in his improvement throughout the year. She established an excellent relationship with him. We will be continuing with Rebecca next year!",
+    author: "Melanie",
+    role: "Parent of a Grade 10 student, Lisbon",
   },
 ];
 
@@ -87,7 +82,7 @@ export default async function HomePage() {
 
           <h1 className="text-[2.5rem] md:text-[3.2rem] font-extrabold leading-[1.1] tracking-tight text-text mb-4">
             Every child deserves to<br />
-            <span className="text-blue-btn">love learning</span>
+            <span className="text-blue">love learning</span>
           </h1>
 
           <p className="text-base md:text-[17px] text-text-mid leading-7 mb-8 max-w-[480px]">
@@ -101,7 +96,7 @@ export default async function HomePage() {
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-blue-btn text-white px-6 py-3 rounded-full text-sm font-bold shadow-[var(--shadow-btn)] hover:bg-blue-hover motion-safe:hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-btn focus-visible:ring-offset-2"
+              className="inline-flex items-center gap-2 bg-blue text-white px-6 py-3 rounded-full text-sm font-bold shadow-[var(--shadow-btn)] hover:bg-blue-mid motion-safe:hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2"
             >
               Book a free call &rarr;
             </a>
@@ -113,16 +108,6 @@ export default async function HomePage() {
             </Link>
           </div>
 
-          <div className="flex items-center gap-3 text-[13px] text-text-light">
-            <div className="flex gap-0.5">
-              {[0, 1, 2, 3, 4].map((i) => (
-                <Star key={i} className="w-4 h-4 fill-amber text-amber" />
-              ))}
-            </div>
-            <span>
-              Trusted by families across Portugal, South Africa &amp; Europe
-            </span>
-          </div>
         </div>
 
         {/* Right */}
@@ -139,20 +124,11 @@ export default async function HomePage() {
 
           {/* Floating stat cards */}
           <div
-            className="absolute bottom-16 left-8 bg-white rounded-[var(--radius)] px-5 py-4 animate-float"
-            style={{ boxShadow: "var(--shadow)" }}
-          >
-            <p className="text-[28px] font-extrabold text-blue-btn leading-none">
-              14+
-            </p>
-            <p className="text-[12px] text-text-light mt-1">Partner schools</p>
-          </div>
-          <div
             className="absolute top-20 right-8 bg-white rounded-[var(--radius)] px-5 py-4 animate-float-delayed"
             style={{ boxShadow: "var(--shadow)" }}
           >
             <p className="text-[28px] font-extrabold text-purple leading-none">
-              500+
+              250+
             </p>
             <p className="text-[12px] text-text-light mt-1">
               Families supported
@@ -164,8 +140,7 @@ export default async function HomePage() {
       {/* ───── 2. Schools Strip ───── */}
       <section className="bg-blue-mid py-8 overflow-hidden">
         <p className="text-center text-[11px] tracking-[.12em] uppercase font-bold text-white/60 mb-5 px-6">
-          Trusted by families from 14 partner schools across Portugal, South
-          Africa &amp; Europe
+          Partnered with 14 schools across Portugal, South Africa and Europe
         </p>
         <div className="relative overflow-hidden">
           <div className="animate-scroll-track flex w-max gap-6 px-3 items-start will-change-transform">
@@ -211,7 +186,7 @@ export default async function HomePage() {
                 className="rounded-[var(--radius-lg)] overflow-hidden border border-black/[.05]"
                 style={{ boxShadow: "var(--shadow)" }}
               >
-                <div className="bg-gradient-to-br from-color-blue-btn to-blue-dark px-7 py-8 text-white">
+                <div className="bg-gradient-to-br from-blue-mid to-blue px-7 py-8 text-white">
                   <div className="w-11 h-11 rounded-xl bg-white/[.18] flex items-center justify-center text-xl mb-4">
                     <Puzzle className="w-5 h-5" />
                   </div>
@@ -407,15 +382,15 @@ export default async function HomePage() {
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-7">
+          <div className="grid md:grid-cols-3 gap-7 items-stretch">
             {posts.map((post, i) => (
-              <RevealOnScroll key={post.slug} delay={i as 0 | 1 | 2 | 3}>
+              <RevealOnScroll key={post.slug} delay={i as 0 | 1 | 2 | 3} className="h-full">
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="group block rounded-[var(--radius-lg)] overflow-hidden border border-black/[.05] bg-white hover:-translate-y-1 transition-all"
+                  className="group flex flex-col h-full rounded-[var(--radius-lg)] overflow-hidden border border-black/[.05] bg-white hover:-translate-y-1 transition-all"
                   style={{ boxShadow: "var(--shadow-sm)" }}
                 >
-                  <div className="relative h-44 bg-blue-pale flex items-center justify-center text-4xl">
+                  <div className="relative h-44 shrink-0 bg-blue-pale flex items-center justify-center text-4xl">
                     {post.featuredImage ? (
                       <Image
                         src={post.featuredImage}
@@ -433,14 +408,19 @@ export default async function HomePage() {
                       </span>
                     )}
                   </div>
-                  <div className="px-5 py-5">
+                  <div className="flex flex-col flex-1 px-5 py-5">
                     <p className="text-[12px] text-text-light mb-2">
                       {post.date}
                     </p>
-                    <h3 className="text-[15px] font-bold text-text leading-snug mb-3 group-hover:text-blue-btn transition-colors">
+                    <h3 className="text-[15px] font-bold text-text leading-snug mb-2 group-hover:text-blue-btn transition-colors">
                       {post.title}
                     </h3>
-                    <span className="text-[13px] font-bold text-blue-btn">
+                    {post.excerpt && (
+                      <p className="text-[13px] text-text-mid leading-6 line-clamp-3 mb-4">
+                        {post.excerpt}
+                      </p>
+                    )}
+                    <span className="mt-auto text-[13px] font-bold text-blue-btn">
                       Read article &rarr;
                     </span>
                   </div>
@@ -462,11 +442,25 @@ export default async function HomePage() {
 
       {/* ───── 6. Aldeia Teaser ───── */}
       <section
-        className="py-20 px-6 md:px-20 text-white overflow-hidden"
+        className="relative py-20 px-6 md:px-20 text-white overflow-hidden"
         style={{
-          background: "linear-gradient(135deg, #9181b8 0%, #2a1d4e 100%)",
+          background: "linear-gradient(135deg, var(--color-purple) 0%, var(--color-purple-mid) 100%)",
         }}
       >
+        {/* Concentric circles — decorative, right side */}
+        <svg
+          className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none select-none"
+          width="560"
+          height="560"
+          viewBox="0 0 560 560"
+          fill="none"
+          aria-hidden="true"
+        >
+          {[60, 120, 180, 240, 300, 360, 420].map((r) => (
+            <circle key={r} cx="560" cy="280" r={r} stroke="white" strokeOpacity="0.07" strokeWidth="1" />
+          ))}
+        </svg>
+
         <div className="max-w-[1180px] mx-auto grid md:grid-cols-2 gap-16 items-center">
           {/* Left */}
           <div>
@@ -482,31 +476,46 @@ export default async function HomePage() {
               learner is easier when you&apos;re not doing it alone.
             </p>
 
-            <ul className="space-y-3 mb-8">
-              {[
-                "Monthly workshops",
-                "WhatsApp community",
-                "Fortnightly newsletter",
-                "Resource library",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="flex items-center gap-2.5 text-[14px] text-white/70"
-                >
-                  <span className="text-purple-light font-bold">
-                    {"\u2713"}
-                  </span>
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <div className="flex gap-6 items-start mb-8">
+              <ul className="space-y-3">
+                {[
+                  "Monthly workshops",
+                  "WhatsApp community",
+                  "Fortnightly newsletter",
+                  "Resource library",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-center gap-2.5 text-[14px] text-white/70"
+                  >
+                    <span className="text-purple-light font-bold">
+                      {"\u2713"}
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
 
-            <Link
-              href="/aldeia"
-              className="inline-flex items-center gap-2 color-purple-deep text-white px-6 py-3 rounded-full text-sm font-bold hover:bg-purple-mid hover:-translate-y-0.5 transition-all"
-            >
-              Explore Aldeia &rarr;
-            </Link>
+              {/* WhatsApp QR code */}
+              <AldeiaQR />
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/aldeia"
+                className="inline-flex items-center gap-2 bg-purple-dark border-2 border-purple-dark text-white px-6 py-3 rounded-full text-sm font-bold hover:bg-purple-deep hover:-translate-y-0.5 transition-all"
+              >
+                Explore Aldeia &rarr;
+              </Link>
+              <a
+                href="https://chat.whatsapp.com/IIZ3pwcrKgjEvy7nK7cTOQ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-white text-purple-dark px-6 py-3 rounded-full text-sm font-bold hover:bg-white/90 hover:-translate-y-0.5 transition-all"
+              >
+                Join the community &rarr;
+              </a>
+            </div>
           </div>
 
           {/* Right — 2x2 cards */}
@@ -562,11 +571,11 @@ export default async function HomePage() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-7">
+          <div className="grid md:grid-cols-3 gap-7 items-stretch">
             {testimonials.map((t, i) => (
-              <RevealOnScroll key={t.author} delay={i as 0 | 1 | 2 | 3}>
+              <RevealOnScroll key={t.author} delay={i as 0 | 1 | 2 | 3} className="h-full">
                 <div
-                  className="bg-white rounded-[var(--radius-lg)] p-7 border border-black/[.05]"
+                  className="flex flex-col h-full bg-white rounded-[var(--radius-lg)] p-7 border border-black/[.05]"
                   style={{ boxShadow: "var(--shadow-sm)" }}
                 >
                   <div className="flex gap-0.5 text-amber mb-4">
@@ -580,10 +589,10 @@ export default async function HomePage() {
                       </svg>
                     ))}
                   </div>
-                  <p className="text-[14px] text-text-mid leading-6 mb-5 italic">
+                  <p className="text-[14px] text-text-mid leading-6 mb-5 italic flex-1">
                     &ldquo;{t.quote}&rdquo;
                   </p>
-                  <div>
+                  <div className="mt-auto">
                     <p className="text-[14px] font-bold text-text">
                       {t.author}
                     </p>

@@ -46,7 +46,7 @@ export default function ContactPage() {
               We&apos;re here to help
             </h2>
             <p className="text-base text-text-mid leading-7 mb-8 max-w-[460px]">
-              The easiest way to start is with a free 20-minute call. No commitment, no pressure &ndash; just a conversation about your child.
+              The easiest way to start is with a free 15-minute call. No commitment, no pressure &ndash; just a conversation about your child.
             </p>
 
             <div className="flex flex-col gap-6 mb-10">
@@ -57,7 +57,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="text-[15px] font-bold text-text mb-1">Book a free call</h3>
                   <p className="text-sm text-text-mid leading-relaxed mb-2">
-                    A 20-minute call with Rebecca to discuss your child&apos;s needs.
+                    A 15-minute call with Rebecca to discuss your child&apos;s needs.
                   </p>
                   <a
                     href="https://calendly.com/medelalearnings"

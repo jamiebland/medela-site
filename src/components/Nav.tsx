@@ -59,7 +59,7 @@ export default function Nav() {
             href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-blue-btn text-white px-4 py-1.5 rounded-full text-[13px] font-semibold shadow-[var(--shadow-btn)] hover:bg-blue-hover motion-safe:hover:-translate-y-px transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-btn focus-visible:ring-offset-2"
+            className="bg-blue text-white px-4 py-1.5 rounded-full text-[13px] font-semibold shadow-[var(--shadow-btn)] hover:bg-blue-mid motion-safe:hover:-translate-y-px transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2"
           >
             Book a session &rarr;
           </a>
@@ -94,7 +94,7 @@ export default function Nav() {
             href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-blue-btn text-white px-5 py-3 rounded-full text-sm font-semibold text-center shadow-[var(--shadow-btn)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-btn focus-visible:ring-offset-2"
+            className="bg-blue text-white px-5 py-3 rounded-full text-sm font-semibold text-center shadow-[var(--shadow-btn)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2"
           >
             Book a session &rarr;
           </a>

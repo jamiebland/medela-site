@@ -325,7 +325,7 @@ export default async function AboutPage() {
                 {
                   step: "01",
                   title: "Initial conversation",
-                  desc: "A free 20-minute call to understand your child's needs, your concerns, and whether Medela is the right fit.",
+                  desc: "A free 15-minute call to understand your child's needs, your concerns, and whether Medela is the right fit.",
                 },
                 {
                   step: "02",

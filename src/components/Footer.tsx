@@ -19,7 +19,7 @@ export default function Footer() {
             Medela Learning Support
           </div>
           <p className="text-[13px] text-white/[.38] leading-7 max-w-[250px] mb-3.5">
-            Educational therapy and learning support for children in Lisbon and across Portugal. Founded by Rebecca and Jamille.
+            Educational therapy and learning support for children in Lisbon and across Portugal. Founded by Rebecca Bland.
           </p>
         </div>
 

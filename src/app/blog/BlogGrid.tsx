@@ -193,7 +193,7 @@ export default function BlogGrid({
           {/* Book session */}
           <div className="bg-blue-btn rounded-[var(--radius-lg)] p-6 text-center">
             <h3 className="text-[15px] font-extrabold text-white leading-snug tracking-tight mb-2">Need one-to-one support?</h3>
-            <p className="text-[13px] text-white/55 leading-relaxed mb-4">Book a free 20-minute call with Rebecca to talk through your child&apos;s challenges.</p>
+            <p className="text-[13px] text-white/55 leading-relaxed mb-4">Book a free 15-minute call with Rebecca to talk through your child&apos;s challenges.</p>
             <a
               href="https://calendly.com/medelalearnings"
               target="_blank"

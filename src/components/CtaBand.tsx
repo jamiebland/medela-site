@@ -10,7 +10,7 @@ export default function CtaBand() {
           Ready to take the first step?
         </h2>
         <p className="text-base text-white/[.72] leading-7 mb-7">
-          A free 20-minute call is the easiest way to find out whether Medela is right for your child &ndash; no commitment, no pressure.
+          A free 15-minute call is the easiest way to find out whether Medela is right for your child &ndash; no commitment, no pressure.
         </p>
         <div className="flex justify-center gap-3 flex-wrap">
           <a
