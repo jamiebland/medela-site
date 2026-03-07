@@ -165,15 +165,15 @@ export default function LearningResourcesPage() {
             Just click, buy, download, and start using.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[18px] mt-11">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[18px] mt-11 items-stretch">
             {[
               { num: 1, icon: <ShoppingCart className="w-6 h-6 text-blue-btn" />, title: "Choose your pack", desc: "Pick the grade and season that matches your child\u2019s year. Not sure? Grade 2 Fall is a great starting point." },
               { num: 2, icon: <CreditCard className="w-6 h-6 text-blue-btn" />, title: "Buy securely", desc: "Checkout is handled via our online platform, Secure, fast, and no account needed. Pay by card or PayPal." },
               { num: 3, icon: <Download className="w-6 h-6 text-blue-btn" />, title: "Download instantly", desc: "Your PDF is available immediately after purchase. You\u2019ll also get an email link so you can download it again anytime." },
               { num: 4, icon: <Printer className="w-6 h-6 text-blue-btn" />, title: "Print & use", desc: "Print at home or at a local print shop. The pack works page by page or as a complete unit. Whatever suits your child best." },
             ].map((step, i) => (
-              <RevealOnScroll key={step.num} delay={i}>
-                <div className="bg-white rounded-[var(--radius)] p-6 text-center shadow-[var(--shadow-sm)] transition-all duration-200 hover:-translate-y-[3px] hover:shadow-[var(--shadow)]">
+              <RevealOnScroll key={step.num} delay={i} className="h-full">
+                <div className="bg-white rounded-[var(--radius)] p-6 text-center shadow-[var(--shadow-sm)] transition-all duration-200 hover:-translate-y-[3px] hover:shadow-[var(--shadow)] h-full flex flex-col">
                   <div className="w-10 h-10 rounded-full bg-blue-pale border-2 border-blue-light flex items-center justify-center text-sm font-extrabold text-blue-btn mx-auto mb-3">
                     {step.num}
                   </div>
@@ -207,15 +207,15 @@ export default function LearningResourcesPage() {
                 Every pack is carefully designed to work as a complete unit not
                 just a collection of activities.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mt-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mt-8 items-stretch">
                 {[
                   { icon: <BookOpen className="w-5 h-5 text-blue-btn" />, title: "Literacy activities", desc: "Reading comprehension, phonics practice, creative writing prompts, and vocabulary work." },
                   { icon: <Calculator className="w-5 h-5 text-blue-btn" />, title: "Maths activities", desc: "Number, operations, problem-solving and reasoning, matched to grade expectations and scaffolded for different learners." },
                   { icon: <FlaskConical className="w-5 h-5 text-blue-btn" />, title: "Science & Geography", desc: "Cross-curricular content that makes English and Maths practice feel meaningful by connecting it to the world." },
                   { icon: <CheckCircle className="w-5 h-5 text-blue-btn" />, title: "Answer booklet", desc: "Every pack includes a full answer guide so parents can mark confidently and children get immediate feedback." },
                 ].map((feat, i) => (
-                  <RevealOnScroll key={feat.title} delay={i % 2}>
-                    <div className="bg-bg rounded-[var(--radius)] p-[18px] shadow-[var(--shadow-sm)]">
+                  <RevealOnScroll key={feat.title} delay={i % 2} className="h-full">
+                    <div className="bg-bg rounded-[var(--radius)] p-[18px] shadow-[var(--shadow-sm)] h-full flex flex-col">
                       <div className="mb-2">{feat.icon}</div>
                       <h4 className="text-sm font-bold text-text mb-1 tracking-tight">
                         {feat.title}

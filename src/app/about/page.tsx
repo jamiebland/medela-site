@@ -136,9 +136,9 @@ export default async function AboutPage() {
             </RevealOnScroll>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 items-stretch">
             {/* Rebecca */}
-            <RevealOnScroll>
+            <RevealOnScroll className="h-full">
               <TeamMemberModal
                 name="Rebecca Bland"
                 title="Educational Therapist & Founder"
@@ -155,8 +155,8 @@ export default async function AboutPage() {
                   </>
                 }
               >
-              <div className="bg-bg rounded-[var(--radius-lg)] shadow-[var(--shadow)] overflow-hidden hover:-translate-y-1 transition-transform duration-300">
-                <div className="relative h-[300px] overflow-hidden">
+              <div className="bg-bg rounded-[var(--radius-lg)] shadow-[var(--shadow)] overflow-hidden hover:-translate-y-1 transition-transform duration-300 h-full flex flex-col">
+                <div className="relative h-[300px] overflow-hidden shrink-0">
                   <Image
                     src="/images/team/image-rebecca-profile.jpg"
                     alt="Rebecca — Educational Therapist & Founder"
@@ -167,7 +167,7 @@ export default async function AboutPage() {
                     Founder
                   </span>
                 </div>
-                <div className="p-6 md:p-8">
+                <div className="p-6 md:p-8 flex-1 flex flex-col">
                   <h3 className="text-xl font-extrabold text-text mb-0.5">
                     Rebecca
                   </h3>
@@ -204,7 +204,7 @@ export default async function AboutPage() {
                   </p>
                   <a
                     href="mailto:rebecca@medelalearning.com"
-                    className="mt-4 inline-flex items-center gap-2 bg-blue-pale text-blue-btn text-[13px] font-semibold px-4 py-2 rounded-full hover:bg-blue hover:text-white transition-colors"
+                    className="mt-4 self-start inline-flex items-center gap-2 bg-blue-pale text-blue-btn text-[13px] font-semibold px-4 py-2 rounded-full hover:bg-blue hover:text-white transition-colors"
                   >
                     rebecca@medelalearning.com
                   </a>
@@ -214,11 +214,12 @@ export default async function AboutPage() {
             </RevealOnScroll>
 
             {/* Jamille */}
-            <RevealOnScroll delay={1}>
+            <RevealOnScroll delay={1} className="h-full">
               <TeamMemberModal
                 name="Jamille"
                 title="Resource Creator & Co-founder of Aldeia"
                 image="/images/team/jamille-avatar.jpg"
+                modalImage="/images/team/jamille-avatar-2.jpg"
                 email="jamille@medelalearning.com"
                 accentClass="text-purple-dark"
                 bio={
@@ -230,8 +231,8 @@ export default async function AboutPage() {
                   </>
                 }
               >
-              <div className="bg-bg rounded-[var(--radius-lg)] shadow-[var(--shadow)] overflow-hidden hover:-translate-y-1 transition-transform duration-300">
-                <div className="relative h-[300px] overflow-hidden">
+              <div className="bg-bg rounded-[var(--radius-lg)] shadow-[var(--shadow)] overflow-hidden hover:-translate-y-1 transition-transform duration-300 h-full flex flex-col">
+                <div className="relative h-[300px] overflow-hidden shrink-0">
                   <Image
                     src="/images/team/jamille-avatar.jpg"
                     alt="Jamille — Co-founder & Community Lead"
@@ -242,7 +243,7 @@ export default async function AboutPage() {
                     Co-founder of Aldeia
                   </span>
                 </div>
-                <div className="p-6 md:p-8">
+                <div className="p-6 md:p-8 flex-1 flex flex-col">
                   <h3 className="text-xl font-extrabold text-text mb-0.5">
                     Jamille
                   </h3>
@@ -279,7 +280,7 @@ export default async function AboutPage() {
                   </p>
                   <a
                     href="mailto:jamille@medelalearning.com"
-                    className="mt-4 inline-flex items-center gap-2 bg-purple-pale text-purple-dark text-[13px] font-semibold px-4 py-2 rounded-full hover:bg-purple hover:text-white transition-colors"
+                    className="mt-4 self-start inline-flex items-center gap-2 bg-purple-pale text-purple-dark text-[13px] font-semibold px-4 py-2 rounded-full hover:bg-purple hover:text-white transition-colors"
                   >
                     jamille@medelalearning.com
                   </a>

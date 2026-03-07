@@ -177,11 +177,11 @@ export default async function HomePage() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-7">
+          <div className="grid md:grid-cols-2 gap-7 items-stretch">
             {/* Card 1 — Educational Therapy */}
-            <RevealOnScroll>
+            <RevealOnScroll className="h-full">
               <div
-                className="rounded-[var(--radius-lg)] overflow-hidden border border-black/[.05]"
+                className="rounded-[var(--radius-lg)] overflow-hidden border border-black/[.05] h-full flex flex-col"
                 style={{ boxShadow: "var(--shadow)" }}
               >
                 <div className="bg-gradient-to-br from-blue-mid to-blue px-7 py-8 text-white">
@@ -197,8 +197,8 @@ export default async function HomePage() {
                     independence needed for school success.
                   </p>
                 </div>
-                <div className="bg-white px-7 py-7">
-                  <ul className="space-y-3 mb-6">
+                <div className="bg-white px-7 py-7 flex-1 flex flex-col">
+                  <ul className="space-y-3 mb-6 flex-1">
                     {[
                       "Comprehensive learning assessment",
                       "Individualised therapy plan",
@@ -228,9 +228,9 @@ export default async function HomePage() {
             </RevealOnScroll>
 
             {/* Card 2 — Digital Programmes */}
-            <RevealOnScroll delay={1}>
+            <RevealOnScroll delay={1} className="h-full">
               <div
-                className="rounded-[var(--radius-lg)] overflow-hidden border border-black/[.05]"
+                className="rounded-[var(--radius-lg)] overflow-hidden border border-black/[.05] h-full flex flex-col"
                 style={{ boxShadow: "var(--shadow)" }}
               >
                 <div className="bg-gradient-to-br from-purple to-purple-dark px-7 py-8 text-white">
@@ -244,8 +244,8 @@ export default async function HomePage() {
                     Practical, therapist-designed tools that help parents support reading, writing and learning at home, without turning homework into a daily battle.
                   </p>
                 </div>
-                <div className="bg-white px-7 py-7">
-                  <ul className="space-y-3 mb-6">
+                <div className="bg-white px-7 py-7 flex-1 flex flex-col">
+                  <ul className="space-y-3 mb-6 flex-1">
                     {[
                       "Seasonal themed learning packs",
                       "Printable worksheets & activities",
@@ -514,7 +514,7 @@ export default async function HomePage() {
 
           {/* Right — 2x2 cards + QR */}
           <div className="flex flex-col gap-4">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4 items-stretch">
             {[
               {
                 icon: <GraduationCap className="w-5 h-5" />,
@@ -537,8 +537,8 @@ export default async function HomePage() {
                 desc: "Curated tools and guides you can use at home",
               },
             ].map((card) => (
-              <RevealOnScroll key={card.title}>
-                <div className="bg-white/[.08] border border-white/[.10] rounded-[var(--radius)] p-5">
+              <RevealOnScroll key={card.title} className="h-full">
+                <div className="bg-white/[.08] border border-white/[.10] rounded-[var(--radius)] p-5 h-full flex flex-col">
                   <span className="text-2xl mb-3 block">{card.icon}</span>
                   <h3 className="text-[14px] font-bold text-white mb-1">
                     {card.title}

@@ -63,9 +63,9 @@ export default async function AldeiaPage() {
               <Globe className="w-3.5 h-3.5 inline-block -mt-px" /> Lisbon · Portugal · Open to all families
             </div>
             <h1 className="text-[clamp(28px,4vw,52px)] font-extrabold text-white leading-[1.1] tracking-tight mb-[18px]">
-              You shouldn&apos;t have to{" "}
-              <span className="font-light text-purple-light">
-                navigate this alone
+              A Village {" "}
+              <span className="font-heavy text-purple-dark">
+                for the Village
               </span>
             </h1>
             <p className="text-base text-white/[.72] leading-7 max-w-[440px] mb-8">
@@ -538,7 +538,7 @@ export default async function AldeiaPage() {
             ].map((t) => (
               <span
                 key={t}
-                className="bg-purple-mid/[.5] border border-purple-mid text-white/80 px-4 py-[7px] rounded-full text-[13px] font-medium hover:bg-purple-mid/[.7] hover:text-white transition-colors"
+                className="bg-purple-mid/[.5] text-white/80 px-4 py-[7px] rounded-full text-[13px] font-medium hover:bg-purple-mid/[.7] hover:text-white transition-colors"
               >
                 {t}
               </span>
