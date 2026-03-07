@@ -3,32 +3,58 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const WHATSAPP_URL = "https://chat.whatsapp.com/IIZ3pwcrKgjEvy7nK7cTOQ";
+import { WHATSAPP_URL } from "@/lib/config";
 
-export default function AldeiaQR() {
+export default function AldeiaQR({ fullWidth = false, theme = "dark" }: { fullWidth?: boolean; theme?: "dark" | "light" }) {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      {/* Thumbnail — click to expand */}
-      <button
-        onClick={() => setOpen(true)}
-        className="shrink-0 flex flex-col items-center gap-2 bg-white/10 border border-white/20 rounded-[var(--radius)] p-2 hover:bg-white/20 transition-colors cursor-pointer"
-        aria-label="Expand QR code"
-      >
-        <Image
-          src="/images/image-whatsapp-qr.png"
-          alt="WhatsApp QR code"
-          width={120}
-          height={120}
-          className="rounded-md"
-        />
-        <p className="text-[11px] text-white/60 text-center leading-4">
-          Click to view<br />QR code
-        </p>
-      </button>
+      {fullWidth ? (
+        /* Wide banner version */
+        <button
+          onClick={() => setOpen(true)}
+          className={`w-full flex items-center gap-5 rounded-xl p-4 transition-colors cursor-pointer text-left ${
+            theme === "light"
+              ? "bg-purple border border-purple hover:bg-purple-mid"
+              : "bg-white/[.13] border border-purple/[.35] hover:bg-white/[.18]"
+          }`}
+          aria-label="Expand QR code"
+        >
+          <Image
+            src="/images/image-whatsapp-qr.png"
+            alt="WhatsApp QR code"
+            width={72}
+            height={72}
+            className="rounded-md shrink-0"
+          />
+          <div className="flex-1">
+            <p className="text-sm font-bold text-white mb-1">Join our WhatsApp community</p>
+            <p className="text-[12px] text-white/70 leading-5">Scan the QR code or click to open WhatsApp and join the Aldeia parent group.</p>
+          </div>
+          <span className="text-[11px] text-white/60 shrink-0 pr-1">Click to expand →</span>
+        </button>
+      ) : (
+        /* Thumbnail version */
+        <button
+          onClick={() => setOpen(true)}
+          className="shrink-0 flex flex-col items-center gap-2 bg-white/10 border border-white/20 rounded-[var(--radius)] p-2 hover:bg-white/20 transition-colors cursor-pointer"
+          aria-label="Expand QR code"
+        >
+          <Image
+            src="/images/image-whatsapp-qr.png"
+            alt="WhatsApp QR code"
+            width={120}
+            height={120}
+            className="rounded-md"
+          />
+          <p className="text-[11px] text-white/60 text-center leading-4">
+            Click to view<br />QR code
+          </p>
+        </button>
+      )}
 
-      {/* Lightbox */}
+      {/* Lightbox — shared by both variants */}
       {open && (
         <div
           className="fixed inset-0 z-[500] flex items-center justify-center bg-black/70 backdrop-blur-sm"

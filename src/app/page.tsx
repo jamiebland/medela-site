@@ -5,7 +5,7 @@ import RevealOnScroll from "@/components/RevealOnScroll";
 import CtaBand from "@/components/CtaBand";
 import Newsletter from "@/components/Newsletter";
 import { Puzzle, Smartphone, GraduationCap, MessageCircle, Mail, BookOpen, Star } from "lucide-react";
-import { CALENDLY_URL, ASSET_BASE, SITE_URL, SITE_EMAIL } from "@/lib/config";
+import { CALENDLY_URL, WHATSAPP_URL, ASSET_BASE, SITE_URL, SITE_EMAIL } from "@/lib/config";
 import JsonLd from "@/components/JsonLd";
 import AldeiaQR from "@/components/AldeiaQR";
 
@@ -476,29 +476,24 @@ export default async function HomePage() {
               learner is easier when you&apos;re not doing it alone.
             </p>
 
-            <div className="flex gap-6 items-start mb-8">
-              <ul className="space-y-3">
-                {[
-                  "Monthly workshops",
-                  "WhatsApp community",
-                  "Fortnightly newsletter",
-                  "Resource library",
-                ].map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-center gap-2.5 text-[14px] text-white/70"
-                  >
-                    <span className="text-purple-light font-bold">
-                      {"\u2713"}
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              {/* WhatsApp QR code */}
-              <AldeiaQR />
-            </div>
+            <ul className="space-y-3 mb-8">
+              {[
+                "Monthly workshops",
+                "WhatsApp community",
+                "Fortnightly newsletter",
+                "Resource library",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="flex items-center gap-2.5 text-[14px] text-white/70"
+                >
+                  <span className="text-purple-light font-bold">
+                    {"\u2713"}
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
 
             <div className="flex flex-wrap gap-3">
               <Link
@@ -508,7 +503,7 @@ export default async function HomePage() {
                 Explore Aldeia &rarr;
               </Link>
               <a
-                href="https://chat.whatsapp.com/IIZ3pwcrKgjEvy7nK7cTOQ"
+                href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-white text-purple-dark px-6 py-3 rounded-full text-sm font-bold hover:bg-white/90 hover:-translate-y-0.5 transition-all"
@@ -518,7 +513,8 @@ export default async function HomePage() {
             </div>
           </div>
 
-          {/* Right — 2x2 cards */}
+          {/* Right — 2x2 cards + QR */}
+          <div className="flex flex-col gap-4">
           <div className="grid grid-cols-2 gap-4">
             {[
               {
@@ -554,6 +550,8 @@ export default async function HomePage() {
                 </div>
               </RevealOnScroll>
             ))}
+          </div>
+          <AldeiaQR fullWidth />
           </div>
         </div>
       </section>

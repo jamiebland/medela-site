@@ -25,6 +25,9 @@ import {
   Video,
   Smile,
 } from "lucide-react";
+import { WHATSAPP_URL } from "@/lib/config";
+import AldeiaCircles from "@/components/AldeiaCircles";
+import AldeiaQR from "@/components/AldeiaQR";
 
 export const metadata: Metadata = {
   title: "Aldeia — Parent Community",
@@ -41,19 +44,9 @@ export default function AldeiaPage() {
       <section
         id="community"
         className="relative overflow-hidden min-h-[88vh] flex items-center px-6 md:px-20 py-16 md:py-[92px]"
-        style={{
-          background: "linear-gradient(148deg, #2a1d4e 0%, #180f38 100%)",
-        }}
+        style={{ background: "var(--color-purple)" }}
       >
-        {/* Decorative rings */}
-        <div className="absolute -right-[120px] -top-[120px] w-[580px] h-[580px] rounded-full border border-purple/[.10] pointer-events-none" />
-        <div className="absolute right-10 top-10 w-[320px] h-[320px] rounded-full border border-purple/[.06] pointer-events-none" />
-
-        {/* Floating particles */}
-        <div className="absolute w-1.5 h-1.5 rounded-full bg-purple/30 top-[22%] left-[8%] animate-[drift_8s_ease-in-out_infinite]" />
-        <div className="absolute w-1 h-1 rounded-full bg-purple-light/20 top-[60%] left-[14%] animate-[drift_8s_ease-in-out_infinite_1.5s]" />
-        <div className="absolute w-2 h-2 rounded-full bg-purple/15 top-[38%] left-[3%] animate-[drift_8s_ease-in-out_infinite_3s]" />
-        <div className="absolute w-[5px] h-[5px] rounded-full bg-purple-light/25 top-[75%] left-[22%] animate-[drift_8s_ease-in-out_infinite_0.8s]" />
+        <AldeiaCircles />
 
         <div className="max-w-[1180px] mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-[72px] items-center relative z-10">
           {/* Left column */}
@@ -82,8 +75,10 @@ export default function AldeiaPage() {
             </p>
             <div className="flex items-center gap-2.5 flex-wrap mb-10">
               <a
-                href="#newsletter"
-                className="inline-flex items-center gap-[7px] bg-purple text-white px-[26px] py-[13px] rounded-full text-sm font-semibold shadow-[0_6px_20px_rgba(109,94,165,.32)] hover:bg-purple-dark transition-all hover:-translate-y-0.5"
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-[7px] bg-purple-dark text-white px-[26px] py-[13px] rounded-full text-sm font-semibold shadow-[0_6px_20px_rgba(74,61,122,.45)] hover:bg-purple-deep transition-all hover:-translate-y-0.5"
               >
                 Join the community &rarr;
               </a>
@@ -96,7 +91,8 @@ export default function AldeiaPage() {
             </div>
           </div>
 
-          {/* Feature cards — right column */}
+          {/* Feature cards + QR — right column */}
+          <div className="flex flex-col gap-3">
           <div className="grid grid-cols-2 gap-3">
             {[
               {
@@ -122,7 +118,7 @@ export default function AldeiaPage() {
             ].map((c) => (
               <div
                 key={c.title}
-                className="bg-white/[.055] border border-purple/[.18] rounded-xl p-5 hover:bg-white/[.09] hover:-translate-y-[3px] transition-all"
+                className="bg-white/[.13] border border-purple/[.35] rounded-xl p-5 hover:bg-white/[.18] hover:-translate-y-[3px] transition-all"
               >
                 <div className="text-purple-light mb-2.5">{c.ico}</div>
                 <h4 className="text-sm font-bold text-white mb-[5px] tracking-tight">
@@ -133,6 +129,7 @@ export default function AldeiaPage() {
                 </p>
               </div>
             ))}
+          </div>
           </div>
         </div>
       </section>
@@ -260,6 +257,9 @@ export default function AldeiaPage() {
                     </p>
                   </div>
                 ))}
+              </div>
+              <div className="mt-3">
+                <AldeiaQR fullWidth theme="light" />
               </div>
             </RevealOnScroll>
           </div>
@@ -426,44 +426,31 @@ export default function AldeiaPage() {
             you leave with something you can actually use.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-[18px] mt-12">
-            {/* Workshop 1 — Upcoming */}
+          <div className="max-w-md mx-auto mt-12">
             <RevealOnScroll>
-              <div className="bg-white rounded-[18px] shadow-[0_2px_12px_rgba(42,29,78,.06)] overflow-hidden motion-safe:hover:-translate-y-[5px] hover:shadow-[0_4px_32px_rgba(42,29,78,.10)] transition-all flex flex-col">
+              <div className="bg-white rounded-[18px] shadow-[0_2px_12px_rgba(42,29,78,.06)] overflow-hidden flex flex-col">
                 <div
                   className="px-[22px] pt-6 pb-5 relative overflow-hidden"
-                  style={{
-                    background:
-                      "linear-gradient(140deg, #2a1d4e, #4a3d7a)",
-                  }}
+                  style={{ background: "linear-gradient(140deg, #2a1d4e, #4a3d7a)" }}
                 >
                   <div className="absolute -right-[18px] -top-[18px] w-[100px] h-[100px] rounded-full bg-white/[.05]" />
-                  <div className="inline-flex items-center gap-[5px] px-2.5 py-1 rounded-full text-[10px] font-bold tracking-[.06em] uppercase mb-3.5 w-fit bg-[rgba(232,168,76,.2)] text-[#e8a84c] border border-[rgba(232,168,76,.3)]">
-                    ● Booking open
+                  <div className="inline-flex items-center gap-[5px] px-2.5 py-1 rounded-full text-[10px] font-bold tracking-[.06em] uppercase mb-3.5 w-fit bg-purple/[.25] text-purple-light border border-purple/[.3]">
+                    Date TBC — join the waitlist
                   </div>
                   <h3 className="text-base font-bold text-white leading-[1.3] mb-2 tracking-tight">
                     Understanding Your Child&apos;s Psychometric Report
                   </h3>
                   <div className="text-xs text-white/70">
-                    Tue 18 March 2026 · 7:00 PM Lisbon
+                    Coming soon · Date to be confirmed
                   </div>
                 </div>
                 <div className="px-[22px] pt-5 pb-[22px] flex-1 flex flex-col">
-                  <p className="text-[13px] text-[#4a4468] leading-[1.7] mb-4 flex-1">
+                  <p className="text-[13px] text-[#4a4468] leading-[1.7] mb-5 flex-1">
                     Your child has had a psychometric assessment &ndash; now
                     what? Jamille walks through what the scores actually mean,
                     what to ask the school, and how to use the report to get the
                     right support in place.
                   </p>
-                  <div className="text-[11px] text-[#8a86a8] mb-1.5">
-                    14 spots remaining
-                  </div>
-                  <div className="bg-purple/[.1] rounded h-1 mb-3.5 overflow-hidden">
-                    <div
-                      className="h-full bg-purple rounded"
-                      style={{ width: "53%" }}
-                    />
-                  </div>
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     <span className="flex items-center gap-[5px] bg-purple-xpale border border-purple/[.15] px-2.5 py-1 rounded-full text-[11px] font-medium text-purple-dark">
                       <Monitor className="w-3 h-3 inline-block -mt-px" /> Online
@@ -486,194 +473,23 @@ export default function AldeiaPage() {
                       />
                     </div>
                     <div>
-                      <div className="text-xs font-semibold text-[#1c2133]">
-                        Jamille
-                      </div>
-                      <div className="text-[11px] text-[#8a86a8]">
-                        Co-founder · Aldeia
-                      </div>
+                      <div className="text-xs font-semibold text-[#1c2133]">Jamille</div>
+                      <div className="text-[11px] text-[#8a86a8]">Co-founder · Aldeia</div>
                     </div>
                   </div>
                   <div className="flex items-center justify-between gap-2.5 pt-3.5 border-t border-purple/[.1]">
                     <div className="text-lg font-extrabold text-purple-dark tracking-tight">
                       &euro;20{" "}
-                      <span className="text-xs font-normal text-[#8a86a8]">
-                        per family
-                      </span>
+                      <span className="text-xs font-normal text-[#8a86a8]">per family</span>
                     </div>
                     <a
-                      href="#"
+                      href="https://buy.stripe.com/eVq4gzdwX4xWfJJa27dnW00"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-[13px] font-semibold text-white bg-purple-dark px-4 py-2 rounded-full hover:bg-purple-deep transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-dark focus-visible:ring-offset-2"
                     >
-                      Register &rarr;
+                      Join waitlist &rarr;
                     </a>
-                  </div>
-                </div>
-              </div>
-            </RevealOnScroll>
-
-            {/* Workshop 2 — Upcoming */}
-            <RevealOnScroll delay={1}>
-              <div className="bg-white rounded-[18px] shadow-[0_2px_12px_rgba(42,29,78,.06)] overflow-hidden motion-safe:hover:-translate-y-[5px] hover:shadow-[0_4px_32px_rgba(42,29,78,.10)] transition-all flex flex-col">
-                <div
-                  className="px-[22px] pt-6 pb-5 relative overflow-hidden"
-                  style={{
-                    background:
-                      "linear-gradient(140deg, #2a1d4e, #4a3d7a)",
-                  }}
-                >
-                  <div className="absolute -right-[18px] -top-[18px] w-[100px] h-[100px] rounded-full bg-white/[.05]" />
-                  <div className="inline-flex items-center gap-[5px] px-2.5 py-1 rounded-full text-[10px] font-bold tracking-[.06em] uppercase mb-3.5 w-fit bg-[rgba(232,168,76,.2)] text-[#e8a84c] border border-[rgba(232,168,76,.3)]">
-                    ● Booking open
-                  </div>
-                  <h3 className="text-base font-bold text-white leading-[1.3] mb-2 tracking-tight">
-                    Dyslexia at Home: Practical Strategies That Actually Work
-                  </h3>
-                  <div className="text-xs text-white/70">
-                    Thu 3 April 2026 · 7:30 PM Lisbon
-                  </div>
-                </div>
-                <div className="px-[22px] pt-5 pb-[22px] flex-1 flex flex-col">
-                  <p className="text-[13px] text-[#4a4468] leading-[1.7] mb-4 flex-1">
-                    Rebecca shares the at-home techniques she uses in her own
-                    sessions &ndash; from multisensory reading approaches to
-                    managing the emotional side of homework battles. Honest,
-                    practical, parent-friendly.
-                  </p>
-                  <div className="text-[11px] text-[#8a86a8] mb-1.5">
-                    21 spots remaining
-                  </div>
-                  <div className="bg-purple/[.1] rounded h-1 mb-3.5 overflow-hidden">
-                    <div
-                      className="h-full bg-purple rounded"
-                      style={{ width: "30%" }}
-                    />
-                  </div>
-                  <div className="flex flex-wrap gap-1.5 mb-4">
-                    <span className="flex items-center gap-[5px] bg-purple-xpale border border-purple/[.15] px-2.5 py-1 rounded-full text-[11px] font-medium text-purple-dark">
-                      <Monitor className="w-3 h-3 inline-block -mt-px" /> Online
-                    </span>
-                    <span className="flex items-center gap-[5px] bg-purple-xpale border border-purple/[.15] px-2.5 py-1 rounded-full text-[11px] font-medium text-purple-dark">
-                      <Clock className="w-3 h-3 inline-block -mt-px" /> 60 mins
-                    </span>
-                    <span className="flex items-center gap-[5px] bg-purple-xpale border border-purple/[.15] px-2.5 py-1 rounded-full text-[11px] font-medium text-purple-dark">
-                      <Video className="w-3 h-3 inline-block -mt-px" /> Recorded
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className="w-[30px] h-[30px] rounded-full overflow-hidden bg-purple-pale shrink-0">
-                      <Image
-                        src="/images/team/rebecca-avatar-sm.jpg"
-                        alt="Rebecca"
-                        width={30}
-                        height={30}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div>
-                      <div className="text-xs font-semibold text-[#1c2133]">
-                        Rebecca
-                      </div>
-                      <div className="text-[11px] text-[#8a86a8]">
-                        Educational Therapist · Medela
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between gap-2.5 pt-3.5 border-t border-purple/[.1]">
-                    <div className="text-lg font-extrabold text-purple-dark tracking-tight">
-                      &euro;15{" "}
-                      <span className="text-xs font-normal text-[#8a86a8]">
-                        per family
-                      </span>
-                    </div>
-                    <a
-                      href="#"
-                      className="text-[13px] font-semibold text-white bg-purple-dark px-4 py-2 rounded-full hover:bg-purple-deep transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-dark focus-visible:ring-offset-2"
-                    >
-                      Register &rarr;
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </RevealOnScroll>
-
-            {/* Workshop 3 — Coming soon */}
-            <RevealOnScroll delay={2}>
-              <div className="bg-white rounded-[18px] shadow-[0_2px_12px_rgba(42,29,78,.06)] overflow-hidden motion-safe:hover:-translate-y-[5px] hover:shadow-[0_4px_32px_rgba(42,29,78,.10)] transition-all flex flex-col">
-                <div
-                  className="px-[22px] pt-6 pb-5 relative overflow-hidden"
-                  style={{
-                    background:
-                      "linear-gradient(140deg, #2a1d4e, #4a3d7a)",
-                  }}
-                >
-                  <div className="absolute -right-[18px] -top-[18px] w-[100px] h-[100px] rounded-full bg-white/[.05]" />
-                  <div className="inline-flex items-center gap-[5px] px-2.5 py-1 rounded-full text-[10px] font-bold tracking-[.06em] uppercase mb-3.5 w-fit bg-purple/[.25] text-purple-light border border-purple/[.3]">
-                    Coming soon
-                  </div>
-                  <h3 className="text-base font-bold text-white leading-[1.3] mb-2 tracking-tight">
-                    Navigating the Portuguese School System as an Expat Family
-                  </h3>
-                  <div className="text-xs text-white/70">
-                    May 2026 · Date TBC
-                  </div>
-                </div>
-                <div className="px-[22px] pt-5 pb-[22px] flex-1 flex flex-col">
-                  <p className="text-[13px] text-[#4a4468] leading-[1.7] mb-4 flex-1">
-                    The Portuguese education system is complicated. Combine that
-                    with a child who needs extra support, and it can feel
-                    overwhelming. This workshop breaks it down step by step, with
-                    a panel of experienced parents and educators.
-                  </p>
-                  <div className="text-[11px] text-[#8a86a8] mb-1.5">
-                    Join the waitlist
-                  </div>
-                  <div className="bg-purple/[.1] rounded h-1 mb-3.5 overflow-hidden">
-                    <div
-                      className="h-full bg-purple rounded"
-                      style={{ width: "0%" }}
-                    />
-                  </div>
-                  <div className="flex flex-wrap gap-1.5 mb-4">
-                    <span className="flex items-center gap-[5px] bg-purple-xpale border border-purple/[.15] px-2.5 py-1 rounded-full text-[11px] font-medium text-purple-dark">
-                      <Monitor className="w-3 h-3 inline-block -mt-px" /> Online
-                    </span>
-                    <span className="flex items-center gap-[5px] bg-purple-xpale border border-purple/[.15] px-2.5 py-1 rounded-full text-[11px] font-medium text-purple-dark">
-                      <Clock className="w-3 h-3 inline-block -mt-px" /> 90 mins
-                    </span>
-                    <span className="flex items-center gap-[5px] bg-purple-xpale border border-purple/[.15] px-2.5 py-1 rounded-full text-[11px] font-medium text-purple-dark">
-                      <Video className="w-3 h-3 inline-block -mt-px" /> Recorded
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className="w-[30px] h-[30px] rounded-full overflow-hidden bg-purple-pale shrink-0">
-                      <Image
-                        src="/images/team/jamille-avatar-sm.jpg"
-                        alt="Jamille"
-                        width={30}
-                        height={30}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div>
-                      <div className="text-xs font-semibold text-[#1c2133]">
-                        Jamille + Guest panel
-                      </div>
-                      <div className="text-[11px] text-[#8a86a8]">
-                        Co-founder · Aldeia
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between gap-2.5 pt-3.5 border-t border-purple/[.1]">
-                    <div className="text-lg font-extrabold text-purple-dark tracking-tight">
-                      &euro;20{" "}
-                      <span className="text-xs font-normal text-[#8a86a8]">
-                        per family
-                      </span>
-                    </div>
-                    <span className="text-[13px] font-semibold text-purple-dark bg-purple/[.2] px-4 py-2 rounded-full cursor-default whitespace-nowrap">
-                      Waitlist &rarr;
-                    </span>
                   </div>
                 </div>
               </div>
