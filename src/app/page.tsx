@@ -86,9 +86,7 @@ export default async function HomePage() {
           </h1>
 
           <p className="text-base md:text-[17px] text-text-mid leading-7 mb-8 max-w-[480px]">
-            Specialist educational therapy and digital learning programmes that
-            help children build confidence, close gaps, and fall in love with
-            learning &ndash; wherever they are.
+            Specialist educational therapy that helps children overcome learning challenges, strengthen core academic skills, and build lasting confidence at school.
           </p>
 
           <div className="flex flex-wrap gap-3 mb-8">
@@ -128,7 +126,7 @@ export default async function HomePage() {
             style={{ boxShadow: "var(--shadow)" }}
           >
             <p className="text-[28px] font-extrabold text-purple leading-none">
-              250+
+              40+
             </p>
             <p className="text-[12px] text-text-light mt-1">
               Families supported
@@ -175,7 +173,7 @@ export default async function HomePage() {
               What we offer
             </div>
             <h2 className="text-2xl md:text-[36px] font-extrabold text-text leading-[1.15] tracking-tight">
-              Two ways to support your child&apos;s learning
+              How we can support your child&apos;s learning
             </h2>
           </div>
 
@@ -194,9 +192,9 @@ export default async function HomePage() {
                     One-to-One Educational Therapy
                   </h3>
                   <p className="text-[14px] text-white/65 leading-6">
-                    Personalised sessions tailored to your child&apos;s unique
-                    learning profile while building skills, confidence, and
-                    independence.
+                    Individual sessions to build with your child&apos;s unique
+                    learning challenges while still building the skills, confidence, and
+                    independence needed for school success.
                   </p>
                 </div>
                 <div className="bg-white px-7 py-7">
@@ -240,11 +238,10 @@ export default async function HomePage() {
                     <Smartphone className="w-5 h-5" />
                   </div>
                   <h3 className="text-xl font-extrabold mb-2">
-                    Digital Learning Programmes
+                    Practical resources parents can use at home
                   </h3>
                   <p className="text-[14px] text-white/65 leading-6">
-                    Structured, therapist-designed digital resources your child
-                    can work through at home or at their own pace.
+                    Practical, therapist-designed tools that help parents support reading, writing and learning at home, without turning homework into a daily battle.
                   </p>
                 </div>
                 <div className="bg-white px-7 py-7">
@@ -333,12 +330,12 @@ export default async function HomePage() {
                   {
                     num: "02",
                     title: "Design a personalised plan",
-                    desc: "Every therapy plan is built around your child, not a one-size-fits-all programme. Goals are meaningful and achievable.",
+                    desc: "Every therapy plan is built around your child, not a one-size-fits-all programme. We share the goals of the parent, the child and school.",
                   },
                   {
                     num: "03",
                     title: "Build confidence & independence",
-                    desc: "Through targeted, evidence-based strategies, we help your child develop the skills and self-belief to thrive.",
+                    desc: "Through targeted, evidence-based strategies, we help your child develop the skills and self-belief to thrive in and out of school.",
                   },
                 ].map((step) => (
                   <div key={step.num} className="flex gap-4">
@@ -466,14 +463,16 @@ export default async function HomePage() {
           <div>
             <div className="flex items-center gap-2 text-[11px] tracking-[.12em] uppercase font-bold text-white/60 mb-2.5">
               <span className="block w-[18px] h-0.5 bg-purple-light/50 rounded-sm" />
-              Community
+              A New kind of Community
             </div>
             <h2 className="text-2xl md:text-[36px] font-extrabold leading-[1.15] tracking-tight mb-2">
-              The Aldeia Community
+              Join Aldeia, the parent community.
             </h2>
             <p className="text-[17px] text-white/55 leading-7 mb-8 max-w-[440px]">
               A village of support for every family. Raising a
               learner is easier when you&apos;re not doing it alone.
+
+              Aldeia brings together parents, educators, and specialists in a warm, support space.
             </p>
 
             <ul className="space-y-3 mb-8">
@@ -520,12 +519,12 @@ export default async function HomePage() {
               {
                 icon: <GraduationCap className="w-5 h-5" />,
                 title: "Workshops",
-                desc: "Monthly live sessions on topics that matter to your family",
+                desc: "Monthly sessions with specialists in dyslexia, ADHD, occupational therapy & more.",
               },
               {
                 icon: <MessageCircle className="w-5 h-5" />,
                 title: "WhatsApp Group",
-                desc: "Connect with other parents on the same journey",
+                desc: "Real parents sharing what works, what doesn't, and what they wish they knew",
               },
               {
                 icon: <Mail className="w-5 h-5" />,

@@ -21,7 +21,7 @@ export default async function BlogPage() {
       {/* Hero */}
       <div
         className="relative overflow-hidden px-6 md:px-20 py-18 md:py-20"
-        style={{ background: "linear-gradient(140deg, #1e3a6e 0%, #0e2248 100%)" }}
+        style={{ background: "linear-gradient(270deg, #6a96e0 0%, #80a8eb 100%)" }}
       >
         <div className="absolute -right-20 -top-20 w-[440px] h-[440px] rounded-full border border-blue/[.09] pointer-events-none" />
         <div className="max-w-[1180px] mx-auto relative z-10">
@@ -31,10 +31,10 @@ export default async function BlogPage() {
             Blog
           </div>
           <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-[1.1] tracking-tight max-w-[640px] mb-3.5">
-            Insights &amp; ideas for <span className="text-blue-light">parents &amp; educators</span>
+            Insights &amp; ideas for <span className="text-blue-dark">parents &amp; educators</span>
           </h1>
-          <p className="text-base text-white/55 leading-7 max-w-[520px]">
-            Honest writing about learning differences, educational therapy, and raising confident children &ndash; from Rebecca, Jamille, and the Aldeia community.
+          <p className="text-base md:text-lg text-white/60 leading-7 max-w-[500px] mb-7">
+            Honest writing about learning differences, educational therapy, and raising confident children. From Rebecca, Jamille, and the Aldeia community.
           </p>
         </div>
       </div>

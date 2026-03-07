@@ -1,0 +1,4 @@
+#ignore all .env files, which may contain sensitive information such as API keys and database credentials. These files should not be committed to version control.
+.env
+.env.local
+.env.*

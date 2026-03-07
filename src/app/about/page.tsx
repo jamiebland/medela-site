@@ -22,28 +22,28 @@ const faqItems = [
   {
     question: "How do I know if my child needs educational therapy?",
     answer:
-      "If your child is struggling with reading, writing, maths, or general confidence in school — and traditional tutoring hasn't made a lasting difference — educational therapy may help. We look beyond surface-level symptoms to understand how your child learns, then build a programme around their specific needs. A free introductory call is the best way to find out if we're the right fit.",
+      "If your child is struggling with reading, writing, maths, or general confidence in school and traditional tutoring hasn't made a lasting difference, educational therapy may help. We look beyond surface-level symptoms to understand how your child learns, then build a programme around their specific needs. A free introductory call is the best way to find out if we're the right fit.",
   },
   {
     question:
       "What's the difference between a tutor and an educational therapist?",
     answer:
-      "A tutor typically focuses on curriculum content — helping a child keep up with schoolwork. An educational therapist addresses the underlying learning processes: how a child takes in, stores, and retrieves information. We use evidence-based strategies to build foundational skills like phonological awareness, working memory, and self-regulation, so progress sticks long-term.",
+      "A tutor typically focuses on curriculum content, helping a child keep up with schoolwork. An educational therapist addresses the underlying learning processes: how a child takes in, stores, and retrieves information. We use evidence-based strategies to build foundational skills like phonological awareness, working memory, and self-regulation, so progress sticks long-term.",
   },
   {
     question: "How long are sessions, and how often?",
     answer:
-      "Sessions are typically 50 minutes, once or twice a week. The frequency depends on your child's needs and schedule. We'll recommend a cadence after the initial assessment, but we're always flexible — life with kids is unpredictable!",
+      "Sessions are typically one hour and depending on the child's needs anywehre between once per week to once a day. The frequency depends on your child's needs and schedule. We'll recommend a cadence after the initial assessment, but we're always flexible as we know life with kids can be unpredictable!",
   },
   {
     question: "Do you offer online sessions?",
     answer:
-      "Yes. We offer both in-person sessions in Lisbon and online sessions for families across Portugal and beyond. Our online sessions use interactive tools and screen-sharing to keep things engaging — many children actually prefer them.",
+      "Yes. We offer both in-person sessions in the Greater Lisbon Area (Lisbon, Cascais, Sintra) and online sessions for families across Portugal and beyond. Our online sessions use interactive tools and screen-sharing to keep things engaging and fun.",
   },
   {
     question: "What age range do you work with?",
     answer:
-      "We work with children and young people from age 5 through to 18. Our approach is adapted for each developmental stage, from early literacy through to exam preparation and study skills for older students.",
+      "We work with children from age 5 through to 18. Our approach is adapted for each developmental stage, from early literacy through to exam preparation, executive coaching and study skills for older students.",
   },
   {
     question: "Will you liaise with my child's school?",
@@ -54,12 +54,12 @@ const faqItems = [
     question:
       "Are the digital resources suitable for children with learning differences?",
     answer:
-      "Yes — they're designed with learning differences in mind. Our resources use structured, multi-sensory approaches with clear visuals, dyslexia-friendly fonts, and step-by-step scaffolding. They're created by Rebecca based on the same evidence-based methods used in her one-to-one sessions.",
+      "Yes, they're designed with learning differences in mind. Our resources use structured, multi-sensory approaches with clear visuals, dyslexia-friendly fonts, and step-by-step scaffolding. They're created by the Medela team based on the same evidence-based methods used in their one-to-one sessions.",
   },
   {
     question: "What is Aldeia, and how does it relate to Medela?",
     answer:
-      "Aldeia (Portuguese for 'village') is our community arm. It brings parents, educators, and specialists together through workshops, meetups, and online events. While Medela focuses on one-to-one educational therapy and resources, Aldeia builds the wider support network — because raising a child with learning differences is easier with a village around you.",
+      "Aldeia (Portuguese for 'village') is our parent community. It brings parents, educators, and specialists together through workshops, meetups, and online events. While Medela focuses on one-to-one educational therapy and resources, Aldeia builds the wider support network, because raising a child with learning differences is easier with a village around you.",
   },
 ];
 
@@ -90,9 +90,12 @@ export default async function AboutPage() {
           </RevealOnScroll>
           <RevealOnScroll delay={1}>
             <p className="text-base md:text-lg text-white/80 leading-7 max-w-[460px]">
-              Medela Learning Support was founded by Rebecca to give
-              every child access to specialist, compassionate educational
-              therapy. Whether in Lisbon, across Portugal, or online.
+              Medela Learning Support was founded to give
+              every child access to specialized, compassionate educational
+              therapy. 
+              We have a combined 15+ years worth of experience with children with dyslexia, dyscalculia, ADHD, and language processing difficulties. 
+              We know that with the right support, every child can make meaningful progress.
+              Whether in Lisbon Portugal or online. 
             </p>
           </RevealOnScroll>
         </div>
@@ -145,9 +148,9 @@ export default async function AboutPage() {
                 accentClass="text-blue-btn"
                 bio={
                   <>
-                    <p>I began my studies with a focus on psychology, but quickly realised that I wanted to be directly involved in the solutions and journeys of children&apos;s learning, rather than in assessment or counselling. This led me to teaching and, eventually, to specialising as an education therapist.</p>
+                    <p>I began my studies with a focus on psychology, but quickly realised that I wanted to be directly involved in the solutions and journeys of children&apos;s learning, rather than in assessments or counselling. This led me to studying teaching and, eventually, to specialising as an education therapist.</p>
                     <p>My early work involved partnering with universities and parents to support students with reading and writing difficulties. This experience highlighted the importance of individualised support and creative teaching methods in improving children&apos;s engagement and understanding. Here, the dream for Medela Learning Support began.</p>
-                    <p>My journey took me from working at an independent school in Johannesburg, South Africa — where I provided one-on-one academic support to remedial learners — to teaching at an international school in Portugal. Now I am fulfilling my dream, working as a private education specialist.</p>
+                    <p>My journey took me from working at an independent school in Johannesburg, South Africa, where I provided one-on-one academic support to remedial learners, to teaching at an international school in Portugal. Now I am fulfilling my dream, working as a private education specialist.</p>
                     <p>I am also currently working toward a Master&apos;s degree with a specific focus on dyslexia. This continues to allow me to stay at the forefront of research and best practice, ensuring that the support I offer remains both deeply informed and highly effective.</p>
                   </>
                 }
@@ -169,10 +172,10 @@ export default async function AboutPage() {
                     Rebecca
                   </h3>
                   <p className="text-sm font-semibold text-blue-btn mb-3">
-                    Educational Therapist &amp; Founder
+                    Educational Therapist
                   </p>
                   <p className="text-sm text-text-mid leading-7 mb-4">
-                    Rebecca is a specialist educational therapist with over a decade
+                    Rebecca is a specialist educational therapist with over 7+ years
                     of experience supporting children with dyslexia,
                     dyscalculia, ADHD, and language processing difficulties. She
                     designs every programme around the individual child. 
@@ -220,10 +223,10 @@ export default async function AboutPage() {
                 accentClass="text-purple-dark"
                 bio={
                   <>
-                    <p>Born in Brazil and raised with a deep appreciation for community and connection, Jamille&apos;s path to Medela was shaped by years of firsthand experience within international schools across Portugal.</p>
-                    <p>As a parent herself and someone embedded in Lisbon&apos;s international school community, she witnessed something that couldn&apos;t be ignored: the isolation and confusion experienced by families when a child begins to struggle. Without local networks, language fluency, or knowledge of the Portuguese system, many parents were left navigating learning difficulties entirely alone.</p>
-                    <p>This gap — between what families needed and what was available — became Jamille&apos;s driving force. She co-founded Aldeia with a clear mission: to build a village of support around every family. Through workshops, community events, a growing WhatsApp network, and curated resources, Aldeia creates the connections that make a real difference.</p>
-                    <p>Today, Jamille continues to grow Aldeia into a thriving network of parents, educators, and specialists — united by the belief that no family should face learning challenges alone.</p>
+                    <p>I was born in Brazil and raised with a deep appreciation for community and connection, my path to Medela was shaped by years of firsthand experience within international schools across Portugal.</p>
+                    <p>As an education specialist embedded in Lisbon&apos;s international school community, I witnessed firsthand the isolation and confusion experienced by families when a child begins to struggle. Without local networks, language fluency, or knowledge of the international education system, many parents were left navigating learning difficulties entirely alone.</p>
+                    <p>This gap, between what families needed and what was available has become my driving force. I wanted to start Aldeia with a clear mission: to build a village of support around every family. Through workshops, community events, a growing WhatsApp network, and curated resources, Aldeia creates the connections that make a real difference.</p>
+                    <p>With the goal to grow Aldeia into a thriving network of parents, educators, and specialists, I believe that no family should face learning challenges alone.</p>
                   </>
                 }
               >
@@ -236,7 +239,7 @@ export default async function AboutPage() {
                     className="object-cover"
                   />
                   <span className="absolute top-4 left-4 bg-purple-dark text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
-                    Resource Creator &amp; Co-founder of Aldeia
+                    Co-founder of Aldeia
                   </span>
                 </div>
                 <div className="p-6 md:p-8">
@@ -244,22 +247,23 @@ export default async function AboutPage() {
                     Jamille
                   </h3>
                   <p className="text-sm font-semibold text-purple-dark mb-3">
-                    Resource Creator &amp; Co-founder of Aldeia
+                    Psychopedagogy Specialist
                   </p>
                   <p className="text-sm text-text-mid leading-7 mb-4">
                     Jamille brings the community to life. As the driving force
                     behind Aldeia, she connects parents, educators, and
                     specialists through workshops, events, and shared resources.
-                    Her background in community development and family support
-                    means she understands that learning differences affect the
+                    Her background as an educational specialist alongside her skills in community development and family support
+                    mean that she understands that learning differences affect the
                     whole family, not just the child.
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {[
                       "Community Building",
                       "Parent Workshops",
+                      "Parental Support",
+                      "Dyscalculia",
                       "Aldeia Events",
-                      "Family Support",
                       "Partnerships",
                     ].map((tag) => (
                       <span
@@ -271,8 +275,7 @@ export default async function AboutPage() {
                     ))}
                   </div>
                   <p className="text-[12px] text-text-light leading-5">
-                    Community Development &middot; Family Support Specialist
-                    &middot; Aldeia Founder
+                    Bachelor of Education &middot; Psychopedagogy Specialist
                   </p>
                   <a
                     href="mailto:jamille@medelalearning.com"
@@ -308,7 +311,7 @@ export default async function AboutPage() {
               {
                 icon: <Sprout className="w-6 h-6 text-blue-btn" />,
                 title: "Every child can grow",
-                desc: "We believe that with the right support, every child can make meaningful progress — regardless of diagnosis or starting point.",
+                desc: "We believe that with the right support, every child can make meaningful progress regardless of diagnosis or starting point.",
               },
               {
                 icon: <Puzzle className="w-6 h-6 text-blue-btn" />,
@@ -323,7 +326,7 @@ export default async function AboutPage() {
               {
                 icon: <Handshake className="w-6 h-6 text-blue-btn" />,
                 title: "Parents are partners",
-                desc: "You know your child best. We work alongside families — sharing strategies, celebrating wins, and adapting together.",
+                desc: "You know your child best. We work alongside families, sharing strategies, celebrating wins, and adapting together.",
               },
               {
                 icon: <BookOpen className="w-6 h-6 text-blue-btn" />,
@@ -381,7 +384,7 @@ export default async function AboutPage() {
                 {
                   step: "02",
                   title: "Learning profile assessment",
-                  desc: "A thorough evaluation of how your child learns — covering literacy, numeracy, memory, attention, and emotional wellbeing.",
+                  desc: "A thorough evaluation of how your child learns. We cover literacy, numeracy, memory, attention, and emotional wellbeing.",
                 },
                 {
                   step: "03",

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import RevealOnScroll from "@/components/RevealOnScroll";
-import Newsletter, { NewsletterForm } from "@/components/Newsletter";
 import {
   Globe,
   Mail,
@@ -28,6 +27,7 @@ import {
 import { WHATSAPP_URL } from "@/lib/config";
 import AldeiaCircles from "@/components/AldeiaCircles";
 import AldeiaQR from "@/components/AldeiaQR";
+import { getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
   title: "Aldeia — Parent Community",
@@ -35,7 +35,8 @@ export const metadata: Metadata = {
     "Join Aldeia — a free parent community for families navigating learning differences in Portugal. Workshops, a WhatsApp group, and a fortnightly newsletter.",
 };
 
-export default function AldeiaPage() {
+export default async function AldeiaPage() {
+  const posts = (await getAllPosts()).slice(0, 3);
   return (
     <div style={{ background: "#f5f3fa" }}>
       {/* ════════════════════════════════════════
@@ -70,7 +71,7 @@ export default function AldeiaPage() {
             <p className="text-base text-white/[.72] leading-7 max-w-[440px] mb-8">
               Aldeia is a warm, honest community for parents raising children
               with learning differences in Portugal. Expert workshops, a
-              supportive WhatsApp group, and a fortnightly newsletter &ndash; all
+              supportive WhatsApp group, and a fortnightly newsletter. All
               in one place.
             </p>
             <div className="flex items-center gap-2.5 flex-wrap mb-10">
@@ -98,7 +99,7 @@ export default function AldeiaPage() {
               {
                 ico: <Mail className="w-6 h-6" />,
                 title: "Newsletter",
-                desc: "Fortnightly insights from Rebecca & Jamille. Practical, warm, never generic.",
+                desc: "Fortnightly insights from the Medela team and other guests. Practical, warm, never generic.",
               },
               {
                 ico: <MessageCircle className="w-6 h-6" />,
@@ -108,12 +109,12 @@ export default function AldeiaPage() {
               {
                 ico: <GraduationCap className="w-6 h-6" />,
                 title: "Workshops",
-                desc: "Monthly sessions with psychometrists, OTs, teachers, and speech therapists.",
+                desc: "Regular sessions with psychometrists, OTs, teachers, and speech therapists.",
               },
               {
                 ico: <MapPin className="w-6 h-6" />,
                 title: "Rooted in Lisbon",
-                desc: "Built for raising children in Portugal — whether Portuguese, expat, or both.",
+                desc: "Built for raising children with learning challenges in Portugal and beyond.",
               },
             ].map((c) => (
               <div
@@ -184,7 +185,7 @@ export default function AldeiaPage() {
                     {
                       ico: <Plane className="w-4 h-4" />,
                       title: "Expat families in Portugal",
-                      desc: "Navigating the Portuguese education system — or an international school — as a newcomer, without a support network.",
+                      desc: "Navigating the Portuguese education system, or an international school, as a newcomer, without a support network.",
                     },
                   ].map((r) => (
                     <div
@@ -218,7 +219,7 @@ export default function AldeiaPage() {
                 Why parents join Aldeia
               </h2>
               <p className="text-base text-[#4a4468] leading-7 max-w-[560px]">
-                Community isn&apos;t just nice to have &ndash; it&apos;s often
+                Community isn&apos;t just nice to have, it&apos;s often
                 the thing that makes the difference.
               </p>
               <div className="grid grid-cols-2 gap-3 mt-7">
@@ -226,17 +227,17 @@ export default function AldeiaPage() {
                   {
                     ico: <Handshake className="w-5 h-5" />,
                     title: "Peer support",
-                    desc: "Parents who genuinely understand what you're going through — because they've been there.",
+                    desc: "Parents who genuinely understand what you're going through because they've been there.",
                   },
                   {
                     ico: <Brain className="w-5 h-5" />,
                     title: "Expert access",
-                    desc: "Monthly workshops with specialists you'd usually have to pay privately for an hour with.",
+                    desc: "Regular workshops with specialists you'd usually have to pay privately for an hour with.",
                   },
                   {
                     ico: <ClipboardList className="w-5 h-5" />,
                     title: "Practical guidance",
-                    desc: "Not just theory — real strategies, scripts for school meetings, and step-by-step guides.",
+                    desc: "Not just theory real strategies, scripts for school meetings, and step-by-step guides.",
                   },
                   {
                     ico: <Heart className="w-5 h-5" />,
@@ -279,8 +280,7 @@ export default function AldeiaPage() {
             Everything in one community
           </h2>
           <p className="text-base text-[#4a4468] leading-7 max-w-[560px]">
-            Aldeia is free to join. Once you&apos;re in the newsletter, you get
-            access to everything.
+            Aldeia is free to join the community and access the parents and specialists. Once you&apos;re in you'll be sent the newsletter and kept up to date with future meetups and events.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center mt-13">
@@ -290,7 +290,7 @@ export default function AldeiaPage() {
                 {
                   ico: <Mail className="w-5 h-5" />,
                   title: "Fortnightly newsletter",
-                  desc: "Rebecca and Jamille write every issue personally. Practical tips, workshop recaps, recommended resources, and honest reflections on the realities of supporting a child with learning differences in Portugal.",
+                  desc: "Practical tips, workshop recaps, recommended resources, and honest reflections on the realities of supporting a child with learning differences in Portugal.",
                   delay: 0,
                 },
                 {
@@ -308,7 +308,7 @@ export default function AldeiaPage() {
                 {
                   ico: <BookOpen className="w-5 h-5" />,
                   title: "Aldeia blog & resource library",
-                  desc: "Articles written for parents — not professionals. Honest, readable, and grounded in the specific experience of raising a child with learning differences in Portugal.",
+                  desc: "Articles written for parents, not professionals. Honest, readable, and grounded in the specific experience of raising a child with learning differences in Portugal.",
                   delay: 3,
                 },
               ].map((f) => (
@@ -340,10 +340,10 @@ export default function AldeiaPage() {
                   </div>
                   <div>
                     <h4 className="text-[13px] font-bold text-white">
-                      Aldeia Community
+                      Aldeia - Parent Support Community
                     </h4>
                     <p className="text-[11px] text-white/70 mt-px">
-                      247 members
+                      60+ members
                     </p>
                   </div>
                 </div>
@@ -367,7 +367,7 @@ export default function AldeiaPage() {
                   <div className="self-end max-w-[80%]">
                     <div className="bg-[#dcf8c6] text-[#1a2033] px-3.5 py-2.5 rounded-xl rounded-br-[3px] text-[13px] leading-[1.5]">
                       Yes! We went through this last year. Rebecca actually did a
-                      workshop on this &ndash; the recording should be in the
+                      workshop on this. The recording should be in the
                       drive <Sparkles className="w-3.5 h-3.5 inline-block -mt-px" />
                     </div>
                     <div className="text-[10px] text-[#aaa] mt-[3px] text-right">
@@ -387,7 +387,7 @@ export default function AldeiaPage() {
                   {/* me */}
                   <div className="self-end max-w-[80%]">
                     <div className="bg-[#dcf8c6] text-[#1a2033] px-3.5 py-2.5 rounded-xl rounded-br-[3px] text-[13px] leading-[1.5]">
-                      Also &ndash; Jamille is hosting a Q&amp;A on psychometrics
+                      Also Jamille is hosting a Q&amp;A on psychometrics
                       next month. Definitely worth joining!
                     </div>
                     <div className="text-[10px] text-[#aaa] mt-[3px] text-right">
@@ -435,18 +435,18 @@ export default function AldeiaPage() {
                 >
                   <div className="absolute -right-[18px] -top-[18px] w-[100px] h-[100px] rounded-full bg-white/[.05]" />
                   <div className="inline-flex items-center gap-[5px] px-2.5 py-1 rounded-full text-[10px] font-bold tracking-[.06em] uppercase mb-3.5 w-fit bg-purple/[.25] text-purple-light border border-purple/[.3]">
-                    Date TBC — join the waitlist
+                    Date TBC
                   </div>
                   <h3 className="text-base font-bold text-white leading-[1.3] mb-2 tracking-tight">
-                    Understanding Your Child&apos;s Psychometric Report
+                    Understanding Your Child&apos;s Learning Journey
                   </h3>
                   <div className="text-xs text-white/70">
-                    Coming soon · Date to be confirmed
+                    Coming soon · Book your spot
                   </div>
                 </div>
                 <div className="px-[22px] pt-5 pb-[22px] flex-1 flex flex-col">
                   <p className="text-[13px] text-[#4a4468] leading-[1.7] mb-5 flex-1">
-                    Your child has had a psychometric assessment &ndash; now
+                    Your child has had a psychometric assessment, now
                     what? Jamille walks through what the scores actually mean,
                     what to ask the school, and how to use the report to get the
                     right support in place.
@@ -479,8 +479,8 @@ export default function AldeiaPage() {
                   </div>
                   <div className="flex items-center justify-between gap-2.5 pt-3.5 border-t border-purple/[.1]">
                     <div className="text-lg font-extrabold text-purple-dark tracking-tight">
-                      &euro;20{" "}
-                      <span className="text-xs font-normal text-[#8a86a8]">per family</span>
+                      &euro;10{" "}
+                      <span className="text-xs font-normal text-[#8a86a8]">per person</span>
                     </div>
                     <a
                       href="https://buy.stripe.com/eVq4gzdwX4xWfJJa27dnW00"
@@ -499,17 +499,28 @@ export default function AldeiaPage() {
       </section>
 
       {/* ════════════════════════════════════════
-           PAST WORKSHOPS STRIP
+           UPCOMING TOPICS STRIP
          ════════════════════════════════════════ */}
       <div
-        className="py-13 px-6 md:px-20"
-        style={{
-          background: "linear-gradient(135deg, #2a1d4e 0%, #180f38 100%)",
-        }}
+        className="py-14 px-6 md:px-20 relative overflow-hidden"
+        style={{ background: "var(--color-purple)" }}
       >
-        <div className="max-w-[1180px] mx-auto">
-          <div className="text-[11px] tracking-[.12em] uppercase font-bold text-white/[.35] mb-[18px]">
-            Topics we&apos;ve covered before
+        {/* Static concentric circles */}
+        <svg
+          className="absolute pointer-events-none select-none"
+          style={{ right: "-40px", top: "50%", transform: "translateY(-50%)", width: 420, height: 420, opacity: 0.18 }}
+          viewBox="0 0 420 420"
+          fill="none"
+          aria-hidden="true"
+        >
+          {[50, 100, 150, 200, 250, 300, 350].map((r) => (
+            <circle key={r} cx="210" cy="210" r={r} stroke="white" strokeWidth="1" />
+          ))}
+        </svg>
+
+        <div className="max-w-[1180px] mx-auto relative z-10">
+          <div className="text-[11px] tracking-[.12em] uppercase font-bold text-white/[.45] mb-[18px]">
+            Upcoming topics
           </div>
           <div className="flex flex-wrap gap-2">
             {[
@@ -517,17 +528,17 @@ export default function AldeiaPage() {
               "Reading confidence in early years",
               "School anxiety & school refusal",
               "Occupational therapy basics",
-              "Speech therapy — what to expect",
+              "Speech therapy, what to expect",
               "Dyscalculia demystified",
               "How to have the diagnosis conversation",
               "Supporting bilingual learners",
-              "IEPs & support plans — know your rights",
+              "IEPs & support plans, know your rights",
               "Sensory processing & daily life",
               "Raising a twice-exceptional child",
             ].map((t) => (
               <span
                 key={t}
-                className="bg-white/[.07] border border-purple/[.2] text-white/55 px-4 py-[7px] rounded-full text-[13px] font-medium hover:bg-white/[.12] hover:text-white/80 transition-colors"
+                className="bg-purple-mid/[.5] border border-purple-mid text-white/80 px-4 py-[7px] rounded-full text-[13px] font-medium hover:bg-purple-mid/[.7] hover:text-white transition-colors"
               >
                 {t}
               </span>
@@ -555,62 +566,47 @@ export default function AldeiaPage() {
               href="/blog"
               className="text-sm font-semibold text-purple-dark border-b-[1.5px] border-purple-light pb-0.5"
             >
-              All Aldeia articles &rarr;
+              All articles &rarr;
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {[
-              {
-                ico: <Brain className="w-8 h-8" />,
-                cat: "ADHD",
-                date: "February 2026",
-                title:
-                  "The one thing I wish someone had told me when my son was first diagnosed with ADHD",
-                href: "/blog/adhd-diagnosis-first-steps",
-                delay: 0,
-              },
-              {
-                ico: <School className="w-8 h-8" />,
-                cat: "Schools",
-                date: "January 2026",
-                title:
-                  "How to prepare for a meeting with your child's school — and actually get what you need",
-                href: "/blog/school-meeting-guide",
-                delay: 1,
-              },
-              {
-                ico: <MessageCircle className="w-8 h-8" />,
-                cat: "Community",
-                date: "December 2025",
-                title:
-                  "Why Aldeia exists — and what we hope it becomes",
-                href: "/blog/why-aldeia-exists",
-                delay: 2,
-              },
-            ].map((post) => (
-              <RevealOnScroll
-                key={post.href}
-                delay={post.delay as 0 | 1 | 2}
-              >
+          <div className="grid md:grid-cols-3 gap-7 items-stretch">
+            {posts.map((post, i) => (
+              <RevealOnScroll key={post.slug} delay={i as 0 | 1 | 2} className="h-full">
                 <Link
-                  href={post.href}
-                  className="group bg-white rounded-xl overflow-hidden shadow-[0_2px_12px_rgba(42,29,78,.06)] hover:-translate-y-1 hover:shadow-[0_4px_32px_rgba(42,29,78,.10)] transition-all flex flex-col"
+                  href={`/blog/${post.slug}`}
+                  className="group flex flex-col h-full rounded-[var(--radius-lg)] overflow-hidden border border-black/[.05] bg-white hover:-translate-y-1 transition-all"
+                  style={{ boxShadow: "var(--shadow-sm)" }}
                 >
-                  <div className="h-[162px] bg-purple-pale flex items-center justify-center text-4xl relative overflow-hidden">
-                    {post.ico}
-                    <span className="absolute top-2.5 left-2.5 px-2.5 py-[3px] rounded-full text-[10px] font-bold tracking-[.07em] uppercase bg-purple text-white">
-                      {post.cat}
-                    </span>
+                  <div className="relative h-44 shrink-0 bg-purple-pale flex items-center justify-center">
+                    {post.featuredImage ? (
+                      <Image
+                        src={post.featuredImage}
+                        alt={post.title}
+                        fill
+                        unoptimized
+                        className="object-cover"
+                      />
+                    ) : (
+                      <BookOpen className="w-8 h-8 text-purple" />
+                    )}
+                    {post.category && (
+                      <span className="absolute top-3 left-3 bg-white/90 text-[11px] font-bold text-text-mid uppercase tracking-[.08em] px-2.5 py-1 rounded-full">
+                        {post.category}
+                      </span>
+                    )}
                   </div>
-                  <div className="px-[18px] pt-4 pb-[18px] flex-1 flex flex-col">
-                    <div className="text-[11px] text-[#8a86a8] mb-[5px]">
-                      {post.date}
-                    </div>
-                    <div className="text-sm font-bold text-[#1c2133] leading-[1.35] mb-2 flex-1">
+                  <div className="flex flex-col flex-1 px-5 py-5">
+                    <p className="text-[12px] text-[#8a86a8] mb-2">{post.date}</p>
+                    <h3 className="text-[15px] font-bold text-[#1c2133] leading-snug mb-2 group-hover:text-purple transition-colors">
                       {post.title}
-                    </div>
-                    <span className="text-[13px] font-semibold text-purple-dark flex items-center gap-1 group-hover:gap-2 transition-all">
+                    </h3>
+                    {post.excerpt && (
+                      <p className="text-[13px] text-[#4a4468] leading-6 line-clamp-3 mb-4">
+                        {post.excerpt}
+                      </p>
+                    )}
+                    <span className="mt-auto text-[13px] font-bold text-purple-dark">
                       Read article &rarr;
                     </span>
                   </div>
@@ -621,191 +617,6 @@ export default function AldeiaPage() {
         </div>
       </section>
 
-      {/* ════════════════════════════════════════
-           NEWSLETTER / JOIN
-         ════════════════════════════════════════ */}
-      <div
-        id="newsletter"
-        className="py-16 md:py-[92px] px-6 md:px-20 relative overflow-hidden"
-        style={{
-          background: "linear-gradient(148deg, #2a1d4e 0%, #180f38 100%)",
-        }}
-      >
-        <div className="absolute -left-20 -bottom-20 w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle,rgba(145,129,184,.08)_0%,transparent_70%)] pointer-events-none" />
-        <div className="max-w-[1180px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center relative z-10">
-          {/* Left — what you get */}
-          <div>
-            <div className="flex items-center gap-2 text-[11px] tracking-[.12em] uppercase font-bold text-white/[.38] mb-2.5">
-              <span className="block w-[18px] h-0.5 bg-white/[.28] rounded-sm" />
-              Join for free
-            </div>
-            <h2 className="text-[clamp(22px,3vw,38px)] font-extrabold text-white leading-[1.1] tracking-tight mb-3">
-              Start with the{" "}
-              <span className="font-light text-purple-light">newsletter</span>
-            </h2>
-            <p className="text-[15px] text-white/[.72] leading-7">
-              The fortnightly Aldeia newsletter is the heart of the community.
-              When you sign up, you&apos;ll get the WhatsApp group link in your
-              welcome email &ndash; and access to everything Aldeia has to offer.
-            </p>
-            <div className="flex flex-col gap-2.5 mt-6">
-              {[
-                {
-                  ico: <Mail className="w-5 h-5" />,
-                  content: (
-                    <>
-                      <strong className="text-white/[.85] font-semibold">
-                        What&apos;s in each issue:
-                      </strong>{" "}
-                      practical strategies, workshop recaps, parent stories,
-                      resource recommendations, and honest reflections from Rebecca
-                      &amp; Jamille.
-                    </>
-                  ),
-                },
-                {
-                  ico: <MessageCircle className="w-5 h-5" />,
-                  content: (
-                    <>
-                      <strong className="text-white/[.85] font-semibold">
-                        WhatsApp community link
-                      </strong>{" "}
-                      shared in your welcome email &ndash; a warm, moderated
-                      group of parents who get it.
-                    </>
-                  ),
-                },
-                {
-                  ico: <GraduationCap className="w-5 h-5" />,
-                  content: (
-                    <>
-                      <strong className="text-white/[.85] font-semibold">
-                        Early access to workshops
-                      </strong>{" "}
-                      and subscriber-only rates &ndash; announced in the
-                      newsletter before anywhere else.
-                    </>
-                  ),
-                },
-              ].map((issue, i) => (
-                <div
-                  key={i}
-                  className="flex items-start gap-[11px] bg-white/[.055] border border-purple/[.16] rounded-xl px-[15px] py-[13px]"
-                >
-                  <div className="text-lg shrink-0 mt-px">{issue.ico}</div>
-                  <div className="text-[13px] text-white/60 leading-[1.55]">
-                    {issue.content}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right — form (uses Newsletter component pattern but purple-themed inline) */}
-          <div>
-            <div className="bg-white/[.07] border border-purple/[.2] rounded-[18px] p-8">
-              <div className="text-lg font-bold text-white mb-1.5 tracking-tight">
-                Join Aldeia &ndash; it&apos;s free
-              </div>
-              <div className="text-[13px] text-white/[.45] mb-5 leading-[1.6]">
-                Sign up for the newsletter and get the WhatsApp link in your
-                welcome email. Unsubscribe any time.
-              </div>
-              <NewsletterForm />
-              <div className="flex items-center gap-[9px] bg-[rgba(37,211,102,.1)] border border-[rgba(37,211,102,.2)] rounded-xl px-3.5 py-[11px] mt-2.5 text-xs text-white/[.72] leading-[1.5]">
-                <span><MessageCircle className="w-4 h-4" /></span>
-                <span>
-                  <strong className="text-white/80">
-                    WhatsApp community link
-                  </strong>{" "}
-                  sent in your welcome email straight after signup.
-                </span>
-              </div>
-              <div className="text-[11px] text-white/[.28] text-center mt-1">
-                No spam. Unsubscribe any time. Your details are never shared.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ════════════════════════════════════════
-           TEAM — Meet Rebecca & Jamille
-         ════════════════════════════════════════ */}
-      <section className="py-16 md:py-[88px] px-6 md:px-20 bg-white">
-        <div className="max-w-[1180px] mx-auto">
-          <div className="flex items-center gap-2 text-[11px] tracking-[.12em] uppercase font-bold text-purple-dark mb-2.5">
-            <span className="block w-[18px] h-0.5 bg-purple rounded-sm" />
-            Behind Aldeia
-          </div>
-          <h2 className="text-[clamp(22px,3.2vw,40px)] font-extrabold leading-[1.13] tracking-tight text-[#1c2133] mb-3">
-            Meet Rebecca &amp; Jamille
-          </h2>
-          <p className="text-base text-[#4a4468] leading-7 max-w-[560px]">
-            Two people who believed parents shouldn&apos;t have to figure this
-            out alone &ndash; and built a community to prove it.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-11">
-            {/* Rebecca */}
-            <RevealOnScroll>
-              <div className="bg-[#f5f3fa] rounded-[18px] overflow-hidden shadow-[0_2px_12px_rgba(42,29,78,.06)] flex hover:-translate-y-[3px] hover:shadow-[0_4px_32px_rgba(42,29,78,.10)] transition-all">
-                <div className="w-[120px] shrink-0 bg-purple-pale overflow-hidden">
-                  <Image
-                    src="/images/team/rebecca-avatar.jpg"
-                    alt="Rebecca"
-                    width={120}
-                    height={160}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-5 flex flex-col justify-center">
-                  <div className="text-[17px] font-extrabold text-[#1c2133] tracking-tight mb-0.5">
-                    Rebecca
-                  </div>
-                  <div className="text-xs text-purple-dark font-semibold mb-2.5">
-                    Educational Therapist &amp; Founder
-                  </div>
-                  <p className="text-[13px] text-[#4a4468] leading-[1.65]">
-                    Specialist educational therapist and founder of Medela
-                    Learning. Rebecca created Aldeia because she saw, every day in
-                    her sessions, how isolated parents felt &ndash; and wanted to
-                    change that.
-                  </p>
-                </div>
-              </div>
-            </RevealOnScroll>
-
-            {/* Jamille */}
-            <RevealOnScroll delay={1}>
-              <div className="bg-[#f5f3fa] rounded-[18px] overflow-hidden shadow-[0_2px_12px_rgba(42,29,78,.06)] flex hover:-translate-y-[3px] hover:shadow-[0_4px_32px_rgba(42,29,78,.10)] transition-all">
-                <div className="w-[120px] shrink-0 overflow-hidden relative">
-                  <Image
-                    src="/images/team/jamille-avatar.jpg"
-                    alt="Jamille"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-5 flex flex-col justify-center">
-                  <div className="text-[17px] font-extrabold text-[#1c2133] tracking-tight mb-0.5">
-                    Jamille
-                  </div>
-                  <div className="text-xs text-purple-dark font-semibold mb-2.5">
-                    Co-founder &amp; Community Lead
-                  </div>
-                  <p className="text-[13px] text-[#4a4468] leading-[1.65]">
-                    Jamille leads the Aldeia community and hosts the workshops.
-                    Her background is in community building and parent advocacy
-                    &ndash; and she brings warmth and practical wisdom to
-                    everything Aldeia does.
-                  </p>
-                </div>
-              </div>
-            </RevealOnScroll>
-          </div>
-        </div>
-      </section>
 
       {/* ════════════════════════════════════════
            MEDELA CTA BAND

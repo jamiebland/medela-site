@@ -15,7 +15,7 @@ export default function ContactPage() {
       {/* Hero */}
       <div
         className="relative overflow-hidden px-6 md:px-20 py-18 md:py-20"
-        style={{ background: "linear-gradient(140deg, #1e3a6e 0%, #0e2248 100%)" }}
+        style={{ background: "linear-gradient(270deg, #6a96e0 0%, #80a8eb 100%)" }}
       >
         <div className="absolute -right-20 -top-20 w-[440px] h-[440px] rounded-full border border-blue/[.09] pointer-events-none" />
         <div className="max-w-[1180px] mx-auto relative z-10">
@@ -25,10 +25,10 @@ export default function ContactPage() {
             Contact
           </div>
           <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-[1.1] tracking-tight max-w-[640px] mb-3.5">
-            Get in <span className="text-blue-light">touch</span>
+            Get in <span className="text-blue-dark">touch</span>
           </h1>
-          <p className="text-base text-white/55 leading-7 max-w-[520px]">
-            Whether you have a question, want to discuss your child&apos;s needs, or just want to say hello &ndash; we&apos;d love to hear from you.
+          <p className="text-base md:text-lg text-white/55 leading-7 max-w-[500px] mb-7">
+            Whether you have a question, want to discuss your child&apos;s needs, or just want to say hello. We&apos;d love to hear from you.
           </p>
         </div>
       </div>
@@ -46,7 +46,7 @@ export default function ContactPage() {
               We&apos;re here to help
             </h2>
             <p className="text-base text-text-mid leading-7 mb-8 max-w-[460px]">
-              The easiest way to start is with a free 15-minute call. No commitment, no pressure &ndash; just a conversation about your child.
+              The easiest way to start is with a free 15-minute call. No commitment, no pressure, just a conversation about your child.
             </p>
 
             <div className="flex flex-col gap-6 mb-10">

@@ -32,7 +32,7 @@ const faqItems = [
   {
     question: "What age or year group are the packs for?",
     answer:
-      "The packs are designed for Grades 1\u20134, which typically corresponds to ages 6\u201310. Each pack is clearly labelled by grade. If your child is between grades or you\u2019re unsure, the Fall pack for the grade they\u2019re entering is usually the best starting point.",
+      "The packs are designed for Grades 1\u20134, which typically corresponds to ages 6\u201310. Each pack is clearly by grade. If your child is between grades or you\u2019re unsure, the Fall pack for the grade they\u2019re entering is usually the best starting point.",
   },
   {
     question: "Are these suitable for children with dyslexia or ADHD?",
@@ -42,7 +42,7 @@ const faqItems = [
   {
     question: "How do I get the pack after buying?",
     answer:
-      "Immediately after purchase you\u2019ll receive a download link by email. Your PDF is available to download straight away and the link remains active so you can re-download any time.",
+      "Immediately after purchase you\u2019ll receive a download link by email. Your PDF is available to download straight away and the link remains active so you can re-download any time. If you have any questions you are welcome to get in contact",
   },
   {
     question: "Do I need to print the pack, or can it be used digitally?",
@@ -72,15 +72,16 @@ export default function LearningResourcesPage() {
       ═══════════════════════════════════════════ */}
       <div
         className="relative overflow-hidden px-6 md:px-20 py-18 md:py-20"
-        style={{ background: "linear-gradient(140deg, #1e3a6e 0%, #0e2248 100%)" }}
+        style={{ background: "linear-gradient(270deg, #6a96e0 0%, #80a8eb 100%)" }}
       >
         {/* Decorative circles */}
+        
         <div className="absolute -right-20 -top-20 w-[440px] h-[440px] rounded-full border border-blue/[.09] pointer-events-none" />
         <div className="absolute left-[5%] -bottom-[60px] w-[260px] h-[260px] rounded-full pointer-events-none bg-[radial-gradient(circle,rgba(128,168,235,.06)_0%,transparent_70%)]" />
 
         <div className="max-w-[1180px] mx-auto relative z-10">
           {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-xs text-white/[.38] mb-5 font-medium">
+          <div className="flex items-center gap-1.5 text-[13px] text-white/70 mb-8">
             <Link href="/" className="hover:text-white/70 transition-colors">
               Home
             </Link>
@@ -92,11 +93,11 @@ export default function LearningResourcesPage() {
             <div>
               <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-[1.1] tracking-tight max-w-[600px] mb-3.5">
                 Learning packs that{" "}
-                <span className="text-blue-light">actually work</span> at home
+                <span className="text-blue-dark">actually work</span> at home
               </h1>
-              <p className="text-base text-white/55 leading-7 max-w-[500px] mb-7">
-                Downloadable activity packs for Grades 1&ndash;4 &mdash; designed by Rebecca
-                using the same evidence-based approach she uses in her one-to-one
+              <p className="text-base md:text-lg text-white/60 leading-7 max-w-[500px] mb-7">
+                Downloadable activity packs for Grades 1&ndash;4. Created by the Medela team
+                using the same evidence-based approach used in our one-to-one
                 sessions. Cross-curricular, beautifully structured, and built with
                 learning differences in mind.
               </p>
@@ -161,15 +162,15 @@ export default function LearningResourcesPage() {
           </h2>
           <p className="text-base text-text-mid leading-7 max-w-[560px]">
             There&apos;s no subscription, no account to create, and nothing complicated.
-            Just buy, download, and start using.
+            Just click, buy, download, and start using.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[18px] mt-11">
             {[
               { num: 1, icon: <ShoppingCart className="w-6 h-6 text-blue-btn" />, title: "Choose your pack", desc: "Pick the grade and season that matches your child\u2019s year. Not sure? Grade 2 Fall is a great starting point." },
-              { num: 2, icon: <CreditCard className="w-6 h-6 text-blue-btn" />, title: "Buy securely", desc: "Checkout is handled via Sellfy \u2014 secure, fast, and no account needed. Pay by card or PayPal." },
+              { num: 2, icon: <CreditCard className="w-6 h-6 text-blue-btn" />, title: "Buy securely", desc: "Checkout is handled via our online platform, Secure, fast, and no account needed. Pay by card or PayPal." },
               { num: 3, icon: <Download className="w-6 h-6 text-blue-btn" />, title: "Download instantly", desc: "Your PDF is available immediately after purchase. You\u2019ll also get an email link so you can download it again anytime." },
-              { num: 4, icon: <Printer className="w-6 h-6 text-blue-btn" />, title: "Print & use", desc: "Print at home or at a local print shop. The pack works page by page or as a complete unit \u2014 whatever suits your child." },
+              { num: 4, icon: <Printer className="w-6 h-6 text-blue-btn" />, title: "Print & use", desc: "Print at home or at a local print shop. The pack works page by page or as a complete unit. Whatever suits your child best." },
             ].map((step, i) => (
               <RevealOnScroll key={step.num} delay={i}>
                 <div className="bg-white rounded-[var(--radius)] p-6 text-center shadow-[var(--shadow-sm)] transition-all duration-200 hover:-translate-y-[3px] hover:shadow-[var(--shadow)]">
@@ -200,16 +201,16 @@ export default function LearningResourcesPage() {
                 What&apos;s inside
               </div>
               <h2 className="text-2xl md:text-4xl font-extrabold leading-[1.13] tracking-tight text-text mb-3">
-                More than a worksheet &mdash; a full learning programme
+                More than a worksheet, a full learning programme
               </h2>
               <p className="text-base text-text-mid leading-7 max-w-[560px]">
-                Every pack is carefully designed to work as a complete unit &mdash; not
+                Every pack is carefully designed to work as a complete unit not
                 just a collection of activities.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mt-8">
                 {[
-                  { icon: <BookOpen className="w-5 h-5 text-blue-btn" />, title: "Literacy activities", desc: "Reading comprehension, phonics practice, creative writing prompts, and vocabulary work \u2014 all season-themed." },
-                  { icon: <Calculator className="w-5 h-5 text-blue-btn" />, title: "Maths activities", desc: "Number, operations, problem-solving and reasoning \u2014 matched to grade expectations and scaffolded for different learners." },
+                  { icon: <BookOpen className="w-5 h-5 text-blue-btn" />, title: "Literacy activities", desc: "Reading comprehension, phonics practice, creative writing prompts, and vocabulary work." },
+                  { icon: <Calculator className="w-5 h-5 text-blue-btn" />, title: "Maths activities", desc: "Number, operations, problem-solving and reasoning, matched to grade expectations and scaffolded for different learners." },
                   { icon: <FlaskConical className="w-5 h-5 text-blue-btn" />, title: "Science & Geography", desc: "Cross-curricular content that makes English and Maths practice feel meaningful by connecting it to the world." },
                   { icon: <CheckCircle className="w-5 h-5 text-blue-btn" />, title: "Answer booklet", desc: "Every pack includes a full answer guide so parents can mark confidently and children get immediate feedback." },
                 ].map((feat, i) => (
@@ -258,10 +259,10 @@ export default function LearningResourcesPage() {
                 </div>
                 <div className="flex flex-col gap-1.5">
                   {[
-                    "Clear font \u2014 readable for dyslexic learners",
-                    "Uncluttered layout \u2014 never overwhelming",
-                    "Chunked tasks \u2014 one step at a time",
-                    "Multisensory \u2014 draw, write, cut, colour",
+                    "Clear font. Readable for dyslexic learners",
+                    "Uncluttered layout, never overwhelming",
+                    "Chunked tasks to take one step at a time",
+                    "Multisensory, draw, write, cut, colour",
                     "Works for all learners, designed for LD",
                   ].map((line) => (
                     <div key={line} className="flex items-center gap-2 text-[13px] text-text-mid">
@@ -362,14 +363,13 @@ export default function LearningResourcesPage() {
               Designed by a specialist
             </div>
             <h2 className="text-lg md:text-[28px] font-extrabold text-white leading-[1.2] tracking-tight mb-2.5">
-              Every pack is created by Rebecca &mdash; Educational Therapist &amp; Founder
+              Every pack is created by the Medela team.
             </h2>
             <p className="text-[15px] text-white/[.72] leading-7 max-w-[540px]">
               These aren&apos;t generic worksheets. Every activity in every pack is
               designed by Rebecca using the same evidence-based methodology she uses in
               her one-to-one sessions. That means they work for neurotypical children
-              and children with learning differences &mdash; because they were built
-              with both in mind from the start.
+              and children with learning differences.
             </p>
           </div>
         </div>
