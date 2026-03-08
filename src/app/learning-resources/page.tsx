@@ -12,15 +12,13 @@ import {
   Calculator,
   FlaskConical,
   CheckCircle,
-  Snowflake,
-  Star,
-  User,
 } from "lucide-react";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import CtaBand from "@/components/CtaBand";
 import Newsletter from "@/components/Newsletter";
 import FaqAccordion from "@/components/FaqAccordion";
 import ResourceFilter from "./ResourceFilter";
+import PreviewGallery from "./PreviewGallery";
 
 export const metadata = {
   title: "Printable Activity Packs for Children with Learning Differences | Grades 1–4",
@@ -233,39 +231,25 @@ export default function LearningResourcesPage() {
             {/* Pack preview card */}
             <RevealOnScroll delay={1}>
               <div className="bg-bg rounded-[var(--radius-lg)] p-7 shadow-[var(--shadow)]">
-                <div className="flex items-center gap-3 mb-[18px]">
-                  <div className="w-12 h-12 rounded-xl bg-blue-pale flex items-center justify-center">
-                    <Snowflake className="w-5 h-5 text-blue-btn" />
-                  </div>
-                  <div>
-                    <h4 className="text-[15px] font-bold text-text tracking-tight">
-                      Grade 2 Winter Pack sample pages
-                    </h4>
-                    <p className="text-xs text-text-light mt-0.5">
-                      30+ pages &middot; Full answer booklet
-                    </p>
-                  </div>
+                <div className="mb-[18px]">
+                  <h4 className="text-[15px] font-bold text-text tracking-tight">
+                    Fall Grade 2 — sample pages
+                  </h4>
+                  <p className="text-xs text-text-light mt-0.5">
+                    30+ pages &middot; Full answer booklet
+                  </p>
                 </div>
-                <div className="grid grid-cols-3 gap-2 mb-[18px]">
-                  {[
-                    { key: "literacy", icon: <BookOpen className="w-6 h-6 text-blue-btn" /> },
-                    { key: "maths", icon: <Calculator className="w-6 h-6 text-blue-btn" /> },
-                    { key: "science", icon: <FlaskConical className="w-6 h-6 text-blue-btn" /> },
-                  ].map((item) => (
-                    <div
-                      key={item.key}
-                      className="bg-white rounded-lg aspect-[3/4] border border-blue/[.15] flex items-center justify-center shadow-[var(--shadow-sm)]"
-                    >
-                      {item.icon}
-                    </div>
-                  ))}
-                </div>
+                <PreviewGallery images={[
+                  { src: "/images/resources/fall-grade2-cover.png", alt: "Fall Grade 2 cover" },
+                  { src: "/images/resources/fall-grade2-english-preview.png", alt: "Fall Grade 2 English preview" },
+                  { src: "/images/resources/fall-grade2-maths-preview.png", alt: "Fall Grade 2 Maths preview" },
+                ]} />
                 <div className="flex flex-col gap-1.5">
                   {[
                     "Uncluttered layout, fun, interactive pages",
                     "Chunked tasks to take one step at a time",
                     "Multisensory, draw, write, cut, colour",
-                    ].map((line) => (
+                  ].map((line) => (
                     <div key={line} className="flex items-center gap-2 text-[13px] text-text-mid">
                       <span className="text-[#3db87a] font-bold shrink-0">{"\u2713"}</span>
                       {line}
@@ -274,69 +258,6 @@ export default function LearningResourcesPage() {
                 </div>
               </div>
             </RevealOnScroll>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          TESTIMONIALS
-      ═══════════════════════════════════════════ */}
-      <section className="bg-bg py-20 px-6 md:px-20">
-        <div className="max-w-[1180px] mx-auto">
-          <div className="flex items-center gap-2 text-[11px] tracking-[.12em] uppercase font-bold text-blue-btn mb-2.5">
-            <span className="block w-[18px] h-0.5 bg-blue rounded-sm" />
-            What parents say
-          </div>
-          <h2 className="text-2xl md:text-4xl font-extrabold leading-[1.13] tracking-tight text-text mb-3">
-            Trusted by families across Portugal &amp; beyond
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-11">
-            {[
-              {
-                text: "The activity packs are the only resource I recommend to every parent in my class. Cross-curricular, beautifully paced, and genuinely useful for children of all abilities.",
-                name: "Sofia M.",
-                role: "Primary Teacher \u00b7 Porto",
-                avatar: <User className="w-4 h-4 text-blue-btn" />,
-              },
-              {
-                text: "My daughter has dyslexia and I was worried these packs would feel like more of the same struggle. They don\u2019t. The layout is so much calmer \u2014 she actually asks to do them.",
-                name: "Catarina F.",
-                role: "Parent of Grade 3 student \u00b7 Lisbon",
-                avatar: <User className="w-4 h-4 text-blue-btn" />,
-              },
-              {
-                text: "We bought the Grade 1 bundle for the summer and it was the best thing we did. My son went back to school feeling confident and ready \u2014 huge difference from previous years.",
-                name: "Mark & Joana L.",
-                role: "Parents of Grade 1 student \u00b7 Cascais",
-                avatar: <User className="w-4 h-4 text-blue-btn" />,
-              },
-            ].map((t, i) => (
-              <RevealOnScroll key={t.name} delay={i}>
-                <div className="bg-white rounded-[var(--radius)] p-[22px] shadow-[var(--shadow-sm)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[var(--shadow)] flex flex-col h-full">
-                  <div className="flex items-center gap-0.5 text-amber mb-3">
-                    {[...Array(5)].map((_, j) => (
-                      <Star key={j} className="w-3.5 h-3.5 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-sm text-text-mid leading-7 flex-1 mb-4 relative pl-3.5">
-                    <span className="absolute -left-0.5 -top-1 text-[30px] text-blue-pale leading-none font-extrabold">
-                      &ldquo;
-                    </span>
-                    {t.text}
-                  </p>
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-9 h-9 rounded-full bg-blue-pale flex items-center justify-center shrink-0">
-                      {t.avatar}
-                    </div>
-                    <div>
-                      <div className="text-sm font-semibold text-text">{t.name}</div>
-                      <div className="text-xs text-text-light mt-0.5">{t.role}</div>
-                    </div>
-                  </div>
-                </div>
-              </RevealOnScroll>
-            ))}
           </div>
         </div>
       </section>

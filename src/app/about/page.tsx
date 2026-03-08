@@ -377,6 +377,21 @@ export default async function AboutPage() {
               </p>
             </RevealOnScroll>
 
+            {/* Accent pull-quote */}
+            <RevealOnScroll>
+              <div className="relative rounded-2xl overflow-hidden mb-8 px-7 py-6" style={{ background: "linear-gradient(135deg, var(--color-purple) 0%, #3d72c4 100%)" }}>
+                <div className="absolute -right-6 -top-6 w-28 h-28 rounded-full bg-white/[.06] pointer-events-none" />
+                <div className="absolute -left-4 -bottom-8 w-36 h-36 rounded-full bg-white/[.04] pointer-events-none" />
+                <p className="relative text-[22px] md:text-[26px] font-extrabold text-white leading-[1.25] tracking-tight">
+                  No two children learn<br />
+                  <span className="text-purple-light">the same way.</span>
+                </p>
+                <p className="relative text-[13px] text-white/60 mt-2 leading-6 max-w-[340px]">
+                  That&apos;s why every Medela programme is built from scratch — not adapted from a template.
+                </p>
+              </div>
+            </RevealOnScroll>
+
             <div className="flex flex-col gap-6">
               {[
                 {

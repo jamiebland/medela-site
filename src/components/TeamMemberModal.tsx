@@ -29,72 +29,36 @@ export default function TeamMemberModal({
 
   const modal = open ? createPortal(
     <div
-      style={{
-        position: "fixed",
-        inset: 0,
-        zIndex: 9999,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "rgba(0,0,0,0.6)",
-        backdropFilter: "blur(4px)",
-        padding: "24px",
-      }}
+      className="fixed inset-0 z-[9999] flex items-end sm:items-center justify-center sm:p-6 bg-black/60 backdrop-blur-sm"
       onClick={() => setOpen(false)}
     >
       <div
-        style={{
-          position: "relative",
-          backgroundColor: "white",
-          borderRadius: "18px",
-          boxShadow: "0 24px 80px rgba(0,0,0,0.25)",
-          width: "min(820px, 100%)",
-          display: "flex",
-          overflow: "hidden",
-          maxHeight: "90vh",
-        }}
+        className="relative bg-white w-full sm:w-auto sm:min-w-[min(820px,100%)] rounded-t-[20px] sm:rounded-[18px] shadow-[0_24px_80px_rgba(0,0,0,0.25)] flex flex-col sm:flex-row overflow-hidden max-h-[92dvh] sm:max-h-[90vh]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close */}
         <button
           onClick={() => setOpen(false)}
-          style={{
-            position: "absolute",
-            top: 16,
-            right: 16,
-            zIndex: 10,
-            width: 32,
-            height: 32,
-            borderRadius: "50%",
-            background: "rgba(0,0,0,0.25)",
-            border: "none",
-            color: "white",
-            fontSize: 14,
-            fontWeight: 700,
-            cursor: "pointer",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
+          className="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-black/25 border-none text-white text-sm font-bold cursor-pointer flex items-center justify-center hover:bg-black/40 transition-colors"
           aria-label="Close"
         >
           ✕
         </button>
 
-        {/* Image — left column */}
-        <div style={{ position: "relative", width: 260, flexShrink: 0 }}>
+        {/* Image — top on mobile, left column on desktop */}
+        <div className="relative w-full h-[220px] shrink-0 sm:w-[260px] sm:h-auto">
           <Image
             src={modalImage ?? image}
             alt={name}
             fill
             className="object-cover object-top"
           />
-          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 50%)" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 50%)" }} />
         </div>
 
-        {/* Content — right column */}
-        <div style={{ flex: 1, padding: "40px 40px 36px", display: "flex", flexDirection: "column", gap: 0 }}>
-          <h3 style={{ fontSize: 22, fontWeight: 800, color: "var(--color-text)", margin: "0 0 4px" }}>{name}</h3>
+        {/* Content — scrollable */}
+        <div className="flex-1 flex flex-col overflow-y-auto px-6 py-7 sm:px-10 sm:py-10 gap-0">
+          <h3 className="text-[22px] font-extrabold text-text mb-1">{name}</h3>
           <p className={`text-[13px] font-semibold mb-6 ${accentClass}`}>{title}</p>
 
           <div className="space-y-3 text-[14px] text-text-mid leading-7 flex-1">
@@ -102,7 +66,7 @@ export default function TeamMemberModal({
           </div>
 
           {/* Get in contact */}
-          <div style={{ marginTop: 32, paddingTop: 20, borderTop: "1px solid rgba(0,0,0,0.07)" }}>
+          <div className="mt-8 pt-5 border-t border-black/[.07]">
             <p className="text-[11px] text-text-light uppercase tracking-[.1em] font-bold mb-3">
               Get in contact
             </p>
@@ -126,7 +90,7 @@ export default function TeamMemberModal({
           if ((e.target as HTMLElement).closest("a")) return;
           setOpen(true);
         }}
-        className="cursor-pointer"
+        className="cursor-pointer h-full"
       >
         {children}
       </div>

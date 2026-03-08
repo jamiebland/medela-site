@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 const MAILERLITE_API_KEY = process.env.MAILERLITE_API_KEY!;
-const ALDEIA_GROUP_ID = process.env.MAILERLITE_ALDEIA_GROUP_ID!;
+const ALDEIA_GROUP_ID = process.env.MAILERLITE_ALDEIA_GROUP_ID;
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -23,13 +23,13 @@ export async function POST(req: NextRequest) {
       body: JSON.stringify({
         email,
         fields: { name: name || undefined },
-        groups: [ALDEIA_GROUP_ID],
+        ...(ALDEIA_GROUP_ID ? { groups: [ALDEIA_GROUP_ID] } : {}),
       }),
     });
 
     if (!res.ok) {
       const data = await res.json();
-      console.error("MailerLite error:", data);
+      console.error("MailerLite error:", res.status, JSON.stringify(data));
       return NextResponse.json({ error: "Subscription failed." }, { status: 500 });
     }
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 
 import { WHATSAPP_URL } from "@/lib/config";
@@ -54,8 +55,8 @@ export default function AldeiaQR({ fullWidth = false, theme = "dark" }: { fullWi
         </button>
       )}
 
-      {/* Lightbox — shared by both variants */}
-      {open && (
+      {/* Lightbox — shared by both variants, rendered via portal to escape any transform stacking context */}
+      {open && createPortal(
         <div
           className="fixed inset-0 z-[500] flex items-center justify-center bg-black/70 backdrop-blur-sm"
           onClick={() => setOpen(false)}
@@ -98,7 +99,7 @@ export default function AldeiaQR({ fullWidth = false, theme = "dark" }: { fullWi
             </a>
           </div>
         </div>
-      )}
+      , document.body)}
     </>
   );
 }
