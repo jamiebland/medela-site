@@ -98,9 +98,9 @@ export default async function AboutPage() {
               Medela Learning Support was founded to give
               every child access to specialized, compassionate educational
               therapy. 
-              We have a combined 15+ years worth of experience with children with dyslexia, dyscalculia, ADHD, and language processing difficulties. 
+              We have a combined 15+ years worth of experience with children with dyslexia, dyscalculia, ADHD, and Autism. 
               We know that with the right support, every child can make meaningful progress.
-              Whether in Lisbon Portugal or online. 
+              Whether in Lisbon, Portugal or online. 
             </p>
           </RevealOnScroll>
         </div>
@@ -180,12 +180,11 @@ export default async function AboutPage() {
                     Educational Therapist
                   </p>
                   <p className="text-sm text-text-mid leading-7 mb-4">
-                    Rebecca is a specialist educational therapist with over 7+ years
-                    of experience supporting children with dyslexia,
-                    dyscalculia, ADHD, and language processing difficulties. She
-                    designs every programme around the individual child. 
+                    Rebecca is a specialized remedial therapist with over 7+ years
+                    of experience supporting children with learning difficulties and disabilities. 
+                    She designs every programme around the individual child. Alongside her one-to-one work, Rebecca is passionate about sharing her knowledge and building a community of support around families, through Aldeia. 
                     Combining structured, evidence-based methods with warmth and
-                    creativity to rebuild confidence from the ground up.
+                    creativity to rebuild confidence and love for learning.
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {[
@@ -193,7 +192,7 @@ export default async function AboutPage() {
                       "Dyscalculia",
                       "ADHD",
                       "Language Processing",
-                      "School Liaison",
+                      "Case Management",
                       "Curriculum Design",
                     ].map((tag) => (
                       <span
@@ -231,7 +230,7 @@ export default async function AboutPage() {
                   <>
                     <p>I was born in Brazil and raised with a deep appreciation for community and connection, my path to Medela was shaped by years of firsthand experience within international schools across Portugal.</p>
                     <p>As an education specialist embedded in Lisbon&apos;s international school community, I witnessed firsthand the isolation and confusion experienced by families when a child begins to struggle. Without local networks, language fluency, or knowledge of the international education system, many parents were left navigating learning difficulties entirely alone.</p>
-                    <p>This gap, between what families needed and what was available has become my driving force. I wanted to start Aldeia with a clear mission: to build a village of support around every family. Through workshops, community events, a growing WhatsApp network, and curated resources, Aldeia creates the connections that make a real difference.</p>
+                    <p>This gap, between what families needed and what was available has become my driving force. I co-founded Aldeia with a clear mission: to build a village of support around every family. Through workshops, community events, a growing WhatsApp network, and curated resources, Aldeia creates the connections that make a real difference.</p>
                     <p>With the goal to grow Aldeia into a thriving network of parents, educators, and specialists, I believe that no family should face learning challenges alone.</p>
                   </>
                 }
@@ -256,12 +255,10 @@ export default async function AboutPage() {
                     Psychopedagogy Specialist
                   </p>
                   <p className="text-sm text-text-mid leading-7 mb-4">
-                    Jamille brings the community to life. As the driving force
-                    behind Aldeia, she connects parents, educators, and
-                    specialists through workshops, events, and shared resources.
-                    Her background as an educational specialist alongside her skills in community development and family support
+                    Jamille's background as an educational specialist alongside her skills in community development and family support
                     mean that she understands that learning differences affect the
-                    whole family, not just the child.
+                    whole family, not just the child. She helps to connect parents, educators, and
+                    specialists through workshops, events, and shared resources. Additionally she is a contributer to the creation of Medela's digital resources, ensuring they meet the real needs of families.             
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {[

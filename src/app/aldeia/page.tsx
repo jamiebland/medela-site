@@ -74,7 +74,7 @@ export default async function AldeiaPage() {
             <p className="text-base text-white/[.72] leading-7 max-w-[440px] mb-8">
               Aldeia is a warm, honest community for parents raising children
               with learning differences in Portugal. Expert workshops, a
-              supportive WhatsApp group, and a fortnightly newsletter. All
+              supportive WhatsApp group, and a monthly newsletter. All
               in one place.
             </p>
             <div className="flex items-center gap-2.5 flex-wrap mb-10">
@@ -102,17 +102,17 @@ export default async function AldeiaPage() {
               {
                 ico: <Mail className="w-6 h-6" />,
                 title: "Newsletter",
-                desc: "Fortnightly insights from the Medela team and other guests. Practical, warm, never generic.",
+                desc: "Monthly insights from the Medela team and other guests.",
               },
               {
                 ico: <MessageCircle className="w-6 h-6" />,
                 title: "WhatsApp Group",
-                desc: "A safe space for parents to share, ask questions, and support each other.",
+                desc: "A safe space for parents to share, ask questions, and support each other. Facilitated by learning specialists.",
               },
               {
                 ico: <GraduationCap className="w-6 h-6" />,
                 title: "Workshops",
-                desc: "Regular sessions with psychometrists, OTs, teachers, and speech therapists.",
+                desc: "Regular sessions with specialists in the field such as psychometrists, OTs, teachers, and speech therapists.",
               },
               {
                 ico: <MapPin className="w-6 h-6" />,
@@ -188,7 +188,7 @@ export default async function AldeiaPage() {
                     {
                       ico: <Plane className="w-4 h-4" />,
                       title: "Expat families in Portugal",
-                      desc: "Navigating the Portuguese education system, or an international school, as a newcomer, without a support network.",
+                      desc: "Navigating the international education system in Portugal as a newcomer, without a support network.",
                     },
                   ].map((r) => (
                     <div
@@ -235,12 +235,12 @@ export default async function AldeiaPage() {
                   {
                     ico: <Brain className="w-5 h-5" />,
                     title: "Expert access",
-                    desc: "Regular workshops with specialists you'd usually have to pay privately for an hour with.",
+                    desc: "Regular and relevant workshops with specialists.",
                   },
                   {
                     ico: <ClipboardList className="w-5 h-5" />,
                     title: "Practical guidance",
-                    desc: "Not just theory real strategies, scripts for school meetings, and step-by-step guides.",
+                    desc: "Not just theory,but real strategies, scripts for school meetings, and step-by-step guides.",
                   },
                   {
                     ico: <Heart className="w-5 h-5" />,
@@ -292,26 +292,26 @@ export default async function AldeiaPage() {
               {[
                 {
                   ico: <Mail className="w-5 h-5" />,
-                  title: "Fortnightly newsletter",
-                  desc: "Practical tips, workshop recaps, recommended resources, and honest reflections on the realities of supporting a child with learning differences in Portugal.",
+                  title: "Monthly newsletter",
+                  desc: "Practical tips, workshop recaps, recommended resources, and honest reflections on the realities of supporting a child with learning differences.",
                   delay: 0,
                 },
                 {
                   ico: <MessageCircle className="w-5 h-5" />,
                   title: "WhatsApp community group",
-                  desc: "A warm, moderated space for day-to-day questions, recommendations, and support. When you join the newsletter, you'll receive a private link to the WhatsApp group in your welcome email.",
+                  desc: "A moderated space for day-to-day questions, recommendations, and support. When you join the newsletter, you'll receive a private link to the WhatsApp group in your welcome email.",
                   delay: 1,
                 },
                 {
                   ico: <GraduationCap className="w-5 h-5" />,
                   title: "Monthly expert workshops",
-                  desc: "Live online sessions with psychometrists, occupational therapists, speech therapists, educational psychologists, and experienced teachers. Recorded for those who can't make it live. Affordable and practical.",
                   delay: 2,
+                  desc: "Live or online sessions with psychometrists, occupational therapists, speech therapists, educational psychologists, and experienced teachers.", 
                 },
                 {
                   ico: <BookOpen className="w-5 h-5" />,
                   title: "Aldeia blog & resource library",
-                  desc: "Articles written for parents, not professionals. Honest, readable, and grounded in the specific experience of raising a child with learning differences in Portugal.",
+                  desc: "Articles written for parents; honest, readable, and grounded in the specific experience of raising a child with learning differences.",
                   delay: 3,
                 },
               ].map((f) => (
@@ -425,7 +425,7 @@ export default async function AldeiaPage() {
             Learn from the specialists
           </h2>
           <p className="text-base text-[#4a4468] leading-7 max-w-[560px]">
-            Affordable, practical, and recorded. Every workshop is designed so
+            Affordable, practical. Every workshop is designed so
             you leave with something you can actually use.
           </p>
 
@@ -438,7 +438,7 @@ export default async function AldeiaPage() {
                 >
                   <div className="absolute -right-[18px] -top-[18px] w-[100px] h-[100px] rounded-full bg-white/[.05]" />
                   <div className="inline-flex items-center gap-[5px] px-2.5 py-1 rounded-full text-[10px] font-bold tracking-[.06em] uppercase mb-3.5 w-fit bg-purple/[.25] text-purple-light border border-purple/[.3]">
-                    Date TBC
+                    Date & Location TBC
                   </div>
                   <h3 className="text-base font-bold text-white leading-[1.3] mb-2 tracking-tight">
                     Understanding Your Child&apos;s Learning Journey
@@ -449,20 +449,19 @@ export default async function AldeiaPage() {
                 </div>
                 <div className="px-[22px] pt-5 pb-[22px] flex-1 flex flex-col">
                   <p className="text-[13px] text-[#4a4468] leading-[1.7] mb-5 flex-1">
-                    Your child has had a psychometric assessment, now
-                    what? Jamille walks through what the scores actually mean,
-                    what to ask the school, and how to use the report to get the
-                    right support in place.
+                    Navigating your child's learning development journey can be difficult. 
+                    In this workshop, we will walk through the key components of your child's learning journey and educational experience.
+                    We will also host a time for questions and to connect with other parents navigating similar experiences.
                   </p>
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     <span className="flex items-center gap-[5px] bg-purple-xpale border border-purple/[.15] px-2.5 py-1 rounded-full text-[11px] font-medium text-purple-dark">
-                      <Monitor className="w-3 h-3 inline-block -mt-px" /> Online
+                      <Monitor className="w-3 h-3 inline-block -mt-px" /> In-Person
                     </span>
                     <span className="flex items-center gap-[5px] bg-purple-xpale border border-purple/[.15] px-2.5 py-1 rounded-full text-[11px] font-medium text-purple-dark">
                       <Clock className="w-3 h-3 inline-block -mt-px" /> 75 mins
                     </span>
                     <span className="flex items-center gap-[5px] bg-purple-xpale border border-purple/[.15] px-2.5 py-1 rounded-full text-[11px] font-medium text-purple-dark">
-                      <Video className="w-3 h-3 inline-block -mt-px" /> Recorded
+                      <Video className="w-3 h-3 inline-block -mt-px" />
                     </span>
                   </div>
                   <div className="flex items-center gap-2 mb-4">
@@ -486,7 +485,7 @@ export default async function AldeiaPage() {
                       <span className="text-xs font-normal text-[#8a86a8]">per person</span>
                     </div>
                     <a
-                      href="https://buy.stripe.com/eVq4gzdwX4xWfJJa27dnW00"
+                      href="https://buy.stripe.com/bJedR98cDd4s7dd4HNdnW01"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[13px] font-semibold text-white bg-purple-dark px-4 py-2 rounded-full hover:bg-purple-deep transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-dark focus-visible:ring-offset-2"

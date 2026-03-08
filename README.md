@@ -268,7 +268,7 @@ The site has a built-in admin panel for creating and editing blog posts. Blog po
 
 ### Accessing the Admin
 
-1. Go to [http://localhost:3000/admin/login](http://localhost:3000/admin/login)
+1. Go to [http://localhost:3000/admRebJamin/login](http://localhost:3000/admin/login)
 2. Enter the admin password (the `ADMIN_PASSWORD` value from `.env.local`)
 3. You'll be taken to the post list at `/admin`
 

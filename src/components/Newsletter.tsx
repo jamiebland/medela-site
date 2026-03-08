@@ -81,7 +81,7 @@ export default function Newsletter() {
             Stay connected
           </div>
           <h2 className="text-2xl md:text-[32px] font-extrabold text-white leading-[1.15] tracking-tight mb-2">
-            One useful thing, every fortnight
+            One useful thing, once a month
           </h2>
           <p className="text-[15px] text-white/55 leading-7">
             Practical tips, new resource launches, and community updates, straight to your inbox from Medela
@@ -95,7 +95,7 @@ export default function Newsletter() {
             </div>
             <div className="flex items-center gap-2 text-sm text-white/[.72]">
               <span className="text-blue-light font-bold">&rarr;</span>
-              Early access to new seasonal learning packs
+              Early access to new resources and learning packs
             </div>
             <div className="flex items-center gap-2 text-sm text-white/[.72]">
               <span className="text-blue-light font-bold">&rarr;</span>

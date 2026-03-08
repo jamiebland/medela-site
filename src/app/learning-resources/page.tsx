@@ -35,12 +35,12 @@ const faqItems = [
   {
     question: "What age or year group are the packs for?",
     answer:
-      "The packs are designed for Grades 1\u20134, which typically corresponds to ages 6\u201310. Each pack is clearly by grade. If your child is between grades or you\u2019re unsure, the Fall pack for the grade they\u2019re entering is usually the best starting point.",
+      "The packs are designed for Grades 1\u20134, which typically corresponds to ages 6\u201310. If your child is between grades or you\u2019re unsure, the Fall pack for the grade they\u2019re entering is usually the best starting point.",
   },
   {
     question: "Are these suitable for children with dyslexia or ADHD?",
     answer:
-      "Yes \u2014 the packs are specifically designed with learning differences in mind. Clear fonts, uncluttered page layouts, chunked tasks, and a multisensory approach mean they work well for children who struggle with traditional worksheets. They also work well for neurotypical children.",
+      "Yes, the packs are specifically designed with learning differences in mind but will require adult guidance to help the child through the activities. We use clear fonts, uncluttered page layouts, chunked tasks, and a multisensory approach which mean they work well for children who struggle with traditional worksheets.",
   },
   {
     question: "How do I get the pack after buying?",
@@ -55,12 +55,12 @@ const faqItems = [
   {
     question: "Can I buy a pack as a gift for another family?",
     answer:
-      "Yes. After purchase you\u2019ll receive the download link \u2014 you can forward this to whoever you\u2019re gifting it to. We\u2019re working on a gift card option for future releases.",
+      "Yes. After purchase you\u2019ll receive the download link and you can forward this to whoever you\u2019re gifting it to.",
   },
   {
     question: "Is there a refund policy?",
     answer:
-      "Because these are digital downloads, we don\u2019t offer refunds once the file has been downloaded. If you have a problem with your purchase \u2014 a corrupt file, incorrect pack \u2014 please get in touch and we\u2019ll sort it immediately.",
+      "Because these are digital downloads, we don\u2019t offer refunds once the file has been downloaded. If you have a problem with your purchase, a corrupt file, incorrect pack, please get in touch and we\u2019ll sort it immediately.",
   },
 ];
 
@@ -100,8 +100,8 @@ export default function LearningResourcesPage() {
               </h1>
               <p className="text-base md:text-lg text-white/60 leading-7 max-w-[500px] mb-7">
                 Downloadable activity packs for Grades 1&ndash;4. Created by the Medela team
-                using the same evidence-based approach used in our one-to-one
-                sessions. Cross-curricular, beautifully structured, and built with
+                using the same evidence-based approaches from our one-to-one
+                sessions. Cross-curricular, clearly structured, and built with
                 learning differences in mind.
               </p>
               <div className="flex items-center gap-5 flex-wrap">
@@ -123,14 +123,14 @@ export default function LearningResourcesPage() {
             <div className="bg-white/[.07] border border-white/[.12] rounded-[var(--radius-lg)] p-6 md:p-7 flex flex-row md:flex-col gap-5 md:gap-[18px] min-w-[220px] justify-around md:justify-start">
               <div className="text-center">
                 <div className="text-[32px] font-extrabold text-white tracking-tight leading-none">
-                  14+
+                  8+
                 </div>
                 <div className="text-xs text-white/45 mt-1">packs available</div>
               </div>
               <div className="w-px md:w-auto h-auto md:h-px bg-white/10" />
               <div className="text-center">
                 <div className="text-[32px] font-extrabold text-white tracking-tight leading-none">
-                  G1&ndash;4
+                  Gr1 &ndash; 4
                 </div>
                 <div className="text-xs text-white/45 mt-1">grade range</div>
               </div>
@@ -170,7 +170,7 @@ export default function LearningResourcesPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[18px] mt-11 items-stretch">
             {[
-              { num: 1, icon: <ShoppingCart className="w-6 h-6 text-blue-btn" />, title: "Choose your pack", desc: "Pick the grade and season that matches your child\u2019s year. Not sure? Grade 2 Fall is a great starting point." },
+              { num: 1, icon: <ShoppingCart className="w-6 h-6 text-blue-btn" />, title: "Choose your pack", desc: "Pick the grade and season that matches your child\u2019s year." },
               { num: 2, icon: <CreditCard className="w-6 h-6 text-blue-btn" />, title: "Buy securely", desc: "Checkout is handled via our online platform, Secure, fast, and no account needed. Pay by card or PayPal." },
               { num: 3, icon: <Download className="w-6 h-6 text-blue-btn" />, title: "Download instantly", desc: "Your PDF is available immediately after purchase. You\u2019ll also get an email link so you can download it again anytime." },
               { num: 4, icon: <Printer className="w-6 h-6 text-blue-btn" />, title: "Print & use", desc: "Print at home or at a local print shop. The pack works page by page or as a complete unit. Whatever suits your child best." },
@@ -239,7 +239,7 @@ export default function LearningResourcesPage() {
                   </div>
                   <div>
                     <h4 className="text-[15px] font-bold text-text tracking-tight">
-                      Grade 2 Winter Pack &mdash; sample pages
+                      Grade 2 Winter Pack sample pages
                     </h4>
                     <p className="text-xs text-text-light mt-0.5">
                       30+ pages &middot; Full answer booklet
@@ -262,12 +262,10 @@ export default function LearningResourcesPage() {
                 </div>
                 <div className="flex flex-col gap-1.5">
                   {[
-                    "Clear font. Readable for dyslexic learners",
-                    "Uncluttered layout, never overwhelming",
+                    "Uncluttered layout, fun, interactive pages",
                     "Chunked tasks to take one step at a time",
                     "Multisensory, draw, write, cut, colour",
-                    "Works for all learners, designed for LD",
-                  ].map((line) => (
+                    ].map((line) => (
                     <div key={line} className="flex items-center gap-2 text-[13px] text-text-mid">
                       <span className="text-[#3db87a] font-bold shrink-0">{"\u2713"}</span>
                       {line}
@@ -369,9 +367,9 @@ export default function LearningResourcesPage() {
               Every pack is created by the Medela team.
             </h2>
             <p className="text-[15px] text-white/[.72] leading-7 max-w-[540px]">
-              These aren&apos;t generic worksheets. Every activity in every pack is
-              designed by Rebecca using the same evidence-based methodology she uses in
-              her one-to-one sessions. That means they work for neurotypical children
+              These aren&apos;t generic worksheets. Every activity in every pack is carefully
+              designed using the same methodology drawing from our experience in our educational therapy practice and informed by the latest research in education and cognitive science.
+              This means they work for neurotypical children
               and children with learning differences.
             </p>
           </div>
@@ -393,7 +391,7 @@ export default function LearningResourcesPage() {
                 Everything you need to know before buying
               </h2>
               <p className="text-[15px] text-text-mid leading-7 mb-6">
-                Still unsure? You can always book a free call with Rebecca to talk
+                Still unsure? You can always book a free call to talk
                 through which pack is right for your child.
               </p>
               <a

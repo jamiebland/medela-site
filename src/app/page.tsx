@@ -47,7 +47,7 @@ const testimonials = [
     quote:
       "We had the absolute pleasure of working with Rebecca this school year after receiving a glowing recommendation from another teacher, and I can't say enough wonderful things about the impact she had on my daughter's reading and writing skills. From the very first session, Rebecca created a warm, supportive, and encouraging environment that truly brought out the best in my child. We are so grateful for the time and care Rebecca invested in our daughter. She has made a lasting impact, and we would recommend her wholeheartedly to any family.",
     author: "Anne-Marie",
-    role: "Parent of a Grade 2 student, Germany",
+    role: "Parent of a Grade 2 student, Lisbon",
   },
   {
     quote:
@@ -96,7 +96,7 @@ export default async function HomePage() {
           </h1>
 
           <p className="text-base md:text-[17px] text-text-mid leading-7 mb-8 max-w-[480px]">
-            Specialist educational therapy that helps children overcome learning challenges, strengthen core academic skills, and build lasting confidence at school.
+            Specialized educational therapy that helps children overcome learning challenges, strengthen core academic skills, and build lasting confidence at school.
           </p>
 
           <div className="flex flex-wrap gap-3 mb-8">
@@ -202,8 +202,8 @@ export default async function HomePage() {
                     One-to-One Educational Therapy
                   </h3>
                   <p className="text-[14px] text-white/65 leading-6">
-                    Individual sessions to build with your child&apos;s unique
-                    learning challenges while still building the skills, confidence, and
+                    Individual sessions to address your child&apos;s unique
+                    learning challenges while still developing the skills, confidence, and
                     independence needed for school success.
                   </p>
                 </div>
@@ -248,10 +248,10 @@ export default async function HomePage() {
                     <Smartphone className="w-5 h-5" />
                   </div>
                   <h3 className="text-xl font-extrabold mb-2">
-                    Practical resources parents can use at home
+                    Practical resources and a parent community
                   </h3>
                   <p className="text-[14px] text-white/65 leading-6">
-                    Practical, therapist-designed tools that help parents support reading, writing and learning at home, without turning homework into a daily battle.
+                    Educational therapist-designed tools that help parents support reading, writing and learning at home, alongside a growing community of families sharing advice and support.
                   </p>
                 </div>
                 <div className="bg-white px-7 py-7 flex-1 flex flex-col">
@@ -259,8 +259,8 @@ export default async function HomePage() {
                     {[
                       "Seasonal themed learning packs",
                       "Printable worksheets & activities",
-                      "Video-guided lessons",
-                      "Parent guidance included",
+                      "Coffee mornings for parents",
+                      "Parent workshops",
                       "New packs released regularly",
                     ].map((item) => (
                       <li
@@ -312,9 +312,6 @@ export default async function HomePage() {
                 <p className="text-[13px] font-bold text-blue-btn">
                   7+ years experience
                 </p>
-                <p className="text-[11px] text-text-light">
-                  Qualified educational therapist
-                </p>
               </div>
             </div>
           </RevealOnScroll>
@@ -340,7 +337,7 @@ export default async function HomePage() {
                   {
                     num: "02",
                     title: "Design a personalised plan",
-                    desc: "Every therapy plan is built around your child, not a one-size-fits-all programme. We share the goals of the parent, the child and school.",
+                    desc: "Every therapy plan is built around your child, not a one-size-fits-all programme. We share the goals of the parent, child and school.",
                   },
                   {
                     num: "03",
@@ -482,14 +479,14 @@ export default async function HomePage() {
               A village of support for every family. Raising a
               learner is easier when you&apos;re not doing it alone.
 
-              Aldeia brings together parents, educators, and specialists in a warm, support space.
+              Aldeia brings together parents, educators, and specialists in a warm, supportive space.
             </p>
 
             <ul className="space-y-3 mb-8">
               {[
-                "Monthly workshops",
+                "Regular workshops",
                 "WhatsApp community",
-                "Fortnightly newsletter",
+                "Monthly newsletter",
                 "Resource library",
               ].map((item) => (
                 <li
@@ -529,12 +526,12 @@ export default async function HomePage() {
               {
                 icon: <GraduationCap className="w-5 h-5" />,
                 title: "Workshops",
-                desc: "Monthly sessions with specialists in dyslexia, ADHD, occupational therapy & more.",
+                desc: "Regular sessions with specialists on a variety of topics related to relevant learning challenges and parent experiences.",
               },
               {
                 icon: <MessageCircle className="w-5 h-5" />,
                 title: "WhatsApp Group",
-                desc: "Real parents sharing what works, what doesn't, and what they wish they knew",
+                desc: "Parents sharing what really works and what doesn't. With questions and conversations facilitated by specialists.",
               },
               {
                 icon: <Mail className="w-5 h-5" />,
