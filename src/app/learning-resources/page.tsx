@@ -23,9 +23,12 @@ import FaqAccordion from "@/components/FaqAccordion";
 import ResourceFilter from "./ResourceFilter";
 
 export const metadata = {
-  title: "Learning Resources",
+  title: "Printable Activity Packs for Children with Learning Differences | Grades 1–4",
   description:
-    "Downloadable activity packs for Grades 1\u20134 \u2014 designed by a specialist using evidence-based methods. Cross-curricular, beautifully structured, and built with learning differences in mind.",
+    "Downloadable activity packs for Grades 1–4 designed by an educational therapist — evidence-based, cross-curricular, and built with dyslexia and learning differences in mind.",
+  alternates: {
+    canonical: "/learning-resources",
+  },
 };
 
 const faqItems = [

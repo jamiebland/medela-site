@@ -33,6 +33,9 @@ export const metadata: Metadata = {
   title: "Aldeia — Parent Community",
   description:
     "Join Aldeia — a free parent community for families navigating learning differences in Portugal. Workshops, a WhatsApp group, and a fortnightly newsletter.",
+  alternates: {
+    canonical: "/aldeia",
+  },
 };
 
 export default async function AldeiaPage() {
@@ -54,7 +57,7 @@ export default async function AldeiaPage() {
           <div>
             <Image
               src="/images/brand/Aldeia Logo Full.png"
-              alt="Aldeia"
+              alt="Aldeia logo — parent community for families navigating learning differences in Portugal"
               width={160}
               height={24}
               className="h-6 w-auto mb-6 brightness-0 invert opacity-80"
@@ -466,7 +469,7 @@ export default async function AldeiaPage() {
                     <div className="w-[30px] h-[30px] rounded-full overflow-hidden bg-purple-pale shrink-0">
                       <Image
                         src="/images/team/jamille-avatar-sm.jpg"
-                        alt="Jamille"
+                        alt="Jamille, Psychopedagogy Specialist and co-founder of Aldeia"
                         width={30}
                         height={30}
                         className="w-full h-full object-cover"

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { getAllPosts } from "@/lib/blog";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import CtaBand from "@/components/CtaBand";
@@ -8,6 +9,15 @@ import { Puzzle, Smartphone, GraduationCap, MessageCircle, Mail, BookOpen, Star 
 import { CALENDLY_URL, WHATSAPP_URL, ASSET_BASE, SITE_URL, SITE_EMAIL } from "@/lib/config";
 import JsonLd from "@/components/JsonLd";
 import AldeiaQR from "@/components/AldeiaQR";
+
+export const metadata: Metadata = {
+  title: "Educational Therapy for Children in Lisbon & Portugal | Medela Learning Support",
+  description:
+    "Specialist one-to-one educational therapy for children with dyslexia, dyscalculia, and other learning differences in Lisbon and across Portugal. Book a free call today.",
+  alternates: {
+    canonical: "/",
+  },
+};
 
 const schools = [
   { name: "TASIS", logo: "tasis_logo-removebg-preview-irp56pe9jh.webp" },
@@ -289,7 +299,7 @@ export default async function HomePage() {
               >
                 <Image
                   src="/images/medela/image-hand.jpg"
-                  alt="Educational therapy session"
+                  alt="Child in a one-to-one educational therapy session in Lisbon"
                   width={800}
                   height={420}
                   className="w-full h-[420px] object-cover object-right"

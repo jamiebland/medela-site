@@ -6,7 +6,7 @@ import Newsletter from "@/components/Newsletter";
 import FaqAccordion from "@/components/FaqAccordion";
 import JsonLd from "@/components/JsonLd";
 import { getAllPosts } from "@/lib/blog";
-import { buildFaqJsonLd } from "@/lib/structured-data";
+import { buildFaqJsonLd, buildOrganizationJsonLd } from "@/lib/structured-data";
 import { CALENDLY_URL } from "@/lib/config";
 import type { Metadata } from "next";
 import { Sprout, Puzzle, Heart, Handshake, BookOpen, Home } from "lucide-react";
@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   title: "About Us",
   description:
     "Meet Rebecca the educational therapist behind Medela Learning Support. Learn about Medela's approach to helping children with learning differences.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const faqItems = [
@@ -64,6 +67,7 @@ const faqItems = [
 ];
 
 const faqJsonLd = buildFaqJsonLd(faqItems);
+const orgJsonLd = buildOrganizationJsonLd();
 
 export default async function AboutPage() {
   const allPosts = await getAllPosts();
@@ -72,6 +76,7 @@ export default async function AboutPage() {
   return (
     <main>
       <JsonLd data={faqJsonLd} />
+      <JsonLd data={orgJsonLd} />
       {/* ── Hero ── */}
       <section className="relative grid md:grid-cols-2 min-h-[480px] overflow-hidden bg-blue">
         {/* Left */}
@@ -104,7 +109,7 @@ export default async function AboutPage() {
         <div className="relative hidden md:block">
           <Image
             src="/images/medela/image-sit.jpg"
-            alt="Educational therapy session"
+            alt="Educational therapy session with a child in Lisbon, Portugal"
             fill
             priority
             className="object-cover object-center"
@@ -422,7 +427,7 @@ export default async function AboutPage() {
               <div className="rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow)] mb-6 relative h-[300px]">
                 <Image
                   src="/images/medela/medela-teaching.webp"
-                  alt="Rebecca working with a child"
+                  alt="Rebecca Bland, educational therapist, working one-to-one with a child in Lisbon"
                   fill
                   className="object-cover"
                   style={{ transform: "scale(1.35) translateX(10%)", objectPosition: "center" }}

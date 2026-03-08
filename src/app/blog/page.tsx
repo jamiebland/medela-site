@@ -7,7 +7,10 @@ export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Blog",
-  description: "Honest writing about learning differences, educational therapy, and raising confident children.",
+  description: "Expert articles on dyslexia, dyscalculia, and supporting children with learning differences — written by an educational therapist in Lisbon.",
+  alternates: {
+    canonical: "/blog",
+  },
 };
 
 export default async function BlogPage() {

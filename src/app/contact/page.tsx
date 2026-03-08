@@ -7,6 +7,9 @@ import { SITE_EMAIL } from "@/lib/config";
 export const metadata = {
   title: "Contact",
   description: "Get in touch with Medela Learning Support. Book a free call or send us a message.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {

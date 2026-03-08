@@ -23,6 +23,7 @@ export async function POST(req: Request) {
   const jar = await cookies();
   jar.set("admin_token", token, {
     httpOnly: true,
+    secure: true,
     sameSite: "lax",
     path: "/",
     maxAge: 60 * 60 * 24 * 7, // 7 days

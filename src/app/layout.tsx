@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   description: siteDescription,
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_GB",
     siteName: "Medela Learning Support",
     title: siteTitle,
     description: siteDescription,
@@ -42,9 +42,6 @@ export const metadata: Metadata = {
     title: siteTitle,
     description: siteDescription,
     images: ["/og-image.png"],
-  },
-  alternates: {
-    canonical: "./",
   },
 };
 
