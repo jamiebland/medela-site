@@ -12,13 +12,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/aldeia`, changeFrequency: "monthly", priority: 0.8 },
   ];
 
-  const posts = await getAllPosts();
-  const blogPages: MetadataRoute.Sitemap = posts.map((post) => ({
-    url: `${SITE_URL}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: "monthly",
-    priority: 0.6,
-  }));
+  let blogPages: MetadataRoute.Sitemap = [];
+  try {
+    const posts = await getAllPosts();
+    blogPages = posts.map((post) => ({
+      url: `${SITE_URL}/blog/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    }));
+  } catch {
+    // If Supabase is unavailable, still return static pages
+  }
 
   return [...staticPages, ...blogPages];
 }
