@@ -481,7 +481,7 @@ export default async function AldeiaPage() {
                   </div>
                   <div className="flex items-center justify-between gap-2.5 pt-3.5 border-t border-purple/[.1]">
                     <div className="text-lg font-extrabold text-purple-dark tracking-tight">
-                      &euro;10{" "}
+                      &euro;20{" "}
                       <span className="text-xs font-normal text-[#8a86a8]">per person</span>
                     </div>
                     <a

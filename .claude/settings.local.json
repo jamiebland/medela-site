@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(python3:*)",
-      "WebFetch(domain:medelalearning.sellfy.store)"
+      "WebFetch(domain:medelalearning.sellfy.store)",
+      "WebFetch(domain:buy.stripe.com)"
     ]
   }
 }

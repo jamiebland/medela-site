@@ -10,6 +10,7 @@ interface TeamMemberModalProps {
   title: string;
   image: string;
   modalImage?: string;
+  mobileModalImage?: string;
   email: string;
   bio: React.ReactNode;
   accentClass?: string;
@@ -21,6 +22,7 @@ export default function TeamMemberModal({
   title,
   image,
   modalImage,
+  mobileModalImage,
   email,
   bio,
   accentClass = "text-blue-btn",
@@ -47,12 +49,24 @@ export default function TeamMemberModal({
 
         {/* Image — top on mobile, left column on desktop */}
         <div className="relative w-full h-[220px] shrink-0 sm:w-[260px] sm:h-auto">
-          <Image
-            src={modalImage ?? image}
-            alt={name}
-            fill
-            className="object-cover object-top"
-          />
+          {mobileModalImage && (
+            <div className="absolute inset-0 sm:hidden">
+              <Image
+                src={mobileModalImage}
+                alt={name}
+                fill
+                className="object-cover object-top"
+              />
+            </div>
+          )}
+          <div className={`absolute inset-0 ${mobileModalImage ? "hidden sm:block" : ""}`}>
+            <Image
+              src={modalImage ?? image}
+              alt={name}
+              fill
+              className="object-cover object-top"
+            />
+          </div>
           <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 50%)" }} />
         </div>
 

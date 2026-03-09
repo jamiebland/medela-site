@@ -163,6 +163,8 @@ export default async function HomePage() {
                   src={`${ASSET_BASE}/${school.logo}`}
                   alt={school.name}
                   loading="lazy"
+                  width={120}
+                  height={56}
                   className="h-14 w-auto object-contain brightness-0 invert opacity-60 group-hover:opacity-90 transition-opacity"
                 />
                 <span className="text-[10px] font-medium text-white/40 group-hover:text-white/70 transition-colors">

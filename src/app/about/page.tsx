@@ -149,6 +149,7 @@ export default async function AboutPage() {
                 title="Educational Therapist & Founder"
                 image="/images/team/image-rebecca-profile.jpg"
                 modalImage="/images/team/medela-rebecca-profile-2.webp"
+                mobileModalImage="/images/team/medela-rebecca-profile-closeup.jpg"
                 email="rebecca@medelalearning.com"
                 accentClass="text-blue-btn"
                 bio={
@@ -163,10 +164,16 @@ export default async function AboutPage() {
               <div className="bg-bg rounded-[var(--radius-lg)] shadow-[var(--shadow)] overflow-hidden hover:-translate-y-1 transition-transform duration-300 h-full flex flex-col">
                 <div className="relative h-[300px] overflow-hidden shrink-0">
                   <Image
+                    src="/images/team/medela-rebecca-profile-closeup.jpg"
+                    alt="Rebecca — Educational Therapist & Founder"
+                    fill
+                    className="object-cover md:hidden"
+                  />
+                  <Image
                     src="/images/team/image-rebecca-profile.jpg"
                     alt="Rebecca — Educational Therapist & Founder"
                     fill
-                    className="object-cover"
+                    className="object-cover hidden md:block"
                   />
                   <span className="absolute top-4 left-4 bg-blue-btn text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
                     Founder
@@ -224,6 +231,7 @@ export default async function AboutPage() {
                 title="Resource Creator & Co-founder of Aldeia"
                 image="/images/team/jamille-avatar.jpg"
                 modalImage="/images/team/jamille-avatar-2.jpg"
+                mobileModalImage="/images/team/jamille-avatar-closeup.jpg"
                 email="jamille@medelalearning.com"
                 accentClass="text-purple-dark"
                 bio={
@@ -238,10 +246,16 @@ export default async function AboutPage() {
               <div className="bg-bg rounded-[var(--radius-lg)] shadow-[var(--shadow)] overflow-hidden hover:-translate-y-1 transition-transform duration-300 h-full flex flex-col">
                 <div className="relative h-[300px] overflow-hidden shrink-0">
                   <Image
+                    src="/images/team/jamille-avatar-closeup.jpg"
+                    alt="Jamille — Co-founder & Community Lead"
+                    fill
+                    className="object-cover md:hidden"
+                  />
+                  <Image
                     src="/images/team/jamille-avatar.jpg"
                     alt="Jamille — Co-founder & Community Lead"
                     fill
-                    className="object-cover"
+                    className="object-cover hidden md:block"
                   />
                   <span className="absolute top-4 left-4 bg-purple-dark text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
                     Co-founder of Aldeia
