@@ -20,20 +20,20 @@ export const metadata: Metadata = {
 };
 
 const schools = [
-  { name: "TASIS", logo: "tasis_logo-removebg-preview-irp56pe9jh.webp" },
-  { name: "OIS", logo: "ois_logo-removebg-preview-4gqlr958da.webp" },
-  { name: "EGI", logo: "egi_logo-removebg-preview-w5rjpbv75h.webp" },
-  { name: "BSL", logo: "bsl_logo-removebg-preview-pyvlry9s56.webp" },
-  { name: "CAISL", logo: "caisal_lisbon-removebg-preview-n7ofhimzsb.webp" },
-  { name: "ULIS", logo: "ulis_logo-removebg-preview-gnmlggijfm.webp" },
-  { name: "St. Julian's", logo: "st-julians-dl-removebg-preview-hx1dw1ydnz.webp" },
-  { name: "Red Bridge", logo: "red_bridge_logo-removebg-preview-wc1s7eifdo.webp" },
-  { name: "Aprendizes", logo: "aprendizes-removebg-preview-tvenjw3jed.webp" },
-  { name: "St Katherine's", logo: "st_katherine_s_logo-removebg-preview-jojfuoplvc.webp" },
-  { name: "Kingsmead", logo: "kings_mead_logo-removebg-preview-smhott9fkb.webp" },
-  { name: "Crawford", logo: "crawford_sandton_logo-removebg-preview-fc8lzvlm0v.webp" },
-  { name: "St Stithians", logo: "st_stithians_logo-removebg-preview-jxjkvgme7x.webp" },
-  { name: "BIS", logo: "bavarian_international_school-removebg-preview-moir7kraqt.webp" },
+  { name: "TASIS", logo: "tasis_logo.webp" },
+  { name: "OIS", logo: "ois_logo.webp" },
+  { name: "EGI", logo: "egi_logo.webp" },
+  { name: "BSL", logo: "bsl_logo.webp" },
+  { name: "CAISL", logo: "caisl_logo.webp" },
+  { name: "ULIS", logo: "ulis_logo.webp" },
+  { name: "St. Julian's", logo: "st_julians_logo.webp" },
+  { name: "Red Bridge", logo: "red_bridge_logo.webp" },
+  { name: "Aprendizes", logo: "aprendizes_logo.webp" },
+  { name: "St Katherine's", logo: "st_katherines_logo.webp" },
+  { name: "Kingsmead", logo: "kingsmead_logo.webp" },
+  { name: "Crawford", logo: "crawford_logo.webp" },
+  { name: "St Stithians", logo: "st_stithians_logo.webp" },
+  { name: "BIS", logo: "bis_logo.webp" },
 ];
 
 const testimonials = [
@@ -104,7 +104,7 @@ export default async function HomePage() {
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-blue text-white px-6 py-3 rounded-full text-sm font-bold shadow-[var(--shadow-btn)] hover:bg-blue-mid motion-safe:hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2"
+              className="inline-flex items-center gap-2 bg-blue text-white px-6 py-3 rounded-full text-sm font-bold shadow-[0_6px_24px_rgba(128,168,235,0.45)] hover:bg-blue-mid hover:shadow-[0_8px_32px_rgba(128,168,235,0.55)] motion-safe:hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2"
             >
               Book a free call &rarr;
             </a>
@@ -121,7 +121,7 @@ export default async function HomePage() {
         {/* Right */}
         <div className="relative hidden md:block">
           <Image
-            src="https://assets.ycodeapp.com/assets/app95680/Images/published/rebecca%20top%20teacher!!!-18-dd0kutji5t.webp"
+            src="/images/team/rebecca-hero.webp"
             alt="Rebecca, educational therapist, working with a child"
             fill
             priority
@@ -147,7 +147,7 @@ export default async function HomePage() {
 
       {/* ───── 2. Schools Strip ───── */}
       <section className="bg-blue-mid py-8 overflow-hidden">
-        <p className="text-center text-[11px] tracking-[.12em] uppercase font-bold text-white/60 mb-5 px-6">
+        <p className="text-center text-[11px] tracking-[.12em] uppercase font-bold text-white/80 mb-5 px-6">
           Partnered with 14 schools across Portugal, South Africa and Europe
         </p>
         <div className="relative overflow-hidden">
@@ -155,7 +155,7 @@ export default async function HomePage() {
             {[...schools, ...schools].map((school, i) => (
               <div
                 key={i}
-                className="flex flex-col items-center justify-start gap-2 px-3 select-none shrink-0 group"
+                className="flex flex-col items-center justify-start gap-2 px-3 select-none shrink-0 group w-[120px]"
               >
                 {/* Raw img: animated marquee with CSS filters + dynamic sizing — next/image not suited */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -165,9 +165,9 @@ export default async function HomePage() {
                   loading="lazy"
                   width={120}
                   height={56}
-                  className="h-14 w-auto object-contain brightness-0 invert opacity-60 group-hover:opacity-90 transition-opacity"
+                  className="h-14 w-full object-contain brightness-0 invert opacity-60 group-hover:opacity-90 transition-opacity"
                 />
-                <span className="text-[10px] font-medium text-white/40 group-hover:text-white/70 transition-colors">
+                <span className="text-[10px] font-medium text-white/70 group-hover:text-white transition-colors">
                   {school.name}
                 </span>
               </div>
@@ -304,6 +304,7 @@ export default async function HomePage() {
                   alt="Child in a one-to-one educational therapy session in Lisbon"
                   width={800}
                   height={420}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="w-full h-[420px] object-cover object-right"
                 />
               </div>

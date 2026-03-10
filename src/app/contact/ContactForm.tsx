@@ -48,8 +48,9 @@ export default function ContactForm() {
         <input type="text" name="_honey" className="hidden" />
         <input type="hidden" name="_template" value="table" />
         <div>
-          <label className="text-xs font-semibold text-text-mid uppercase tracking-wider mb-1.5 block">Your name</label>
+          <label htmlFor="contact-name" className="text-xs font-semibold text-text-mid uppercase tracking-wider mb-1.5 block">Your name</label>
           <input
+            id="contact-name"
             type="text"
             name="name"
             required
@@ -58,8 +59,9 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <label className="text-xs font-semibold text-text-mid uppercase tracking-wider mb-1.5 block">Email address</label>
+          <label htmlFor="contact-email" className="text-xs font-semibold text-text-mid uppercase tracking-wider mb-1.5 block">Email address</label>
           <input
+            id="contact-email"
             type="email"
             name="email"
             required
@@ -68,8 +70,9 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <label className="text-xs font-semibold text-text-mid uppercase tracking-wider mb-1.5 block">Subject</label>
+          <label htmlFor="contact-subject" className="text-xs font-semibold text-text-mid uppercase tracking-wider mb-1.5 block">Subject</label>
           <select
+            id="contact-subject"
             name="subject"
             className="w-full px-4 py-3 rounded-xl border border-blue-light/50 text-sm outline-none focus:border-blue-btn transition-colors bg-bg text-text-mid"
           >
@@ -82,8 +85,9 @@ export default function ContactForm() {
           </select>
         </div>
         <div>
-          <label className="text-xs font-semibold text-text-mid uppercase tracking-wider mb-1.5 block">Message</label>
+          <label htmlFor="contact-message" className="text-xs font-semibold text-text-mid uppercase tracking-wider mb-1.5 block">Message</label>
           <textarea
+            id="contact-message"
             name="message"
             required
             rows={5}
@@ -101,7 +105,7 @@ export default function ContactForm() {
         {status === "error" && (
           <p className="text-sm text-red-600">Something went wrong. Please try again or email us directly.</p>
         )}
-        <p className="text-[11px] text-text-light">We respect your privacy and will never share your information.</p>
+        <p className="text-[11px] text-text-mid">We respect your privacy and will never share your information.</p>
       </form>
     </div>
   );

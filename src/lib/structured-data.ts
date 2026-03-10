@@ -16,7 +16,7 @@ export function buildOrganizationJsonLd() {
     "@type": "EducationalOrganization",
     name: "Medela Learning Support",
     url: "https://medelalearning.com",
-    logo: "https://assets.ycodeapp.com/assets/app95680/Images/published/medela_block_logo_white_bg-removebg-preview-twjjmz7hcs.webp",
+    logo: "https://medelalearning.com/images/brand/medela_logo.webp",
     description:
       "Specialist one-to-one educational therapy for children with dyslexia, dyscalculia, ADHD, and learning differences in Lisbon and across Portugal.",
     email: "rebecca@medelalearning.com",

@@ -62,16 +62,16 @@ export default async function AldeiaPage() {
               height={24}
               className="h-6 w-auto mb-6 brightness-0 invert opacity-80"
             />
-            <div className="inline-flex items-center gap-[7px] bg-purple/[.18] border border-purple/[.28] text-purple-light px-3.5 py-1.5 rounded-full text-[11px] font-semibold tracking-[.07em] uppercase mb-3 w-fit">
+            <div className="inline-flex items-center gap-[7px] bg-purple/[.18] border border-purple/[.28] text-white/80 px-3.5 py-1.5 rounded-full text-[11px] font-semibold tracking-[.07em] uppercase mb-3 w-fit">
               <Globe className="w-3.5 h-3.5 inline-block -mt-px" /> Lisbon · Portugal · Open to all families
             </div>
             <h1 className="text-[clamp(28px,4vw,52px)] font-extrabold text-white leading-[1.1] tracking-tight mb-[18px]">
               A Village {" "}
-              <span className="font-heavy text-purple-dark">
+              <span className="font-heavy text-purple-deep">
                 for the Village
               </span>
             </h1>
-            <p className="text-base text-white/[.72] leading-7 max-w-[440px] mb-8">
+            <p className="text-base text-white/90 leading-7 max-w-[440px] mb-8">
               Aldeia is a warm, honest community for parents raising children
               with learning differences in Portugal. Expert workshops, a
               supportive WhatsApp group, and a monthly newsletter. All
@@ -128,7 +128,7 @@ export default async function AldeiaPage() {
                 <h4 className="text-sm font-bold text-white mb-[5px] tracking-tight">
                   {c.title}
                 </h4>
-                <p className="text-xs text-white/[.42] leading-[1.6]">
+                <p className="text-xs text-white/70 leading-[1.6]">
                   {c.desc}
                 </p>
               </div>
@@ -177,8 +177,8 @@ export default async function AldeiaPage() {
                     },
                     {
                       ico: <MessageCircle className="w-4 h-4" />,
-                      title: "Language & processing differences",
-                      desc: "Your child struggles to follow instructions, process spoken language, or express themselves clearly.",
+                      title: "Autism Spectrum Disorder",
+                      desc: "Your child experiences the world differently socially, sensorially, and in how they communicate.",
                     },
                     {
                       ico: <School className="w-4 h-4" />,
@@ -521,7 +521,7 @@ export default async function AldeiaPage() {
         </svg>
 
         <div className="max-w-[1180px] mx-auto relative z-10">
-          <div className="text-[11px] tracking-[.12em] uppercase font-bold text-white/[.45] mb-[18px]">
+          <div className="text-[11px] tracking-[.12em] uppercase font-bold text-white/70 mb-[18px]">
             Upcoming topics
           </div>
           <div className="flex flex-wrap gap-2">
@@ -540,7 +540,7 @@ export default async function AldeiaPage() {
             ].map((t) => (
               <span
                 key={t}
-                className="bg-purple-mid/[.5] text-white/80 px-4 py-[7px] rounded-full text-[13px] font-medium hover:bg-purple-mid/[.7] hover:text-white transition-colors"
+                className="bg-purple-mid/[.5] text-white px-4 py-[7px] rounded-full text-[13px] font-medium hover:bg-purple-mid/[.7] transition-colors"
               >
                 {t}
               </span>

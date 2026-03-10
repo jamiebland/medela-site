@@ -1,13 +1,20 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  experimental: {
+    optimizeCss: true,
+  },
   images: {
-    remotePatterns: [
+    remotePatterns: [],
+  },
+  async redirects() {
+    return [
       {
-        protocol: "https",
-        hostname: "assets.ycodeapp.com",
+        source: "/resources",
+        destination: "/learning-resources",
+        permanent: true,
       },
-    ],
+    ];
   },
 };
 

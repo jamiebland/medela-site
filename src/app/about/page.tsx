@@ -81,10 +81,10 @@ export default async function AboutPage() {
       <section className="relative grid md:grid-cols-2 min-h-[480px] overflow-hidden bg-blue">
         {/* Left */}
         <div className="flex flex-col justify-center px-6 md:px-16 lg:px-20 py-16 md:py-24 relative z-10">
-          <nav className="flex items-center gap-1.5 text-[13px] text-white/70 mb-8">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+          <nav className="flex items-center gap-1.5 text-[13px] text-white mb-8">
+            <Link href="/" className="hover:text-white/80 transition-colors underline-offset-2 hover:underline">Home</Link>
             <span>/</span>
-            <span className="text-white">About</span>
+            <span className="text-white font-semibold">About</span>
           </nav>
           <RevealOnScroll>
             <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-[1.12] tracking-tight max-w-[560px] mb-5">
@@ -94,7 +94,7 @@ export default async function AboutPage() {
             </h1>
           </RevealOnScroll>
           <RevealOnScroll delay={1}>
-            <p className="text-base md:text-lg text-white/80 leading-7 max-w-[460px]">
+            <p className="text-base md:text-lg text-white leading-7 max-w-[460px]">
               Medela Learning Support was founded to give
               every child access to specialized, compassionate educational
               therapy. 
@@ -127,7 +127,7 @@ export default async function AboutPage() {
         <div className="max-w-[1180px] mx-auto">
           <div className="text-center mb-14">
             <RevealOnScroll>
-              <div className="flex items-center justify-center gap-2 text-[11px] tracking-[.12em] uppercase font-bold text-text-light mb-2.5">
+              <div className="flex items-center justify-center gap-2 text-[11px] tracking-[.12em] uppercase font-bold text-text-mid mb-2.5">
                 <span className="block w-[18px] h-0.5 bg-blue-light rounded-sm" />
                 The team
               </div>
@@ -173,6 +173,7 @@ export default async function AboutPage() {
                     src="/images/team/image-rebecca-profile.jpg"
                     alt="Rebecca — Educational Therapist & Founder"
                     fill
+                    sizes="(max-width: 768px) 0vw, (max-width: 1200px) 50vw, 590px"
                     className="object-cover hidden md:block"
                   />
                   <span className="absolute top-4 left-4 bg-blue-btn text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
@@ -210,7 +211,7 @@ export default async function AboutPage() {
                       </span>
                     ))}
                   </div>
-                  <p className="text-[12px] text-text-light leading-5">
+                  <p className="text-[12px] text-text-mid leading-5">
                     B.Ed (FP) &middot; AvDip Remedial Therapy &middot; Dyslexia Specialist
                   </p>
                   <a
@@ -291,7 +292,7 @@ export default async function AboutPage() {
                       </span>
                     ))}
                   </div>
-                  <p className="text-[12px] text-text-light leading-5">
+                  <p className="text-[12px] text-text-mid leading-5">
                     Bachelor of Education &middot; Psychopedagogy Specialist
                   </p>
                   <a
@@ -313,7 +314,7 @@ export default async function AboutPage() {
         <div className="max-w-[1180px] mx-auto">
           <div className="text-center mb-14">
             <RevealOnScroll>
-              <div className="flex items-center justify-center gap-2 text-[11px] tracking-[.12em] uppercase font-bold text-text-light mb-2.5">
+              <div className="flex items-center justify-center gap-2 text-[11px] tracking-[.12em] uppercase font-bold text-text-mid mb-2.5">
                 <span className="block w-[18px] h-0.5 bg-blue-light rounded-sm" />
                 What we believe
               </div>
@@ -377,7 +378,7 @@ export default async function AboutPage() {
         <div className="max-w-[1180px] mx-auto grid lg:grid-cols-2 gap-14 items-start">
           <div>
             <RevealOnScroll>
-              <div className="flex items-center gap-2 text-[11px] tracking-[.12em] uppercase font-bold text-text-light mb-2.5">
+              <div className="flex items-center gap-2 text-[11px] tracking-[.12em] uppercase font-bold text-text-mid mb-2.5">
                 <span className="block w-[18px] h-0.5 bg-blue-light rounded-sm" />
                 How we work
               </div>
@@ -494,7 +495,7 @@ export default async function AboutPage() {
         <div className="max-w-[1180px] mx-auto grid lg:grid-cols-[1fr_1.5fr] gap-14 items-start">
           <div className="lg:sticky lg:top-28">
             <RevealOnScroll>
-              <div className="flex items-center gap-2 text-[11px] tracking-[.12em] uppercase font-bold text-text-light mb-2.5">
+              <div className="flex items-center gap-2 text-[11px] tracking-[.12em] uppercase font-bold text-text-mid mb-2.5">
                 <span className="block w-[18px] h-0.5 bg-blue-light rounded-sm" />
                 Support
               </div>
@@ -528,7 +529,7 @@ export default async function AboutPage() {
           <div className="max-w-[1180px] mx-auto">
             <div className="flex items-end justify-between mb-10">
               <RevealOnScroll>
-                <div className="flex items-center gap-2 text-[11px] tracking-[.12em] uppercase font-bold text-text-light mb-2.5">
+                <div className="flex items-center gap-2 text-[11px] tracking-[.12em] uppercase font-bold text-text-mid mb-2.5">
                   <span className="block w-[18px] h-0.5 bg-blue-light rounded-sm" />
                   From the blog
                 </div>
@@ -570,7 +571,7 @@ export default async function AboutPage() {
                       )}
                     </div>
                     <div className="flex flex-col flex-1 p-5">
-                      <p className="text-[12px] text-text-light mb-2">{post.date}</p>
+                      <p className="text-[12px] text-text-mid mb-2">{post.date}</p>
                       <h3 className="text-[15px] font-bold text-text leading-snug mb-2 group-hover:text-blue-btn transition-colors">
                         {post.title}
                       </h3>

@@ -9,7 +9,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["400", "600", "700", "800"],
 });
 
 const siteTitle = "Medela Learning Support — Educational Therapy in Lisbon";
@@ -56,7 +56,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
         <Nav />
-        {children}
+        <main>{children}</main>
         <Footer />
         <Analytics />
         <SpeedInsights />

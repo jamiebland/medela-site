@@ -22,15 +22,15 @@ export default function ContactPage() {
       >
         <div className="absolute -right-20 -top-20 w-[440px] h-[440px] rounded-full border border-blue/[.09] pointer-events-none" />
         <div className="max-w-[1180px] mx-auto relative z-10">
-          <div className="flex items-center gap-2 text-xs text-white/[.38] mb-5 font-medium">
-            <Link href="/" className="hover:text-white/70 transition-colors">Home</Link>
-            <span className="text-white/20">/</span>
+          <div className="flex items-center gap-2 text-xs text-white mb-5 font-medium">
+            <Link href="/" className="hover:text-white/80 transition-colors underline-offset-2 hover:underline">Home</Link>
+            <span className="text-white/50">/</span>
             Contact
           </div>
           <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-[1.1] tracking-tight max-w-[640px] mb-3.5">
             Get in <span className="text-blue-dark">touch</span>
           </h1>
-          <p className="text-base md:text-lg text-white/55 leading-7 max-w-[500px] mb-7">
+          <p className="text-base md:text-lg text-white/85 leading-7 max-w-[500px] mb-7">
             Whether you have a question, want to discuss your child&apos;s needs, or just want to say hello. We&apos;d love to hear from you.
           </p>
         </div>
@@ -117,7 +117,7 @@ export default function ContactPage() {
 
             {/* Social links */}
             <div>
-              <h3 className="text-[11px] tracking-[.12em] uppercase font-bold text-text-light mb-3">Follow us</h3>
+              <h3 className="text-[11px] tracking-[.12em] uppercase font-bold text-text-mid mb-3">Follow us</h3>
               <div className="flex flex-col gap-2.5">
                 <a href={SOCIALS.medela.instagram} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2.5 text-sm text-text-mid hover:text-text transition-colors group">
                   <span className="w-8 h-8 rounded-lg bg-blue-pale flex items-center justify-center shrink-0 group-hover:bg-blue-pale/80 transition-colors">

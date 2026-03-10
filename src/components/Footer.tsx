@@ -42,7 +42,7 @@ export default function Footer() {
             />
             Medela Learning Support
           </div>
-          <p className="text-[13px] text-white/[.38] leading-7 max-w-[250px] mb-4">
+          <p className="text-[13px] text-white/55 leading-7 max-w-[250px] mb-4">
             Educational therapy and learning support for children in Lisbon and across Portugal.
           </p>
           {/* Medela socials */}
@@ -52,7 +52,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Medela on Instagram"
-              className="w-8 h-8 rounded-full bg-white/[.08] flex items-center justify-center text-white/40 hover:bg-white/[.16] hover:text-white transition-colors"
+              className="w-8 h-8 rounded-full bg-white/[.08] flex items-center justify-center text-white/60 hover:bg-white/[.16] hover:text-white transition-colors"
             >
               <InstagramIcon />
             </a>
@@ -61,7 +61,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Medela on Facebook"
-              className="w-8 h-8 rounded-full bg-white/[.08] flex items-center justify-center text-white/40 hover:bg-white/[.16] hover:text-white transition-colors"
+              className="w-8 h-8 rounded-full bg-white/[.08] flex items-center justify-center text-white/60 hover:bg-white/[.16] hover:text-white transition-colors"
             >
               <FacebookIcon />
             </a>
@@ -70,7 +70,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Medela on TikTok"
-              className="w-8 h-8 rounded-full bg-white/[.08] flex items-center justify-center text-white/40 hover:bg-white/[.16] hover:text-white transition-colors"
+              className="w-8 h-8 rounded-full bg-white/[.08] flex items-center justify-center text-white/60 hover:bg-white/[.16] hover:text-white transition-colors"
             >
               <TikTokIcon />
             </a>
@@ -79,22 +79,22 @@ export default function Footer() {
 
         {/* Medela */}
         <div>
-          <h4 className="text-[11px] tracking-[.1em] uppercase font-bold text-white/[.28] mb-3">Medela</h4>
+          <p className="text-[11px] tracking-[.1em] uppercase font-bold text-white/45 mb-3">Medela</p>
           <ul className="flex flex-col gap-2">
-            <li><Link href="/about" className="text-sm text-white/[.46] hover:text-white transition-colors">About us</Link></li>
-            <li><Link href="/learning-resources" className="text-sm text-white/[.46] hover:text-white transition-colors">Resources</Link></li>
-            <li><a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-white/[.46] hover:text-white transition-colors">Book a session</a></li>
-            <li><Link href="/contact" className="text-sm text-white/[.46] hover:text-white transition-colors">Contact</Link></li>
+            <li><Link href="/about" className="text-sm text-white/65 hover:text-white transition-colors underline-offset-2 hover:underline">About us</Link></li>
+            <li><Link href="/learning-resources" className="text-sm text-white/65 hover:text-white transition-colors underline-offset-2 hover:underline">Resources</Link></li>
+            <li><a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-white/65 hover:text-white transition-colors underline-offset-2 hover:underline">Book a session</a></li>
+            <li><Link href="/contact" className="text-sm text-white/65 hover:text-white transition-colors underline-offset-2 hover:underline">Contact</Link></li>
           </ul>
         </div>
 
         {/* Aldeia */}
         <div>
-          <h4 className="text-[11px] tracking-[.1em] uppercase font-bold text-white/[.28] mb-3">Aldeia</h4>
+          <p className="text-[11px] tracking-[.1em] uppercase font-bold text-white/45 mb-3">Aldeia</p>
           <ul className="flex flex-col gap-2 mb-4">
-            <li><Link href="/aldeia" className="text-sm text-white/[.46] hover:text-white transition-colors">Community</Link></li>
-            <li><Link href="/aldeia#workshops" className="text-sm text-white/[.46] hover:text-white transition-colors">Workshops</Link></li>
-            <li><Link href="/blog" className="text-sm text-white/[.46] hover:text-white transition-colors">Blog</Link></li>
+            <li><Link href="/aldeia" className="text-sm text-white/65 hover:text-white transition-colors underline-offset-2 hover:underline">Community</Link></li>
+            <li><Link href="/aldeia#workshops" className="text-sm text-white/65 hover:text-white transition-colors underline-offset-2 hover:underline">Workshops</Link></li>
+            <li><Link href="/blog" className="text-sm text-white/65 hover:text-white transition-colors underline-offset-2 hover:underline">Blog</Link></li>
           </ul>
           {/* Aldeia Instagram */}
           <a
@@ -102,7 +102,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Aldeia on Instagram"
-            className="inline-flex items-center gap-1.5 text-[12px] text-white/30 hover:text-white/70 transition-colors"
+            className="inline-flex items-center gap-1.5 text-[12px] text-white/60 hover:text-white transition-colors"
           >
             <InstagramIcon />
             @aldeia_parent_community
@@ -111,20 +111,20 @@ export default function Footer() {
 
         {/* Resources */}
         <div>
-          <h4 className="text-[11px] tracking-[.1em] uppercase font-bold text-white/[.28] mb-3">Resources</h4>
+          <p className="text-[11px] tracking-[.1em] uppercase font-bold text-white/45 mb-3">Resources</p>
           <ul className="flex flex-col gap-2">
-            <li><Link href="/learning-resources" className="text-sm text-white/[.46] hover:text-white transition-colors">Grade 1</Link></li>
-            <li><Link href="/learning-resources" className="text-sm text-white/[.46] hover:text-white transition-colors">Grade 2</Link></li>
-            <li><Link href="/learning-resources" className="text-sm text-white/[.46] hover:text-white transition-colors">Grade 3</Link></li>
-            <li><Link href="/learning-resources" className="text-sm text-white/[.46] hover:text-white transition-colors">Grade 4</Link></li>
+            <li><Link href="/learning-resources" className="text-sm text-white/65 hover:text-white transition-colors underline-offset-2 hover:underline">Grade 1</Link></li>
+            <li><Link href="/learning-resources" className="text-sm text-white/65 hover:text-white transition-colors underline-offset-2 hover:underline">Grade 2</Link></li>
+            <li><Link href="/learning-resources" className="text-sm text-white/65 hover:text-white transition-colors underline-offset-2 hover:underline">Grade 3</Link></li>
+            <li><Link href="/learning-resources" className="text-sm text-white/65 hover:text-white transition-colors underline-offset-2 hover:underline">Grade 4</Link></li>
           </ul>
         </div>
       </div>
 
       <div className="max-w-[1180px] mx-auto pt-4 border-t border-white/[.07] flex justify-between items-center flex-wrap gap-2">
-        <p className="text-xs text-white/[.2]">&copy; 2026 Medela Learning Support. All rights reserved.</p>
-        <p className="text-xs text-white/[.18]">
-          An <Link href="/aldeia" className="text-purple/[.45] hover:text-purple/[.7] transition-colors">Aldeia</Link> initiative
+        <p className="text-xs text-white/45">&copy; 2026 Medela Learning Support. All rights reserved.</p>
+        <p className="text-xs text-white/55">
+          An <Link href="/aldeia" className="text-purple-light hover:text-white underline underline-offset-2 transition-colors">Aldeia</Link> initiative
         </p>
       </div>
     </footer>

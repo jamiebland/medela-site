@@ -20,7 +20,7 @@ function PostCard({ post }: { post: BlogPost }) {
     >
       <div className="h-[168px] overflow-hidden relative bg-blue-pale flex items-center justify-center text-4xl">
         {post.featuredImage ? (
-          <Image src={post.featuredImage} alt={post.title} fill unoptimized className="object-cover" />
+          <Image src={post.featuredImage} alt={post.title} fill unoptimized sizes="(max-width: 640px) 100vw, (max-width: 1180px) 50vw, 380px" className="object-cover" />
         ) : (
           <span>{getCategoryIcon(post.category)}</span>
         )}
@@ -93,7 +93,7 @@ export default function BlogGrid({
             >
               <div className="h-[340px] md:h-[340px] overflow-hidden relative bg-blue-pale flex items-center justify-center text-6xl">
                 {featured.featuredImage ? (
-                  <Image src={featured.featuredImage} alt={featured.title} fill unoptimized className="object-cover" />
+                  <Image src={featured.featuredImage} alt={featured.title} fill unoptimized sizes="(max-width: 768px) 100vw, 760px" className="object-cover" />
                 ) : (
                   <span>{getCategoryIcon(featured.category)}</span>
                 )}
