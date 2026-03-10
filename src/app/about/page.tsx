@@ -167,6 +167,7 @@ export default async function AboutPage() {
                     src="/images/team/medela-rebecca-profile-closeup.jpg"
                     alt="Rebecca — Educational Therapist & Founder"
                     fill
+                    sizes="(max-width: 768px) 100vw, 0vw"
                     className="object-cover md:hidden"
                   />
                   <Image
