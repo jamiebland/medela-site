@@ -9,7 +9,9 @@
       "Bash(cd \"C:\\\\Users\\\\jamie\\\\Documents\\\\GitHub\\\\medela-site\" && python -c \"\ncontent = open\\('package.json', 'r', encoding='utf-8'\\).read\\(\\)\nlines = content.split\\('\\\\n'\\)\nfor i, line in enumerate\\(lines, 1\\):\n    print\\(f'{i}: {repr\\(line\\)}'\\)\n\")",
       "Read(//c/Users/jamie/Documents/GitHub/**)",
       "Read(//c/Users/jamie/Documents/**)",
-      "Read(//c/Users/jamie/**)"
+      "Read(//c/Users/jamie/**)",
+      "Bash(identify /c/Users/jamie/Documents/GitHub/medela-site/public/images/team/medela-rebecca-profile-closeup.jpg 2>/dev/null || file /c/Users/jamie/Documents/GitHub/medela-site/public/images/team/medela-rebecca-profile-closeup.jpg)",
+      "Bash(file /c/Users/jamie/Documents/GitHub/medela-site/public/images/team/medela-rebecca-profile-closeup.jpg && identify /c/Users/jamie/Documents/GitHub/medela-site/public/images/team/medela-rebecca-profile-closeup.jpg 2>/dev/null; file /c/Users/jamie/Documents/GitHub/medela-site/public/images/team/image-rebecca-profile.jpg && identify /c/Users/jamie/Documents/GitHub/medela-site/public/images/team/image-rebecca-profile.jpg 2>/dev/null; file /c/Users/jamie/Documents/GitHub/medela-site/public/images/team/rebecca-hero.webp && identify /c/Users/jamie/Documents/GitHub/medela-site/public/images/team/rebecca-hero.webp 2>/dev/null)"
     ]
   }
 }
