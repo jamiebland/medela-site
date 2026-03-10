@@ -23,6 +23,7 @@ import {
   Clock,
   Video,
   Smile,
+  Users,
 } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/config";
 import AldeiaCircles from "@/components/AldeiaCircles";
@@ -437,46 +438,52 @@ export default async function AldeiaPage() {
                   style={{ background: "linear-gradient(140deg, #2a1d4e, #4a3d7a)" }}
                 >
                   <div className="absolute -right-[18px] -top-[18px] w-[100px] h-[100px] rounded-full bg-white/[.05]" />
-                  <div className="inline-flex items-center gap-[5px] px-2.5 py-1 rounded-full text-[10px] font-bold tracking-[.06em] uppercase mb-3.5 w-fit bg-purple/[.25] text-purple-light border border-purple/[.3]">
+                  <div className="inline-flex items-center gap-[5px] px-2.5 py-1 rounded-full text-[10px] font-bold tracking-[.06em] uppercase mb-3.5 w-fit bg-white/[.85] text-purple-dark border border-white/[.5]">
                     Date & Location TBC
                   </div>
                   <h3 className="text-base font-bold text-white leading-[1.3] mb-2 tracking-tight">
-                    Understanding Your Child&apos;s Learning Journey
+                    Navigating Your Child&apos;s Learning Journey: A Parent Workshop
                   </h3>
                   <div className="text-xs text-white/70">
                     Coming soon · Book your spot
                   </div>
                 </div>
                 <div className="px-[22px] pt-5 pb-[22px] flex-1 flex flex-col">
-                  <p className="text-[13px] text-[#4a4468] leading-[1.7] mb-5 flex-1">
-                    Navigating your child's learning development journey can be difficult. 
-                    In this workshop, we will walk through the key components of your child's learning journey and educational experience.
-                    We will also host a time for questions and to connect with other parents navigating similar experiences.
-                  </p>
+                  <div className="text-[13px] text-[#4a4468] leading-[1.7] mb-5 flex-1">
+                    <p className="mb-3">Parenting a child with unique learning needs is a journey filled with love, advocacy, and at times uncertainty. This workshop is designed to walk alongside you, helping you feel informed and supported every step of the way.</p>
+                    <p className="text-[12px] font-semibold text-[#1c2133] mb-1">What We&apos;ll Cover:</p>
+                    <ul className="list-disc list-inside mb-3 space-y-0.5">
+                      <li>Understanding your child&apos;s learning support services and how they work</li>
+                      <li>Breaking down the IEP, what it includes and how to read it</li>
+                      <li>Your rights as a parent and how to advocate for your child</li>
+                      <li>How to collaborate with teachers and school teams</li>
+                    </ul>
+                    <p className="text-[12px] font-semibold text-[#1c2133] mb-1">What You&apos;ll Walk Away With:</p>
+                    <ul className="list-disc list-inside mb-3 space-y-0.5">
+                      <li>A clearer understanding of the IEP process</li>
+                      <li>Confidence to ask the right questions and speak up in meetings</li>
+                      <li>Tools and resources to support your child at home and at school</li>
+                    </ul>
+                    <p>We&apos;ll close with an open Q&amp;A and time to connect with other families navigating similar experiences. You are not alone in this, and we&apos;re so glad you&apos;re here.</p>
+                  </div>
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     <span className="flex items-center gap-[5px] bg-purple-xpale border border-purple/[.15] px-2.5 py-1 rounded-full text-[11px] font-medium text-purple-dark">
-                      <Monitor className="w-3 h-3 inline-block -mt-px" /> In-Person
-                    </span>
-                    <span className="flex items-center gap-[5px] bg-purple-xpale border border-purple/[.15] px-2.5 py-1 rounded-full text-[11px] font-medium text-purple-dark">
-                      <Clock className="w-3 h-3 inline-block -mt-px" /> 75 mins
-                    </span>
-                    <span className="flex items-center gap-[5px] bg-purple-xpale border border-purple/[.15] px-2.5 py-1 rounded-full text-[11px] font-medium text-purple-dark">
-                      <Video className="w-3 h-3 inline-block -mt-px" />
+                      <Users className="w-3 h-3 inline-block -mt-px" /> In-Person
                     </span>
                   </div>
                   <div className="flex items-center gap-2 mb-4">
-                    <div className="w-[30px] h-[30px] rounded-full overflow-hidden bg-purple-pale shrink-0">
+                    <div className="w-[30px] h-[30px] rounded-full overflow-hidden bg-purple-pale shrink-0 flex items-center justify-center">
                       <Image
-                        src="/images/team/jamille-avatar-sm.jpg"
-                        alt="Jamille, Psychopedagogy Specialist and co-founder of Aldeia"
-                        width={30}
-                        height={30}
-                        className="w-full h-full object-cover"
+                        src="/images/brand/Aldeia Logo Full.png"
+                        alt="Aldeia"
+                        width={22}
+                        height={22}
+                        className="w-full h-full object-contain p-1"
                       />
                     </div>
                     <div>
-                      <div className="text-xs font-semibold text-[#1c2133]">Jamille</div>
-                      <div className="text-[11px] text-[#8a86a8]">Co-founder · Aldeia</div>
+                      <div className="text-xs font-semibold text-[#1c2133]">Aldeia</div>
+                      <div className="text-[11px] text-[#8a86a8]">Parent Community</div>
                     </div>
                   </div>
                   <div className="flex items-center justify-between gap-2.5 pt-3.5 border-t border-purple/[.1]">
@@ -536,7 +543,6 @@ export default async function AldeiaPage() {
               "Supporting bilingual learners",
               "IEPs & support plans, know your rights",
               "Sensory processing & daily life",
-              "Raising a twice-exceptional child",
             ].map((t) => (
               <span
                 key={t}

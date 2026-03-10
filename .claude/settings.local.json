@@ -3,7 +3,13 @@
     "allow": [
       "Bash(python3:*)",
       "WebFetch(domain:medelalearning.sellfy.store)",
-      "WebFetch(domain:buy.stripe.com)"
+      "WebFetch(domain:buy.stripe.com)",
+      "Bash(cd \"C:\\\\Users\\\\jamie\\\\Documents\\\\GitHub\\\\medela-site\" && node -e \"require\\('./package.json'\\)\" 2>&1)",
+      "Bash(cd \"C:\\\\Users\\\\jamie\\\\Documents\\\\GitHub\\\\medela-site\" && node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('package.json','utf8'\\)\\)\" && echo \"OK\")",
+      "Bash(cd \"C:\\\\Users\\\\jamie\\\\Documents\\\\GitHub\\\\medela-site\" && python -c \"\ncontent = open\\('package.json', 'r', encoding='utf-8'\\).read\\(\\)\nlines = content.split\\('\\\\n'\\)\nfor i, line in enumerate\\(lines, 1\\):\n    print\\(f'{i}: {repr\\(line\\)}'\\)\n\")",
+      "Read(//c/Users/jamie/Documents/GitHub/**)",
+      "Read(//c/Users/jamie/Documents/**)",
+      "Read(//c/Users/jamie/**)"
     ]
   }
 }
