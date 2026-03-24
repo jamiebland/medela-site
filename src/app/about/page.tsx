@@ -11,6 +11,7 @@ import { CALENDLY_URL } from "@/lib/config";
 import type { Metadata } from "next";
 import { Sprout, Puzzle, Heart, Handshake, BookOpen, Home } from "lucide-react";
 import TeamMemberModal from "@/components/TeamMemberModal";
+import TeamCarousel from "@/components/TeamCarousel";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -141,26 +142,25 @@ export default async function AboutPage() {
             </RevealOnScroll>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 items-stretch">
-            {/* Rebecca */}
-            <RevealOnScroll className="h-full">
-              <TeamMemberModal
-                name="Rebecca Bland"
-                title="Educational Therapist & Founder"
-                image="/images/team/image-rebecca-profile.jpg"
-                modalImage="/images/team/medela-rebecca-profile-2.webp"
-                mobileModalImage="/images/team/medela-rebecca-profile-closeup.jpg"
-                email="rebecca@medelalearning.com"
-                accentClass="text-blue-btn"
-                bio={
-                  <>
-                    <p>I began my studies with a focus on psychology, but quickly realised that I wanted to be directly involved in the solutions and journeys of children&apos;s learning, rather than in assessments or counselling. This led me to studying teaching and, eventually, to specialising as an education therapist.</p>
-                    <p>My early work involved partnering with universities and parents to support students with reading and writing difficulties. This experience highlighted the importance of individualised support and creative teaching methods in improving children&apos;s engagement and understanding. Here, the dream for Medela Learning Support began.</p>
-                    <p>My journey took me from working at an independent school in Johannesburg, South Africa, where I provided one-on-one academic support to remedial learners, to teaching at an international school in Portugal. Now I am fulfilling my dream, working as a private education specialist.</p>
-                    <p>I am also currently working toward a Master&apos;s degree with a specific focus on dyslexia. This continues to allow me to stay at the forefront of research and best practice, ensuring that the support I offer remains both deeply informed and highly effective.</p>
-                  </>
-                }
-              >
+          <TeamCarousel items={[
+            /* ── Rebecca ── */
+            <TeamMemberModal
+              name="Rebecca Bland"
+              title="Educational Therapist & Founder"
+              image="/images/team/image-rebecca-profile.jpg"
+              modalImage="/images/team/medela-rebecca-profile-2.webp"
+              mobileModalImage="/images/team/medela-rebecca-profile-closeup.jpg"
+              email="rebecca@medelalearning.com"
+              accentClass="text-blue-btn"
+              bio={
+                <>
+                  <p>I began my studies with a focus on psychology, but quickly realised that I wanted to be directly involved in the solutions and journeys of children&apos;s learning, rather than in assessments or counselling. This led me to studying teaching and, eventually, to specialising as an education therapist.</p>
+                  <p>My early work involved partnering with universities and parents to support students with reading and writing difficulties. This experience highlighted the importance of individualised support and creative teaching methods in improving children&apos;s engagement and understanding. Here, the dream for Medela Learning Support began.</p>
+                  <p>My journey took me from working at an independent school in Johannesburg, South Africa, where I provided one-on-one academic support to remedial learners, to teaching at an international school in Portugal. Now I am fulfilling my dream, working as a private education specialist.</p>
+                  <p>I am also currently working toward a Master&apos;s degree with a specific focus on dyslexia. This continues to allow me to stay at the forefront of research and best practice, ensuring that the support I offer remains both deeply informed and highly effective.</p>
+                </>
+              }
+            >
               <div className="bg-bg rounded-[var(--radius-lg)] shadow-[var(--shadow)] overflow-hidden hover:-translate-y-1 transition-transform duration-300 h-full flex flex-col">
                 <div className="relative h-[300px] overflow-hidden shrink-0">
                   <Image
@@ -176,131 +176,166 @@ export default async function AboutPage() {
                   </span>
                 </div>
                 <div className="p-6 md:p-8 flex-1 flex flex-col">
-                  <h3 className="text-xl font-extrabold text-text mb-0.5">
-                    Rebecca
-                  </h3>
-                  <p className="text-sm font-semibold text-blue-btn mb-3">
-                    Educational Therapist
-                  </p>
+                  <h3 className="text-xl font-extrabold text-text mb-0.5">Rebecca</h3>
+                  <p className="text-sm font-semibold text-blue-btn mb-3">Educational Therapist</p>
                   <p className="text-sm text-text-mid leading-7 mb-4">
-                    Rebecca is a specialized remedial therapist with over 7+ years
-                    of experience supporting children with learning difficulties and disabilities. 
-                    She designs every programme around the individual child. Alongside her one-to-one work, Rebecca is passionate about sharing her knowledge and building a community of support around families, through Aldeia. 
-                    Combining structured, evidence-based methods with warmth and
-                    creativity to rebuild confidence and love for learning.
+                    Rebecca is a specialized remedial therapist with over 7+ years of experience supporting children with learning difficulties and disabilities. She designs every programme around the individual child. Alongside her one-to-one work, Rebecca is passionate about sharing her knowledge and building a community of support around families, through Aldeia. Combining structured, evidence-based methods with warmth and creativity to rebuild confidence and love for learning.
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {[
-                      "Dyslexia",
-                      "Dyscalculia",
-                      "ADHD",
-                      "Language Processing",
-                      "Case Management",
-                      "Curriculum Design",
-                    ].map((tag) => (
-                      <span
-                        key={tag}
-                        className="bg-blue-pale text-blue-btn text-[11px] font-semibold px-2.5 py-1 rounded-full"
-                      >
-                        {tag}
-                      </span>
+                    {["Dyslexia","Dyscalculia","ADHD","Language Processing","Case Management","Curriculum Design"].map((tag) => (
+                      <span key={tag} className="bg-blue-pale text-blue-btn text-[11px] font-semibold px-2.5 py-1 rounded-full">{tag}</span>
                     ))}
                   </div>
-                  <p className="text-[12px] text-text-mid leading-5">
-                    B.Ed (FP) &middot; AvDip Remedial Therapy &middot; Dyslexia Specialist
-                  </p>
-                  <a
-                    href="mailto:rebecca@medelalearning.com"
-                    className="mt-4 self-start inline-flex items-center gap-2 bg-blue-pale text-blue-btn text-[13px] font-semibold px-4 py-2 rounded-full hover:bg-blue hover:text-white transition-colors"
-                  >
+                  <p className="text-[12px] text-text-mid leading-5">B.Ed (FP) &middot; AvDip Remedial Therapy &middot; Dyslexia Specialist</p>
+                  <a href="mailto:rebecca@medelalearning.com" className="mt-4 self-start inline-flex items-center gap-2 bg-blue-pale text-blue-btn text-[13px] font-semibold px-4 py-2 rounded-full hover:bg-blue hover:text-white transition-colors">
                     rebecca@medelalearning.com
                   </a>
                 </div>
               </div>
-              </TeamMemberModal>
-            </RevealOnScroll>
+            </TeamMemberModal>,
 
-            {/* Jamille */}
-            <RevealOnScroll delay={1} className="h-full">
-              <TeamMemberModal
-                name="Jamille"
-                title="Resource Creator & Co-founder of Aldeia"
-                image="/images/team/jamille-avatar.jpg"
-                modalImage="/images/team/jamille-avatar-2.jpg"
-                mobileModalImage="/images/team/jamille-avatar-closeup.jpg"
-                email="jamille@medelalearning.com"
-                accentClass="text-purple-dark"
-                bio={
-                  <>
-                    <p>I was born in Brazil and raised with a deep appreciation for community and connection, my path to Medela was shaped by years of firsthand experience within international schools across Portugal.</p>
-                    <p>As an education specialist embedded in Lisbon&apos;s international school community, I witnessed firsthand the isolation and confusion experienced by families when a child begins to struggle. Without local networks, language fluency, or knowledge of the international education system, many parents were left navigating learning difficulties entirely alone.</p>
-                    <p>This gap, between what families needed and what was available has become my driving force. I co-founded Aldeia with a clear mission: to build a village of support around every family. Through workshops, community events, a growing WhatsApp network, and curated resources, Aldeia creates the connections that make a real difference.</p>
-                    <p>With the goal to grow Aldeia into a thriving network of parents, educators, and specialists, I believe that no family should face learning challenges alone.</p>
-                  </>
-                }
-              >
+            /* ── Jamille ── */
+            <TeamMemberModal
+              name="Jamille"
+              title="Resource Creator & Co-founder of Aldeia"
+              image="/images/team/jamille-avatar.jpg"
+              modalImage="/images/team/jamille-avatar-2.jpg"
+              mobileModalImage="/images/team/jamille-avatar-closeup.jpg"
+              email="jamille@medelalearning.com"
+              accentClass="text-purple-dark"
+              bio={
+                <>
+                  <p>I was born in Brazil and raised with a deep appreciation for community and connection, my path to Medela was shaped by years of firsthand experience within international schools across Portugal.</p>
+                  <p>As an education specialist embedded in Lisbon&apos;s international school community, I witnessed firsthand the isolation and confusion experienced by families when a child begins to struggle. Without local networks, language fluency, or knowledge of the international education system, many parents were left navigating learning difficulties entirely alone.</p>
+                  <p>This gap, between what families needed and what was available has become my driving force. I co-founded Aldeia with a clear mission: to build a village of support around every family. Through workshops, community events, a growing WhatsApp network, and curated resources, Aldeia creates the connections that make a real difference.</p>
+                  <p>With the goal to grow Aldeia into a thriving network of parents, educators, and specialists, I believe that no family should face learning challenges alone.</p>
+                </>
+              }
+            >
               <div className="bg-bg rounded-[var(--radius-lg)] shadow-[var(--shadow)] overflow-hidden hover:-translate-y-1 transition-transform duration-300 h-full flex flex-col">
                 <div className="relative h-[300px] overflow-hidden shrink-0">
-                  <Image
-                    src="/images/team/jamille-avatar-closeup.jpg"
-                    alt="Jamille — Co-founder & Community Lead"
-                    fill
-                    className="object-cover md:hidden"
-                  />
-                  <Image
-                    src="/images/team/jamille-avatar.jpg"
-                    alt="Jamille — Co-founder & Community Lead"
-                    fill
-                    className="object-cover hidden md:block"
-                  />
+                  <Image src="/images/team/jamille-avatar-closeup.jpg" alt="Jamille — Co-founder & Community Lead" fill className="object-cover md:hidden" />
+                  <Image src="/images/team/jamille-avatar.jpg" alt="Jamille — Co-founder & Community Lead" fill className="object-cover hidden md:block" />
                   <span className="absolute top-4 left-4 bg-purple-dark text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
                     Co-founder of Aldeia
                   </span>
                 </div>
                 <div className="p-6 md:p-8 flex-1 flex flex-col">
-                  <h3 className="text-xl font-extrabold text-text mb-0.5">
-                    Jamille
-                  </h3>
-                  <p className="text-sm font-semibold text-purple-dark mb-3">
-                    Psychopedagogy Specialist
-                  </p>
+                  <h3 className="text-xl font-extrabold text-text mb-0.5">Jamille</h3>
+                  <p className="text-sm font-semibold text-purple-dark mb-3">Psychopedagogy Specialist</p>
                   <p className="text-sm text-text-mid leading-7 mb-4">
-                    Jamille's background as an educational specialist alongside her skills in community development and family support
-                    mean that she understands that learning differences affect the
-                    whole family, not just the child. She helps to connect parents, educators, and
-                    specialists through workshops, events, and shared resources. Additionally she is a contributer to the creation of Medela's digital resources, ensuring they meet the real needs of families.             
+                    Jamille&apos;s background as an educational specialist alongside her skills in community development and family support mean that she understands that learning differences affect the whole family, not just the child. She helps to connect parents, educators, and specialists through workshops, events, and shared resources. Additionally she is a contributor to the creation of Medela&apos;s digital resources, ensuring they meet the real needs of families.
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {[
-                      "Community Building",
-                      "Parent Workshops",
-                      "Parental Support",
-                      "Dyscalculia",
-                      "Aldeia Events",
-                      "Partnerships",
-                    ].map((tag) => (
-                      <span
-                        key={tag}
-                        className="bg-purple-pale text-purple-dark text-[11px] font-semibold px-2.5 py-1 rounded-full"
-                      >
-                        {tag}
-                      </span>
+                    {["Community Building","Parent Workshops","Parental Support","Dyscalculia","Aldeia Events","Partnerships"].map((tag) => (
+                      <span key={tag} className="bg-purple-pale text-purple-dark text-[11px] font-semibold px-2.5 py-1 rounded-full">{tag}</span>
                     ))}
                   </div>
-                  <p className="text-[12px] text-text-mid leading-5">
-                    Bachelor of Education &middot; Psychopedagogy Specialist
-                  </p>
-                  <a
-                    href="mailto:jamille@medelalearning.com"
-                    className="mt-4 self-start inline-flex items-center gap-2 bg-purple-pale text-purple-dark text-[13px] font-semibold px-4 py-2 rounded-full hover:bg-purple hover:text-white transition-colors"
-                  >
+                  <p className="text-[12px] text-text-mid leading-5">Bachelor of Education &middot; Psychopedagogy Specialist</p>
+                  <a href="mailto:jamille@medelalearning.com" className="mt-4 self-start inline-flex items-center gap-2 bg-purple-pale text-purple-dark text-[13px] font-semibold px-4 py-2 rounded-full hover:bg-purple hover:text-white transition-colors">
                     jamille@medelalearning.com
                   </a>
                 </div>
               </div>
-              </TeamMemberModal>
-            </RevealOnScroll>
-          </div>
+            </TeamMemberModal>,
+
+            /* ── Saskia-Lee ── */
+            <TeamMemberModal
+              name="Saskia-Lee Camacho"
+              title="Brain Coach & Psychometrist"
+              image="/images/team/brain-coach-saskialee-closeup.jpg"
+              modalImage="/images/team/brain-coach-saskialee.webp"
+              email="hello@saskialee.eu"
+              accentClass="text-[#3d6b42]"
+              bio={
+                <>
+                  <p>A South African now calling Lisbon home, Saskia is on a mission to help individuals, partners, and families unlock their full potential by harnessing the power of neuroplasticity. She is deeply inspired by the way the brain is designed: miraculous, adaptable, and capable of incredible change.</p>
+                  <p>As a Counselling Psychology Honours graduate, HPCSA-registered Psychometrist, Qualified Life Coach, and Brain Profiling Practitioner, Saskia brings a unique blend of expertise to every session. She is also trained in Brainspotting Phase I, a powerful tool for addressing emotional blocks and fostering deep transformation.</p>
+                  <p>At Medela, Saskia offers Brain Profiling, a neuroscience-based assessment that maps how each family member thinks and functions. The 30-question diagnostic survey divides the brain into four quadrants, producing a visual map of thinking preferences. For families navigating learning differences, understanding how you&apos;re each wired can transform the way you communicate, support, and connect with one another.</p>
+                </>
+              }
+            >
+              <div className="bg-bg rounded-[var(--radius-lg)] shadow-[var(--shadow)] overflow-hidden hover:-translate-y-1 transition-transform duration-300 h-full flex flex-col">
+                <div className="relative h-[300px] overflow-hidden shrink-0">
+                  <Image
+                    src="/images/team/brain-coach-saskialee-closeup.jpg"
+                    alt="Saskia-Lee Camacho — Brain Coach & Psychometrist"
+                    fill
+                    className="object-cover"
+                    style={{ objectPosition: "50% 30%" }}
+                  />
+                  <span className="absolute top-4 left-4 bg-[#7a9e7e] text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                    Aldeia Partner
+                  </span>
+                </div>
+                <div className="p-6 md:p-8 flex-1 flex flex-col">
+                  <h3 className="text-xl font-extrabold text-text mb-0.5">Saskia-Lee</h3>
+                  <p className="text-sm font-semibold text-[#3d6b42] mb-3">Brain Coach & Psychometrist</p>
+                  <p className="text-sm text-text-mid leading-7 mb-4">
+                    Saskia is a HPCSA-registered Psychometrist, Certified Life Coach, and Brain Profiling Practitioner based in Lisbon. Drawing on neuroscience and neuroplasticity, she helps families understand how each member is uniquely wired, unlocking better communication, parenting strategies, and family harmony.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {["Brain Profiling","Neuroplasticity","Psychometrics","Life Coaching","Brainspotting","Family Profiling"].map((tag) => (
+                      <span key={tag} className="bg-[#f2f7f2] text-[#3d6b42] text-[11px] font-semibold px-2.5 py-1 rounded-full">{tag}</span>
+                    ))}
+                  </div>
+                  <p className="text-[12px] text-text-mid leading-5">BSc (Hons) Counselling Psychology &middot; HPCSA Psychometrist &middot; Certified Life Coach</p>
+                  <a href="mailto:hello@saskialee.eu" className="mt-4 self-start inline-flex items-center gap-2 bg-[#f2f7f2] text-[#3d6b42] text-[13px] font-semibold px-4 py-2 rounded-full hover:bg-[#7a9e7e] hover:text-white transition-colors">
+                    hello@saskialee.eu
+                  </a>
+                </div>
+              </div>
+            </TeamMemberModal>,
+
+            /* ── Mollie ── */
+            <TeamMemberModal
+              name="Mollie Rust"
+              title="Educational Support Specialist"
+              image="/images/team/P1220555.JPG"
+              modalImage="/images/team/stakeholder-mollie-1.jpeg"
+              email="mollsrust15@gmail.com"
+              accentClass="text-[#3d6b42]"
+              bio={
+                <>
+                  <p>Mollie Rust is an Educational Support Specialist with over 15 years of hands-on experience walking alongside children in both academic and therapeutic settings. She is passionate about championing neurodivergent learners, including children with autism, ADHD, and diverse learning profiles, as well as those navigating anxiety or social-emotional challenges.</p>
+                  <p>For Mollie, the most important work begins with connection, because when a child feels understood, everything else becomes possible. Rooted in this belief, she offers individualised, relationship-centred support that honours each child&apos;s unique strengths and needs, building genuine confidence, emotional regulation, and academic independence.</p>
+                  <p>Her work spans shadow tutoring, structured learning support, and close collaboration with families and therapists to ensure children experience consistent, wraparound care across both home and school. She brings over a decade of dedicated one-on-one experience with autistic and behaviourally complex learners, embracing creative approaches such as art, movement, games, and real-world learning to help every child engage and flourish.</p>
+                  <p>Mollie is currently completing her Registered Behavior Technician (RBT) certification in Applied Behavior Analysis (ABA), deepening her commitment to evidence-based practice and affirming her dedication to the children and families she serves.</p>
+                </>
+              }
+            >
+              <div className="bg-bg rounded-[var(--radius-lg)] shadow-[var(--shadow)] overflow-hidden hover:-translate-y-1 transition-transform duration-300 h-full flex flex-col">
+                <div className="relative h-[300px] overflow-hidden shrink-0">
+                  <Image
+                    src="/images/team/P1220555.JPG"
+                    alt="Mollie Rust — Educational Support Specialist"
+                    fill
+                    className="object-cover"
+                    style={{ objectPosition: "50% 25%" }}
+                  />
+                  <span className="absolute top-4 left-4 bg-[#7a9e7e] text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                    Aldeia Partner
+                  </span>
+                </div>
+                <div className="p-6 md:p-8 flex-1 flex flex-col">
+                  <h3 className="text-xl font-extrabold text-text mb-0.5">Mollie</h3>
+                  <p className="text-sm font-semibold text-[#3d6b42] mb-3">Educational Support Specialist</p>
+                  <p className="text-sm text-text-mid leading-7 mb-4">
+                    Mollie is an Educational Support Specialist with 15+ years of experience supporting neurodivergent children ages 3–16. Specialising in autism, ADHD, and complex behavioural profiles, she builds connection-first relationships that help children develop confidence, emotional regulation, and genuine learning independence.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {["Autism Support","ADHD","Shadow Tutoring","Behavioural Support","Social-Emotional Learning","ABA"].map((tag) => (
+                      <span key={tag} className="bg-[#f2f7f2] text-[#3d6b42] text-[11px] font-semibold px-2.5 py-1 rounded-full">{tag}</span>
+                    ))}
+                  </div>
+                  <p className="text-[12px] text-text-mid leading-5">15+ years exp. &middot; RBT Certification (in progress)</p>
+                  <a href="mailto:mollsrust15@gmail.com" className="mt-4 self-start inline-flex items-center gap-2 bg-[#f2f7f2] text-[#3d6b42] text-[13px] font-semibold px-4 py-2 rounded-full hover:bg-[#7a9e7e] hover:text-white transition-colors">
+                    mollsrust15@gmail.com
+                  </a>
+                </div>
+              </div>
+            </TeamMemberModal>,
+          ]} />
         </div>
       </section>
 

@@ -47,8 +47,8 @@ export default function TeamMemberModal({
           ✕
         </button>
 
-        {/* Image — top on mobile, left column on desktop */}
-        <div className="relative w-full h-[220px] shrink-0 sm:w-[260px] sm:h-auto">
+        {/* Image — hidden on mobile, left column on desktop */}
+        <div className="relative hidden sm:block w-full h-[220px] shrink-0 sm:w-[260px] sm:h-auto">
           {mobileModalImage && (
             <div className="absolute inset-0 sm:hidden">
               <Image

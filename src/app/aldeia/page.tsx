@@ -445,7 +445,7 @@ export default async function AldeiaPage() {
                     Navigating Your Child&apos;s Learning Journey: A Parent Workshop
                   </h3>
                   <div className="text-xs text-white/70">
-                    Coming soon · Book your spot
+                    April TBD · Book your spot
                   </div>
                 </div>
                 <div className="px-[22px] pt-5 pb-[22px] flex-1 flex flex-col">
@@ -488,11 +488,11 @@ export default async function AldeiaPage() {
                   </div>
                   <div className="flex items-center justify-between gap-2.5 pt-3.5 border-t border-purple/[.1]">
                     <div className="text-lg font-extrabold text-purple-dark tracking-tight">
-                      &euro;20{" "}
+                      &euro;50{" "}
                       <span className="text-xs font-normal text-[#8a86a8]">per person</span>
                     </div>
                     <a
-                      href="https://buy.stripe.com/bJedR98cDd4s7dd4HNdnW01"
+                      href="https://buy.stripe.com/bJe3cvboP7K89ll0rxdnW02"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[13px] font-semibold text-white bg-purple-dark px-4 py-2 rounded-full hover:bg-purple-deep transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-dark focus-visible:ring-offset-2"
