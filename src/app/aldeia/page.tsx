@@ -439,13 +439,16 @@ export default async function AldeiaPage() {
                 >
                   <div className="absolute -right-[18px] -top-[18px] w-[100px] h-[100px] rounded-full bg-white/[.05]" />
                   <div className="inline-flex items-center gap-[5px] px-2.5 py-1 rounded-full text-[10px] font-bold tracking-[.06em] uppercase mb-3.5 w-fit bg-white/[.85] text-purple-dark border border-white/[.5]">
-                    Date & Location TBC
+                    25 April 2026
                   </div>
                   <h3 className="text-base font-bold text-white leading-[1.3] mb-2 tracking-tight">
                     Navigating Your Child&apos;s Learning Journey: A Parent Workshop
                   </h3>
-                  <div className="text-xs text-white/70">
-                    April TBD · Book your spot
+                  <div className="text-xs text-white/70 mb-1">
+                    25 April 2026 · Book your spot
+                  </div>
+                  <div className="text-xs text-white/60">
+                    <span className="font-semibold text-white/80">Venue:</span> Lisbon West (Belém / Paço d&apos;Arcos). Full address provided to confirmed participants by email.
                   </div>
                 </div>
                 <div className="px-[22px] pt-5 pb-[22px] flex-1 flex flex-col">
@@ -453,7 +456,7 @@ export default async function AldeiaPage() {
                     <p className="mb-3">Parenting a child with unique learning needs is a journey filled with love, advocacy, and at times uncertainty. This workshop is designed to walk alongside you, helping you feel informed and supported every step of the way.</p>
                     <p className="text-[12px] font-semibold text-[#1c2133] mb-1">What We&apos;ll Cover:</p>
                     <ul className="list-disc list-inside mb-3 space-y-0.5">
-                      <li>Understanding your child&apos;s learning support services and how they work</li>
+                      <li>Understanding your child&apos;s learning needs, their support services, and how they work</li>
                       <li>Breaking down the IEP, what it includes and how to read it</li>
                       <li>Your rights as a parent and how to advocate for your child</li>
                       <li>How to collaborate with teachers and school teams</li>
@@ -488,17 +491,17 @@ export default async function AldeiaPage() {
                   </div>
                   <div className="flex items-center justify-between gap-2.5 pt-3.5 border-t border-purple/[.1]">
                     <div className="text-lg font-extrabold text-purple-dark tracking-tight">
-                      &euro;50{" "}
+                      &euro;85{" "}
                       <span className="text-xs font-normal text-[#8a86a8]">per person</span>
                     </div>
-                    <a
-                      href="https://buy.stripe.com/bJe3cvboP7K89ll0rxdnW02"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[13px] font-semibold text-white bg-purple-dark px-4 py-2 rounded-full hover:bg-purple-deep transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-dark focus-visible:ring-offset-2"
+                    <button
+                      data-tally-open="LZXAGO"
+                      data-tally-align-left="1"
+                      data-tally-form-events-forwarding="1"
+                      className="text-[13px] font-semibold text-white bg-purple-dark px-4 py-2 rounded-full hover:bg-purple-deep transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-dark focus-visible:ring-offset-2 cursor-pointer"
                     >
-                      Join waitlist &rarr;
-                    </a>
+                      Join Here &rarr;
+                    </button>
                   </div>
                 </div>
               </div>

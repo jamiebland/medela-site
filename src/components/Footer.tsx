@@ -121,9 +121,25 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-[1180px] mx-auto pt-4 border-t border-white/[.07] flex justify-between items-center flex-wrap gap-2">
+      <div className="max-w-[1180px] mx-auto pt-4 border-t border-white/[.07] grid grid-cols-3 items-center gap-3">
         <p className="text-xs text-white/45">&copy; 2026 Medela Learning Support. All rights reserved.</p>
-        <p className="text-xs text-white/55">
+        <a
+          href="https://www.locallista.pt"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 group"
+          aria-label="Recommended by Locallista"
+        >
+          <span className="text-xs text-white/40 group-hover:text-white/60 transition-colors">Recommended by</span>
+          <Image
+            src="/images/brand/Localista_logo.avif"
+            alt="Locallista"
+            width={72}
+            height={20}
+            className="h-5 w-auto object-contain brightness-0 invert opacity-40 group-hover:opacity-70 transition-opacity"
+          />
+        </a>
+        <p className="text-xs text-white/55 text-right">
           An <Link href="/aldeia" className="text-purple-light hover:text-white underline underline-offset-2 transition-colors">Aldeia</Link> initiative
         </p>
       </div>
